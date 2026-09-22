@@ -1,0 +1,282 @@
+/* ========================================
+   INITIATOR — RESTYLED FROM THE THESIS DECK
+
+   Every value below is taken from the source Figma design file
+   (\Pre, node 1590:90) rather than invented:
+
+     Variables   White #ffffff · Black #000000
+                 Title      Inter Bold 96 / 1.2 / -2
+                 Header 2   Inter Bold 48 / 1.2 / -2
+                 Header 3   Inter Bold 36 / 1.32 / -2
+                 Body 2     Inter Regular 30 / 1.36 / -1
+                 Padding    128 vertical · 168 horizontal (on 1920)
+
+     Palette     sampled from the Research Process board —
+                 slate teal, sage, blush, mist, muted purple, grey
+
+   Scoped to .initiator-page, loaded after project.css.
+   Delete this file and its <link> to revert.
+======================================== */
+
+/* Her deck is set in Inter. Delete this line to keep the site's
+   Helvetica Neue throughout — the rest of the file still works. */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
+
+
+.initiator-page {
+
+  /* --- colours, sampled from the deck --- */
+  --ini-ink:      #1e2326;   /* body text on the boards       */
+  --ini-teal:     #3a5b63;   /* RESEARCH / DESIGN header bars */
+  --ini-teal-mid: #597c84;
+  --ini-mist:     #f5f8f8;   /* GOALS panels                  */
+  --ini-sage:     #dce9dd;   /* design-side outputs           */
+  --ini-blush:    #f3d6d3;   /* research-side outputs         */
+  --ini-purple:   #8e7197;   /* method labels                 */
+  --ini-grey:     #a8a8a9;   /* phase bars                    */
+
+  /* --- type, from the deck's own variables --- */
+  --ini-font: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+
+  color: var(--ini-ink);
+}
+
+
+/* ========================================
+   1. TYPE — Inter Bold, tight tracking
+
+   Tracking in the deck is an absolute -2px at each size, so it is
+   converted to em per step rather than applied flat.
+======================================== */
+
+.initiator-page h1,
+.initiator-page h2,
+.initiator-page h3,
+.initiator-page .project-hero-title,
+.initiator-page .section-heading h2,
+.initiator-page .quote-block blockquote,
+.initiator-page .insight-card h3 {
+  font-family: var(--ini-font);
+  font-weight: 700;
+  color: var(--ini-ink);
+}
+
+/* Title — 96 / 1.2 / -2  ->  -0.021em */
+.initiator-page .project-hero-title {
+  max-width: 17ch;
+
+  font-size: clamp(46px, 5.6vw, 96px);
+  line-height: 1.2;
+  letter-spacing: -0.021em;
+}
+
+/* Header 2 — 48 / 1.2 / -2  ->  -0.042em */
+.initiator-page .section-heading h2 {
+  max-width: 22ch;
+
+  font-size: clamp(32px, 3.2vw, 48px);
+  line-height: 1.2;
+  letter-spacing: -0.042em;
+}
+
+/* Header 3 — 36 / 1.32 / -2  ->  -0.04em, stepped down for screen */
+.initiator-page .insight-card h3,
+.initiator-page .text-media-copy h3 {
+  font-size: clamp(21px, 1.9vw, 27px);
+  line-height: 1.32;
+  letter-spacing: -0.04em;
+}
+
+/* Body 2 — 30 / 1.36 / -1 */
+.initiator-page .project-hero-description {
+  max-width: 44ch;
+
+  font-family: var(--ini-font);
+  font-weight: 400;
+  font-size: clamp(18px, 1.5vw, 22px);
+  line-height: 1.36;
+  letter-spacing: -0.02em;
+}
+
+.initiator-page .quote-block blockquote {
+  font-size: clamp(28px, 3vw, 48px);
+  line-height: 1.2;
+  letter-spacing: -0.042em;
+}
+
+
+/* ========================================
+   2. RHYTHM
+
+   The deck's PADDING_TOP_BOTTOM is 128. Everything here is that
+   token or a half/three-quarter step of it — 128 · 96 · 64 · 32 —
+   so no spacing value is invented.
+
+   PADDING_LEFT_RIGHT (168 on a 1920 frame) is deliberately NOT
+   applied: the site's own 48px page padding keeps this page
+   aligned with the header, footer and every other project.
+======================================== */
+
+.initiator-page .project-section         { padding-top: 96px;  padding-bottom: 96px;  }
+.initiator-page .project-section.major   { padding-top: 128px; padding-bottom: 128px; }
+.initiator-page .project-section.compact { padding-top: 64px;  padding-bottom: 64px;  }
+
+.initiator-page .section-heading { margin-bottom: 48px; }
+
+.initiator-page .media,
+.initiator-page .media-stack { margin-block: 32px; }
+
+.initiator-page .quote-block { margin-block: 96px; }
+
+
+/* ========================================
+   3. FIGURES
+
+   The boards are white artwork on a white slide, so they sit on a
+   plain surface with a hairline — not a rounded warm frame.
+
+   Nothing bleeds past the page column: the deck keeps 168px of
+   horizontal padding on a 1920 frame, so content never reaches
+   the edge.
+======================================== */
+
+.initiator-page .media img,
+.initiator-page .media-stack img,
+.initiator-page .text-media img,
+.initiator-page .media-full img,
+.initiator-page .ini-wide-figure img {
+  width: 100%;
+
+  border-radius: var(--radius-figure);
+  box-shadow: var(--ring-figure), var(--shadow-figure);
+}
+
+.initiator-page .project-hero-image img { border-radius: var(--radius-figure); }
+
+.initiator-page .caption {
+  margin-top: 16px;
+
+  font-family: var(--ini-font);
+  font-size: 14px;
+  color: var(--ini-teal-mid);
+}
+
+
+/* ========================================
+   4. ACCENT — the deck's header-bar teal
+======================================== */
+
+.initiator-page .eyebrow {
+  font-family: var(--ini-font);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  color: var(--ini-teal);
+}
+
+.initiator-page .insight-number,
+.initiator-page .ini-step-number {
+  font-family: var(--ini-font);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+
+  color: var(--ini-teal);
+}
+
+.initiator-page .divider {
+  background: linear-gradient(
+    to right,
+    var(--ini-teal) 0 120px,
+    var(--color-line) 120px
+  );
+}
+
+.initiator-page .quote-block blockquote::before {
+  content: "";
+
+  display: block;
+  width: 96px;
+  height: 4px;
+  margin: 0 auto 32px;
+
+  background: var(--ini-teal);
+}
+
+
+/* ========================================
+   5. PANELS
+
+   Modelled on the board's GOALS cards: pale mist fill, teal rule
+   across the top, bold heading. The findings grid takes the blush
+   the board uses for research-side outputs.
+======================================== */
+
+.initiator-page .insight-card {
+  padding: 26px 26px 30px;
+
+  border: 0;
+  border-top: 4px solid var(--ini-teal);
+  border-radius: 0;
+  background: var(--ini-mist);
+}
+
+.initiator-page .insight-card p {
+  font-family: var(--ini-font);
+  color: var(--ini-ink);
+  opacity: .78;
+}
+
+.initiator-page .stat {
+  padding-top: 20px;
+  border-top: 4px solid var(--ini-teal);
+}
+
+.initiator-page .stat-number {
+  font-family: var(--ini-font);
+  font-weight: 700;
+  color: var(--ini-ink);
+  letter-spacing: -0.042em;
+}
+
+.initiator-page .stat-label {
+  font-family: var(--ini-font);
+  color: var(--ini-teal-mid);
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 900px) {
+
+
+  /* same scale, one step down */
+  .initiator-page .project-section       { padding-top: 64px; padding-bottom: 64px; }
+  .initiator-page .project-section.major { padding-top: 96px; padding-bottom: 96px; }
+  .initiator-page .quote-block           { margin-block: 64px; }
+  .initiator-page .section-heading       { margin-bottom: 32px; }
+}
+
+@media (max-width: 640px) {
+
+
+  .initiator-page .project-hero-title,
+  .initiator-page .section-heading h2,
+  .initiator-page .project-hero-description { max-width: none; }
+
+  .initiator-page .insight-card { padding: 22px 20px 26px; }
+
+  /* project.css lets wide diagrams scroll at a readable size below 640px.
+     The figure rules in section 3 above match with the same specificity and
+     load later, so without this they flatten every .ini-scroll board back to
+     phone width. Keep this last. */
+  .initiator-page .ini-scroll img {
+    width: 860px;
+    max-width: none;
+  }
+}

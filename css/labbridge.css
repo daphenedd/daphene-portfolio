@@ -1,0 +1,453 @@
+/* ==========================================================================
+   LABBRIDGE
+   Diagrams built from real elements, so they scale to any width and stay
+   sharp at any zoom. Nothing here is a slide export.
+   ========================================================================== */
+
+
+/* --------------------------------------------------------------------------
+   TWO PATHS
+   The same prerequisite, followed two ways. Both columns run the same four
+   steps so the reader compares them line by line; only step 03 differs, and
+   that is the whole finding.
+   -------------------------------------------------------------------------- */
+
+/* Six shared rows: the label, the four steps, the outcome. Each column is a
+   subgrid of those rows, so step 03 sits at the same height on both sides
+   however the text wraps. That line-by-line alignment is the whole point of
+   the comparison. */
+.lb-paths {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: auto repeat(4, auto) auto;
+
+  column-gap: 24px;
+  row-gap: 0;
+
+  margin-top: 56px;
+}
+
+.lb-path {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: 1 / -1;
+
+  padding: 28px 28px 24px;
+
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  box-shadow: var(--ring-figure);
+}
+
+/* Let the four <li> become items of the subgrid rather than of the <ol>. */
+.lb-steps { display: contents; }
+
+.lb-path--trap    { background: #faf2f3; }   /* raindrops, lightened */
+.lb-path--bounded { background: #f3f6f1; }   /* almost aqua, lightened */
+
+.lb-path-label {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+}
+
+.lb-path-label b {
+  font-size: 19px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  color: var(--color-text);
+}
+
+/* --- the four steps --- */
+
+.lb-steps li {
+  list-style: none;
+  position: relative;
+  padding: 16px 0 16px 46px;
+  border-top: 1px solid var(--color-line);
+}
+
+.lb-steps li:first-child { border-top: 0; padding-top: 24px; }
+
+.lb-step-n {
+  position: absolute;
+  left: 0;
+  top: 17px;
+
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-tertiary);
+}
+
+.lb-steps li:first-child .lb-step-n { top: 25px; }
+
+.lb-steps h3 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.35;
+  margin: 0 0 4px;
+}
+
+.lb-steps p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-secondary);
+  margin: 0;
+}
+
+/* The pivot: the only step where the two paths part company. */
+.lb-step-pivot h3 { font-weight: 600; }
+
+.lb-step-pivot::before {
+  content: "";
+  position: absolute;
+  left: -28px;
+  top: -1px;
+  bottom: -1px;
+  width: 3px;
+
+  border-radius: 0 3px 3px 0;
+  background: var(--color-tertiary);
+}
+
+.lb-path--trap    .lb-step-pivot::before { background: #c08e92; }
+.lb-path--bounded .lb-step-pivot::before { background: #7f9a78; }
+
+/* --- the outcome line --- */
+
+.lb-path-out {
+  align-self: end;
+  margin: 24px 0 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--color-line);
+
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--color-text);
+}
+
+.lb-path-out b { font-weight: 600; }
+
+
+/* --------------------------------------------------------------------------
+   THE INSIDER SIDE
+   A single note under the two paths: the same gap seen from the other end.
+   -------------------------------------------------------------------------- */
+
+.lb-note {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 24px 80px;
+  align-items: start;
+
+  margin-top: 40px;
+  padding-top: 28px;
+  border-top: 1px solid var(--color-line);
+}
+
+.lb-note h3 {
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.lb-note p {
+  margin: 0;
+  color: var(--color-secondary);
+}
+
+.lb-note p + p { margin-top: 16px; }
+
+
+@media (max-width: 860px) {
+
+  /* Stack the two paths. The subgrid has to be unwound completely: with both
+     cards still spanning rows 1 / -1 they would sit on top of each other. */
+  .lb-paths {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    row-gap: 16px;
+  }
+
+  .lb-path {
+    display: block;
+    grid-row: auto;
+    grid-template-rows: none;
+  }
+
+  /* .lb-steps goes back to being a real list, so reset the UA indent. */
+  .lb-steps {
+    display: block;
+    padding: 0;
+    margin: 0;
+  }
+
+  .lb-path-out { align-self: auto; }
+
+  .lb-note {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+
+/* --------------------------------------------------------------------------
+   THE READINESS TRAP
+   Three steps that return to their own starting point. The loop is the
+   finding, so the return leg is drawn rather than described.
+   -------------------------------------------------------------------------- */
+
+.lb-loop {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+
+  list-style: none;
+  padding: 0;
+  margin: 56px 0 0;
+}
+
+.lb-loop li {
+  position: relative;
+  padding: 26px 24px;
+
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  box-shadow: var(--ring-figure);
+}
+
+/* the arrow into the next step */
+.lb-loop li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  width: 20px;
+  height: 1px;
+
+  background: var(--color-tertiary);
+}
+
+.lb-loop li:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  right: -20px;
+  top: 50%;
+
+  width: 6px;
+  height: 6px;
+  transform: translate(13px, -3.5px) rotate(45deg);
+
+  border-top: 1px solid var(--color-tertiary);
+  border-right: 1px solid var(--color-tertiary);
+}
+
+.lb-loop-n {
+  display: block;
+  margin-bottom: 14px;
+
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-tertiary);
+}
+
+.lb-loop h3 {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.35;
+  margin: 0 0 8px;
+}
+
+.lb-loop p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-secondary);
+  margin: 0;
+}
+
+/* The return leg: a rule that runs back under all three, closing the circle. */
+.lb-loop-return {
+  position: relative;
+  margin: 0;
+  padding-top: 34px;
+
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-secondary);
+  text-align: center;
+}
+
+.lb-loop-return::before {
+  content: "";
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  top: 16px;
+  height: 1px;
+
+  background: var(--color-line);
+}
+
+.lb-loop-return::after {
+  content: "";
+  position: absolute;
+  left: 8%;
+  top: 16px;
+
+  width: 6px;
+  height: 6px;
+  transform: translate(-1px, -3px) rotate(-135deg);
+
+  border-top: 1px solid var(--color-tertiary);
+  border-right: 1px solid var(--color-tertiary);
+}
+
+@media (max-width: 860px) {
+
+  .lb-loop { grid-template-columns: 1fr; gap: 14px; }
+
+  /* the horizontal arrows would point into empty space once stacked */
+  .lb-loop li::before,
+  .lb-loop li::after { display: none; }
+
+  .lb-loop-return { text-align: left; padding-top: 20px; }
+  .lb-loop-return::before,
+  .lb-loop-return::after { display: none; }
+}
+
+
+/* --------------------------------------------------------------------------
+   CODED QUOTE
+   One participant's sentence carrying all three conditions. The phrases are
+   marked in the quote and named beside it, so the quote reads as evidence for
+   the codes above rather than as decoration.
+   -------------------------------------------------------------------------- */
+
+.lb-coded {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: 24px 72px;
+  align-items: start;
+}
+
+.lb-coded blockquote {
+  margin: 0;
+
+  font-size: 25px;
+  line-height: 1.5;
+  letter-spacing: -0.015em;
+  text-align: left;
+  color: var(--color-text);
+}
+
+.lb-coded mark {
+  padding: 2px 3px;
+  border-radius: 3px;
+  background: var(--mk, var(--pantone-lemon-icing));
+  color: inherit;
+}
+
+.lb-coded mark:nth-of-type(1) { --mk: var(--pantone-lemon-icing); }
+.lb-coded mark:nth-of-type(2) { --mk: var(--pantone-ice-melt); }
+.lb-coded mark:nth-of-type(3) { --mk: var(--pantone-raindrops); }
+
+.lb-coded sup {
+  margin-left: 2px;
+  font-size: 0.5em;
+  font-weight: 600;
+  vertical-align: super;
+  color: var(--color-secondary);
+}
+
+.lb-coded cite {
+  display: block;
+  margin-top: 20px;
+
+  font-size: 13px;
+  font-style: normal;
+  color: var(--color-tertiary);
+}
+
+/* --- the codes beside it --- */
+
+.lb-codes {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  counter-reset: code;
+}
+
+.lb-codes li {
+  position: relative;
+  padding: 16px 0 16px 34px;
+  border-top: 1px solid var(--color-line);
+}
+
+.lb-codes li:first-child { border-top: 0; padding-top: 4px; }
+
+/* The chip carries the same number as the superscript in the quote, so the
+   mapping does not rely on colour alone. */
+.lb-codes li { counter-increment: code; }
+
+.lb-codes li::before {
+  content: counter(code);
+  position: absolute;
+  left: 0;
+  top: 19px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 19px;
+  height: 19px;
+  border-radius: 5px;
+  background: var(--mk);
+
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.lb-codes li:first-child::before { top: 7px; }
+
+.lb-codes li:nth-child(1) { --mk: var(--pantone-lemon-icing); }
+.lb-codes li:nth-child(2) { --mk: var(--pantone-ice-melt); }
+.lb-codes li:nth-child(3) { --mk: var(--pantone-raindrops); }
+
+.lb-codes h3 {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.35;
+  margin: 0 0 4px;
+}
+
+.lb-codes h3 b {
+  font-weight: 600;
+  color: var(--color-secondary);
+}
+
+.lb-codes p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-secondary);
+  margin: 0;
+}
+
+@media (max-width: 860px) {
+
+  .lb-coded {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .lb-coded blockquote { font-size: 21px; }
+}

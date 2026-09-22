@@ -1,0 +1,64 @@
+/* Visible markers for work that is not finished yet.
+   Everything styled here is a TODO, not a design decision.
+   Delete this file and the .todo-* markup once the real assets are in. */
+
+.todo-asset {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+
+  min-height: 220px;
+  padding: 32px;
+
+  border: 1.5px dashed #c9a227;
+  border-radius: 10px;
+  background: repeating-linear-gradient(
+    -45deg,
+    #fdfaef, #fdfaef 12px,
+    #f9f4e3 12px, #f9f4e3 24px
+  );
+}
+
+.todo-asset b {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #8a6d1b;
+}
+
+.todo-asset span {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #6b6b66;
+  max-width: 62ch;
+}
+
+.todo-asset.tall { min-height: 420px; }
+
+/* Inline uncertainty inside running copy. */
+.todo-text {
+  padding: 1px 7px;
+  border-radius: 4px;
+  background: #fbf0c9;
+  box-shadow: inset 0 0 0 1px #e3cf86;
+  font-style: normal;
+  color: #6b551a;
+}
+
+/* Banner at the top of a page that is still a draft. */
+.todo-banner {
+  margin-bottom: 48px;
+  padding: 18px 22px;
+
+  border-left: 3px solid #c9a227;
+  border-radius: 0 8px 8px 0;
+  background: #fdfaef;
+
+  font-size: 14px;
+  line-height: 1.65;
+  color: #6b551a;
+}
+
+.todo-banner strong { font-weight: 600; }

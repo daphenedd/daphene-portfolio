@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>LabBridge &middot; Mindan Chen</title>
+  <meta name="description" content="An AI-assistedorkspace helping students carry an unresolved research question into a first conversation with a lab. Case study of the system, the studies and the findings.">
+
+  <script>document.documentElement.className += " js";</script>
+
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/project.css">
+  <link rel="stylesheet" href="css/labbridge.css">
+
+</head>
+
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+
+  <nav class="site-nav">
+
+    <a class="site-logo" href="index.html">Mindan Chen</a>
+
+    <div class="nav-links">
+      <a data-nav="work"    href="index.html#work">Work</a>
+      <a data-nav="about"   href="about.html">About</a>
+      <a data-nav="contact" href="mailto:mindan.chen@mail.polimi.it">Contact</a>
+    </div>
+
+  </nav>
+
+</header>
+
+
+<main id="main">
+
+<!-- ============ HERO (public) ============ -->
+
+<section class="project-hero page">
+
+  <div class="project-hero-meta" data-reveal>
+    <span>LabBridge</span>
+    <span>2026</span>
+  </div>
+
+  <h1 class="project-hero-title" data-reveal data-delay="1">Some questions can only be answered by the person you are afraid to ask.</h1>
+
+  <p class="project-hero-description" data-reveal data-delay="2">LabBridge is an AI-assisted workspace that helps a student carry an unresolved question into a first conversation with a research lab, instead of treating it as something to settle alone first.</p>
+
+</section>
+
+<section class="project-info-block page">
+
+  <div class="project-info-grid">
+
+    <div class="project-meta-list">
+
+      <div class="meta-item">
+        <p>My role</p>
+        <strong>User research &middot; System design<br>User study &middot; Paper writing</strong>
+      </div>
+
+      <div class="meta-item">
+        <p>Collaborator</p>
+        <strong>Yuelin Hou<br>Hongyu Wang<br>Prof. Arman Cohan<br>Yilun Zhao<br>Prof. Hua Shen</strong>
+      </div>
+      <div class="meta-item">
+        <p>Area</p>
+        <strong> <br> Education & Learning <br> Self-directed & Informal Learning<br>Information Behavior & Sensemaking <br>Knowledge Workers ; Students / Educators <br>Empirical study that tells us about how people use a system <br>Field Study ; Mixed Methods<br>
+</strong>
+      </div>
+
+      <div class="meta-item">
+        <p>Scale</p>
+        <strong>57 students, 12 lab insiders<br>across four studies</strong>
+      </div>
+
+    </div>
+
+    <div class="project-copy">
+      <p class="text-large">A student reads that a lab used a method in a 2025 paper and concludes they must learn it before writing. Nothing public says whether newcomers are expected to know it. Only someone inside the lab can say. So the student prepares instead of asking, and the question that would have ended the preparation is the one they never send.</p>
+      <p>We call this circular obligation a <strong>readiness trap</strong>. LabBridge is an AI-assisted workspace built around a different move: instead of resolving the student's uncertainty, it helps them make the uncertainty <em>discussable</em>, packaged with its evidence, its stakes and a specific request, before they can settle it alone.</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<div class="page">
+  <div class="divider"></div>
+</div>
+
+
+<!-- ============ 01 PROBLEM ============ -->
+
+<!-- ============ 01 BACKGROUND ============ -->
+
+<section class="project-section page">
+
+  <div class="section-heading" data-reveal>
+    <p class="eyebrow">01 / Background</p>
+    <h2>A paper can show that a method was used. It cannot say whether you were meant to know it already.</h2>
+    <p>A student preparing to approach a research lab reads a method in one of its papers and takes it as something to master before joining. The public record establishes that the lab used the method. It rarely establishes whether that expertise is expected of a newcomer, and answering that question can require someone inside the lab.</p>
+  </div>
+
+  <ol class="lb-loop" data-reveal>
+    <li>
+      <span class="lb-loop-n">01</span>
+      <h3>The judgment needs someone inside</h3>
+      <p>Whether this method is a prerequisite or something you learn on arrival is not in the paper. Only the lab can settle it.</p>
+    </li>
+    <li>
+      <span class="lb-loop-n">02</span>
+      <h3>Asking means risking looking unprepared</h3>
+      <p>For an undergraduate entering research, the prospect of appearing unprepared shapes when and how they seek input at all.</p>
+    </li>
+    <li>
+      <span class="lb-loop-n">03</span>
+      <h3>So preparation comes first</h3>
+      <p>Contact waits until the student feels ready. Nothing in the reading can say when that point has been reached.</p>
+    </li>
+  </ol>
+
+  <p class="lb-loop-return">Readiness is judged against an expectation only the lab can state, so preparing to ask replaces asking. We call this circular obligation the <b>readiness trap</b>.</p>
+
+  <div class="lb-note" data-reveal>
+    <h3>Generative AI helps with the reading. It does not break the circle.</h3>
+    <div>
+      <p>AI is already part of how students approach unfamiliar work: it explains a method, relates it to what they know and helps draft the question. But preparing a research inquiry involves more than understanding what a source says. A paper can establish that a method was used without establishing that newcomers must already know it.</p>
+      <p>When the perceived prerequisite disappears into a general expression of interest, an insider answers the visible question and the reason for delaying contact goes unaddressed. The premise that was actually blocking the student never reaches the person who could resolve it.</p>
+    </div>
+  </div>
+
+</section>
+
+
+<section class="quote-block page">
+  <blockquote>How can AI help students carry consequential open judgments from private preparation into mentor consultation and subsequent decision making?</blockquote>
+</section>
+
+
+<!-- ============ 02 RESEARCH ============ -->
+
+<section class="project-section major page">
+
+  <div class="section-heading" data-reveal>
+    <p class="eyebrow">02 / Research</p>
+    <h2>Eighteen judgment episodes, reconstructed with both sides of the exchange.</h2>
+    <p>Formative work with 10 students and six lab insiders, followed by a representation-synthesis activity with three more of each. Sessions combined critical-incident reconstruction with co-design, yielding 18 judgment episodes.</p>
+  </div>
+
+  <div class="project-copy copy-split" data-reveal>
+    <p>Eight of the 10 students described preparation obligations: learning methods before knowing whether they were required, reading with no stopping rule, delaying contact, or replacing a specific confusion with a general expression of interest.</p>
+    <div class="copy-split-body"><p>Volume of preparation alone was not enough to call something a trap. An episode counted only when all three conditions below held together. Nine of the 18 episodes, from seven students, met all three.</p></div>
+  </div>
+
+  <div class="insight-grid">
+
+    <article class="insight-card" data-reveal data-delay="1">
+      <span class="insight-number">C1</span>
+      <h3>An evidence boundary</h3>
+      <p>The judgment depends on contextual knowledge that the available public materials cannot establish.</p>
+    </article>
+
+    <article class="insight-card" data-reveal data-delay="2">
+      <span class="insight-number">C2</span>
+      <h3>A self-imposed prerequisite</h3>
+      <p>The student treats settling that judgment independently as a condition for seeking the input it requires.</p>
+    </article>
+
+    <article class="insight-card" data-reveal data-delay="3">
+      <span class="insight-number">C3</span>
+      <h3>A real consequence</h3>
+      <p>That requirement produces unbounded preparation, delayed contact, or suppression of the question.</p>
+    </article>
+
+  </div>
+
+</section>
+
+
+<section class="project-section page">
+
+  <div class="lb-coded" data-reveal>
+
+    <blockquote>
+      I think I should <mark>finish reading their two most recent articles before contacting them</mark><sup>1</sup>, otherwise <mark>the questions I&rsquo;ll ask will be too basic</mark><sup>2</sup>. I even <mark>deleted the question I originally wanted to ask</mark><sup>3</sup>, because it would seem like I hadn&rsquo;t done any analysis.
+      <cite>Student participant, formative study</cite>
+    </blockquote>
+
+    <ol class="lb-codes">
+      <li>
+        <h3>A self-imposed prerequisite <b>C2</b></h3>
+        <p>Finishing the reading is set as the condition for making contact, before anyone has said it is required.</p>
+      </li>
+      <li>
+        <h3>An evidence boundary <b>C1</b></h3>
+        <p>What counts as too basic is set by the lab. Nothing in the two articles can tell the student where that line sits.</p>
+      </li>
+      <li>
+        <h3>The question is suppressed <b>C3</b></h3>
+        <p>The one thing an insider could have resolved is removed from the message, to protect against looking unprepared.</p>
+      </li>
+    </ol>
+
+  </div>
+
+</section>
+
+<section class="project-section page">
+
+  <div class="section-heading" data-reveal>
+    <p class="eyebrow">Two paths</p>
+    <h2>The same prerequisite. One question survives, one does not.</h2>
+    <p>Both students hit a gap they judged they had to close before making contact. What separated them was not how much they prepared. It was whether the preparation had an end, and whether the question was still there when it did.</p>
+  </div>
+
+  <div class="lb-paths" data-reveal>
+
+    <article class="lb-path lb-path--trap">
+      <p class="lb-path-label">Unbounded <b>The question does not survive</b></p>
+      <ol class="lb-steps">
+        <li>
+          <span class="lb-step-n">01</span>
+          <h3>A question forms</h3>
+          <p>Something in the lab&rsquo;s work does not add up, and only someone inside it can say why.</p>
+        </li>
+        <li>
+          <span class="lb-step-n">02</span>
+          <h3>The gap becomes a gate</h3>
+          <p>An online course on mixed-effects models is treated as &ldquo;what I had to finish before I could email them.&rdquo;</p>
+        </li>
+        <li class="lb-step-pivot">
+          <span class="lb-step-n">03</span>
+          <h3>No limit is set</h3>
+          <p>Contact is postponed three weeks while the course is worked through.</p>
+        </li>
+        <li>
+          <span class="lb-step-n">04</span>
+          <h3>The question is deleted</h3>
+          <p>The message that finally goes out asks only whether the lab is &ldquo;taking new students.&rdquo;</p>
+        </li>
+      </ol>
+      <p class="lb-path-out"><b>The one thing an insider could have resolved is never asked.</b></p>
+    </article>
+
+    <article class="lb-path lb-path--bounded">
+      <p class="lb-path-label">Bounded <b>The question arrives intact</b></p>
+      <ol class="lb-steps">
+        <li>
+          <span class="lb-step-n">01</span>
+          <h3>A question forms</h3>
+          <p>A toolkit&rsquo;s prerequisites look like something that has to be settled first.</p>
+        </li>
+        <li>
+          <span class="lb-step-n">02</span>
+          <h3>The gap becomes a gate</h3>
+          <p>The same judgment is made: learn this before making contact.</p>
+        </li>
+        <li class="lb-step-pivot">
+          <span class="lb-step-n">03</span>
+          <h3>A limit is set</h3>
+          <p>Two evenings, decided in advance, and then the email goes out either way.</p>
+        </li>
+        <li>
+          <span class="lb-step-n">04</span>
+          <h3>The question is preserved</h3>
+          <p>The prerequisite question is still in the message that gets sent.</p>
+        </li>
+      </ol>
+      <p class="lb-path-out"><b>Bounded preparation with the question preserved means no trap.</b></p>
+    </article>
+
+  </div>
+
+  <p class="caption" data-reveal>The target is not less preparation. It is recognising when preparation has hit an evidence boundary, which is the point where reading stops paying and only a person can answer.</p>
+
+  <div class="lb-note" data-reveal>
+    <h3>The insider side reframed the problem again.</h3>
+    <div>
+      <p>A question&rsquo;s visible topic often leaves the consequential premise implicit. The student asks about the method; the thing actually blocking them is the assumption underneath it.</p>
+      <p>Insiders answered what was asked. The reason for the delay went unaddressed, because nobody had put it in the message.</p>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ============ 02 CONSTRUCT ============ -->
+
+<section class="project-section major page">
+
+  <div class="section-heading">
+    <p class="eyebrow">03 / The design construct</p>
+    <h2>An uncertainty handoff makes an open judgment shareable without first resolving it.</h2>
+  </div>
+
+  <div class="project-copy copy-split">
+    <p>Comparing what students would share with what insiders said they needed produced five recurring information functions. A handoff links the student&rsquo;s <strong>current understanding</strong> and the <strong>evidence</strong> behind it to the <strong>open judgment</strong>, the <strong>decision it would change</strong>, and the <strong>specific input requested</strong>. Fields can be combined or omitted; the student controls every disclosure.</p>
+    <div class="copy-split-body"><p>The decision consequence is the part that does the work. &ldquo;Is prior LLM-training experience expected?&rdquo; is a question. &ldquo;If it is, I postpone outreach and prepare further; if it isn&rsquo;t, I contact you now&rdquo; is a question an insider can answer usefully.</p></div></div>
+
+  <figure class="media media-full" data-reveal-image><img src="assets/labbridge/overview.jpg" width="2384" height="1195" alt="LabBridge workflow: private preparation, selective uncertainty handoff, returned insider input and student revision" loading="lazy" decoding="async"></figure>
+  <p class="caption">The workflow in three moves: private preparation with AI support, a selective handoff across the boundary to a lab insider, and returned input attached to the same judgment for the student to revise.</p>
+
+</section>
+
+
+<!-- ============ 03 SYSTEM ============ -->
+
+<section class="project-section major page">
+
+  <div class="section-heading">
+    <p class="eyebrow">04 / System</p>
+    <h2>Four commitments that decide what the AI is allowed to do.</h2>
+    <p>A web application on GPT-4.1 with an append-only episode store that keeps AI proposals, student commitments, handoff projections, insider interventions and student revisions separable.</p>
+  </div>
+
+  <figure class="media media-full" data-reveal-image><img src="assets/labbridge/interaction-flow.jpg" width="2384" height="1403" alt="LabBridge interaction flow across source library, reasoning canvas, AI suggestions, node inspector and next-step routing" loading="lazy" decoding="async"></figure>
+  <p class="caption">(A) source library, (B) reasoning canvas, (C) AI suggestion and student decision, (D) node inspector, (E) next-step routing.</p>
+
+  <div class="insight-grid">
+
+    <article class="insight-card">
+      <span class="insight-number">01</span>
+      <h3>The student commits first</h3>
+      <p>The system will not generate the lab-level claim the student is then asked to endorse. Generative interpretation waits until the student has stated a position of their own.</p>
+    </article>
+
+    <article class="insight-card">
+      <span class="insight-number">02</span>
+      <h3>Boundaries, not answers</h3>
+      <p>The AI decomposes an interpretation into claims and marks what the attached sources establish, what goes beyond them, and whether currentness is settled. Missing evidence surfaces as insufficient rather than becoming a stronger conclusion.</p>
+    </article>
+
+    <article class="insight-card">
+      <span class="insight-number">03</span>
+      <h3>Nothing shares itself</h3>
+      <p>Sources, rejected proposals, prior versions and route changes stay with the student. Nothing enters a handoff because the system generated or stored it.</p>
+    </article>
+
+    <article class="insight-card">
+      <span class="insight-number">04</span>
+      <h3>The AI cannot close a judgment</h3>
+      <p>It may polish a revision the student has already drafted. It cannot mark an insider-dependent episode resolved.</p>
+    </article>
+
+  </div>
+
+</section>
+
+
+<section class="project-section page">
+
+  <div class="text-media">
+    <div class="text-media-copy">
+      <p class="eyebrow">Walkthrough</p>
+      <h3>One judgment, start to finish.</h3>
+      <p>A student reads a project description as requiring prior LLM-training experience. The system marks the project&rsquo;s use of LLM evaluation as supported and the prerequisite inference as beyond the evidence. She turns the unsupported part into an explicit judgment, routes it to the mentor, and keeps private her note about possibly over-reading the phrase &ldquo;LLM familiarity.&rdquo;</p>
+      <p>The mentor replies that solid Python and ML basics are enough. The reply attaches to the same judgment; her earlier interpretation stays in the episode history beside it.</p>
+    </div>
+    <div>
+      <figure class="media media-full" data-reveal-image><img src="assets/labbridge/walkthrough.jpg" width="2384" height="1326" alt="Five-step system walkthrough from provisional interpretation to revised judgment episode" loading="lazy" decoding="async"></figure>
+    </div>
+  </div>
+
+</section>
+
+
+<section class="project-section page">
+  <figure class="media media-full" data-reveal-image><img src="assets/labbridge/evidence-boundary.jpg" width="2240" height="1282" alt="Evidence-bounded judgment construction: a source excerpt linked to a student claim, an AI-proposed boundary and a student-confirmed open judgment" loading="lazy" decoding="async"></figure>
+  <p class="caption">Evidence-bounded judgment construction. Every proposed relation links to source spans and dates; the student can accept, edit, split, reject or relink it before it enters the committed episode.</p>
+</section>
+
+
+<section class="project-section page">
+  <figure class="media media-full" data-reveal-image><img src="assets/labbridge/handoff-revision.jpg" width="2240" height="945" alt="Selective handoff and returned revision, with insider context attached to the element it addresses" loading="lazy" decoding="async"></figure>
+  <p class="caption">(a) Only student-selected fields cross the boundary to the insider. (b) Returned context stays attached to the element it addresses, and the revision fields start blank, so the student decides what changes.</p>
+</section>
+
+
+<section class="quote-block page">
+  <blockquote>Good AI support does not always remove uncertainty. Sometimes it makes uncertainty precise enough to hand to someone else.</blockquote>
+</section>
+
+
+<!-- ============ 04 EVALUATION ============ -->
+
+<section class="project-section major page">
+
+  <div class="section-heading">
+    <p class="eyebrow">05 / Controlled study</p>
+    <h2>Matched pairs, one shared model, one real insider reply.</h2>
+    <p>42 students across four labs, matched within lab on prior research experience and generative-AI use, one randomly assigned to each condition. The baseline was source-grounded chat with an editable brief. Both conditions shared the same model, source packet, retrieval, viewer, citation support and share preview.</p>
+  </div>
+
+  <figure class="media media-full" data-reveal-image><img src="assets/labbridge/study-design.jpg" width="2240" height="1053" alt="Design of the controlled matched-pair study, from preparation through insider reply to a common final assessment" loading="lazy" decoding="async"></figure>
+  <p class="caption">One focal issue is carried from preparation through an insider reply to a common final assessment. Students who withheld an artifact stayed in that assessment. Three independent assessors, rubric and median-of-three aggregation fixed before scoring.</p>
+
+  <div class="stat-grid">
+
+    <div class="stat">
+      <div class="stat-number">18<span class="stat-unit">/21</span></div>
+      <div class="stat-label">LabBridge accounts reaching the top grade, against 7/21 baseline</div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-number">+0.57</div>
+      <div class="stat-label">Net ordinal advantage across 21 matched pairs (95% CI +0.29 to +0.81, p = .004)</div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-number">79<span class="stat-unit">%</span></div>
+      <div class="stat-label">Correct decisions on a later unaided task, against 55.6% baseline</div>
+    </div>
+
+  </div>
+
+  <figure class="media media-full" data-reveal-image><img src="assets/labbridge/results.jpg" width="2240" height="901" alt="Final grade distribution and matched-pair comparison by condition" loading="lazy" decoding="async"></figure>
+  <p class="caption">Fourteen pairs favour LabBridge, five tie, two favour the baseline. All three assessors independently favour LabBridge; pairwise weighted &kappa; runs .74 to .83.</p>
+
+  <div class="project-copy copy-split">
+    <p>Decomposing the rubric located the difference precisely. <strong>Epistemic warrant was the same in both conditions</strong>, at 19/21 either way. The gap was in issue preservation (21/21 against 17/21) and action adequacy (19/21 against 10/21). LabBridge students were not reasoning more soundly about evidence; they were keeping hold of the consequential question and saying what they would do about it.</p>
+    <div class="copy-split-body"><p>The unaided task is the result I find hardest to explain away: three clarification decisions on an unfamiliar lab packet, no AI, no access to their earlier work. The advantage held at +23.8 percentage points.</p></div></div>
+
+</section>
+
+
+<!-- ============ 05 FIELD ============ -->
+
+<section class="project-section major page">
+
+  <div class="section-heading">
+    <p class="eyebrow">06 / Field deployment</p>
+    <h2>Fourteen days, nine students, no appointment arranged for them.</h2>
+    <p>Students were considering first contact. Nobody guaranteed a reply, nobody scheduled a meeting, and the window closed on day 14 for every case, including the ones where contact never happened.</p>
+  </div>
+
+  <div class="stat-grid">
+    <div class="stat">
+      <div class="stat-number">7<span class="stat-unit">/9</span></div>
+      <div class="stat-label">Initiated contact</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">6<span class="stat-unit">/9</span></div>
+      <div class="stat-label">Had a substantive exchange</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">5<span class="stat-unit">/9</span></div>
+      <div class="stat-label">Brought the focal premise into it <em>and</em> documented a later action</div>
+    </div>
+  </div>
+
+  <div class="project-copy copy-split">
+    <p>One student began convinced that interview training had to precede contact, and on day 3 sent a question about whether script piloting actually required it: <em>&ldquo;I still wasn&rsquo;t sure I was ready, but I could ask whether that preparation was actually needed. That was the message I sent.&rdquo;</em> The insider&rsquo;s account of the same exchange: <em>&ldquo;I could see that they were treating the method as an entry requirement, so I answered that first instead of giving them another reading list.&rdquo;</em></p>
+    <div class="copy-split-body"><p>A second pattern mattered more to me than the success cases. One student took a suggested pilot task as evidence that a role was available; the reply separated the task from a placement decision, and she sent a separate inquiry rather than assuming: <em>&ldquo;The reply told me I could try the pilot task. It didn&rsquo;t tell me there was a place in the lab, so I asked about that separately.&rdquo;</em> The authority limit in the reply changed her next message, instead of sitting in a note as a caveat.</p></div></div>
+
+</section>
+
+
+<!-- ============ LIMITS ============ -->
+
+<section class="project-section page">
+
+  <div class="section-heading">
+    <p class="eyebrow">Limits</p>
+    <h2>What the studies do not show.</h2>
+  </div>
+
+  <div class="insight-grid">
+
+    <article class="insight-card">
+      <span class="insight-number">01</span>
+      <h3>It costs time</h3>
+      <p>LabBridge preparation took 3.28 minutes longer on average. The workflow buys account quality with preparation cost, and that trade is not free.</p>
+    </article>
+
+    <article class="insight-card">
+      <span class="insight-number">02</span>
+      <h3>The boundary mechanism fails</h3>
+      <p>Of 76 displayed AI proposals, students initially accepted five that disagreed with researcher annotations, including all four overstatements. Three were caught before sharing, one after insider input, and one persisted into a grade-0 final account.</p>
+    </article>
+
+    <article class="insight-card">
+      <span class="insight-number">03</span>
+      <h3>The task is one-sided</h3>
+      <p>Every keyed action on the unaided task involves clarifying or confirming. It does not test the opposite judgment, which is knowing when the evidence is already sufficient and you should just proceed.</p>
+    </article>
+
+    <article class="insight-card">
+      <span class="insight-number">04</span>
+      <h3>Two paths stayed shut</h3>
+      <p>One student kept a funding constraint private and went to the paid-research office instead; another kept returning to background reading and never sent the question. The second is exactly the trap the system was built for, and the system did not spring it.</p>
+    </article>
+
+  </div>
+
+  <div class="project-copy copy-wide">
+    <p>Grades measure the submitted account, not internal reasoning, and not when a premise was corrected. The 18 field and study trajectories share participants and are not independent observations.</p>
+  </div>
+
+</section>
+
+
+<!-- ============ NEXT ============ -->
+
+<a class="next-project page" href="privis.html" data-reveal>
+  <p class="next-project-label">Next project</p>
+  <h2>PriVis &rarr;</h2>
+</a>
+
+
+</main>
+
+<footer class="site-footer page">
+
+  <div class="footer-inner">
+    <p>&copy; <span data-year>2026</span> Mindan Chen</p>
+    <p>Milan / Europe</p>
+  </div>
+
+</footer>
+
+<script src="js/main.js"></script>
+
+</body>
+
+</html>

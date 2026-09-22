@@ -1,0 +1,117 @@
+/* Password gate on labbridge.html, and the injected case study.
+   Everything here is scoped so no other project page is affected. */
+
+.locked {
+  padding-block: 40px 120px;
+}
+
+.locked-card {
+  max-width: 560px;
+  padding: 44px 40px;
+
+  border: 1px solid var(--color-line);
+  border-radius: 14px;
+  background: #fffef8;
+}
+
+.locked-status {
+  margin-bottom: 20px;
+
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #8a6d3b;
+}
+
+.locked-card h2 {
+  margin-bottom: 16px;
+
+  font-size: clamp(26px, 3vw, 34px);
+  line-height: 1.2;
+  letter-spacing: -.03em;
+}
+
+.locked-note {
+  margin-bottom: 32px;
+
+  font-size: 15px;
+  line-height: 1.65;
+  color: #62625f;
+}
+
+.locked-note a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.locked-label {
+  display: block;
+  margin-bottom: 10px;
+
+  font-size: 13px;
+  color: #62625f;
+}
+
+.locked-row {
+  display: flex;
+  gap: 10px;
+}
+
+.locked-row input {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 12px 14px;
+
+  border: 1px solid var(--color-line);
+  border-radius: 8px;
+  background: #fff;
+
+  font: inherit;
+  font-size: 15px;
+  color: inherit;
+}
+
+.locked-row button {
+  flex: 0 0 auto;
+  padding: 12px 22px;
+
+  border: 0;
+  border-radius: 8px;
+  background: #1c1c1a;
+  cursor: pointer;
+
+  font: inherit;
+  font-size: 15px;
+  color: #fffef8;
+}
+
+.locked-row button:disabled {
+  opacity: .55;
+  cursor: default;
+}
+
+.locked-error {
+  margin-top: 14px;
+
+  font-size: 14px;
+  line-height: 1.55;
+  color: #9c3328;
+}
+
+/* The decrypted case study is injected already visible — it deliberately
+   carries no [data-reveal], so give it the resting state directly. */
+#unlocked-content [data-reveal],
+#unlocked-content [data-reveal-image] {
+  opacity: 1;
+  transform: none;
+}
+
+@media (max-width: 600px) {
+  .locked-card {
+    padding: 32px 24px;
+  }
+
+  .locked-row {
+    flex-direction: column;
+  }
+}

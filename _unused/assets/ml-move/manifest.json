@@ -1,0 +1,304 @@
+[
+  {
+    "name": "welcome",
+    "source": "sources/Innovation_Project (7).pdf",
+    "page": 8,
+    "object": "Im11.png",
+    "format": "PNG",
+    "path": "assets/welcome.png",
+    "pixels": [
+      1256,
+      648
+    ],
+    "maximum_css_width": 628,
+    "method": "pypdf native image extraction with PDF soft mask",
+    "status": "native dimensions checked; browser verification pending",
+    "purpose": "Inspected reference, not used on page",
+    "maximum_css_height": 324.0,
+    "DPR2_dimension_budget_passes": true,
+    "browser_verified": false,
+    "higher_resolution_source_needed": false
+  },
+  {
+    "name": "collection-low-resolution",
+    "source": "sources/Innovation_Project (7).pdf",
+    "page": 8,
+    "object": "Im12.png",
+    "format": "PNG",
+    "path": "assets/collection-low-resolution.png",
+    "pixels": [
+      623,
+      333
+    ],
+    "maximum_css_width": 311,
+    "method": "pypdf native image extraction with PDF soft mask",
+    "status": "native dimensions checked; browser verification pending",
+    "purpose": "Collection progress (expanded detail)",
+    "maximum_css_height": 166.23,
+    "DPR2_dimension_budget_passes": true,
+    "browser_verified": false,
+    "higher_resolution_source_needed": true
+  },
+  {
+    "name": "wristband-exploration",
+    "source": "sources/Innovation_Project (7).pdf",
+    "page": 8,
+    "object": "Im13.png",
+    "format": "PNG",
+    "path": "assets/wristband-exploration.png",
+    "pixels": [
+      2692,
+      1318
+    ],
+    "maximum_css_width": 1120,
+    "method": "pypdf native image extraction with PDF soft mask",
+    "status": "native dimensions checked; browser verification pending",
+    "purpose": "Hardware constraints and references (expanded detail)",
+    "maximum_css_height": 548.35,
+    "DPR2_dimension_budget_passes": true,
+    "browser_verified": false,
+    "higher_resolution_source_needed": false
+  },
+  {
+    "name": "animal-buddies",
+    "source": "sources/Innovation_Project (7).pdf",
+    "page": 8,
+    "object": "Im14.png",
+    "format": "PNG",
+    "path": "assets/animal-buddies.png",
+    "pixels": [
+      756,
+      567
+    ],
+    "maximum_css_width": 378,
+    "method": "pypdf native image extraction with PDF soft mask",
+    "status": "native dimensions checked; browser verification pending",
+    "purpose": "Unevaluated wearable concept",
+    "maximum_css_height": 283.5,
+    "DPR2_dimension_budget_passes": true,
+    "browser_verified": false,
+    "higher_resolution_source_needed": true
+  },
+  {
+    "name": "student-setup",
+    "source": "sources/Innovation_Project (7).pdf",
+    "page": 10,
+    "object": "Im19.png",
+    "format": "PNG",
+    "path": "assets/student-setup.png",
+    "pixels": [
+      2531,
+      1354
+    ],
+    "maximum_css_width": 1120,
+    "method": "pypdf native image extraction with PDF soft mask",
+    "status": "native dimensions checked; browser verification pending",
+    "purpose": "Hero / student identity",
+    "maximum_css_height": 599.16,
+    "DPR2_dimension_budget_passes": true,
+    "browser_verified": false,
+    "higher_resolution_source_needed": false
+  },
+  {
+    "name": "teacher-session",
+    "source": "sources/Innovation_Project (7).pdf",
+    "page": 19,
+    "object": "Im25.png",
+    "format": "PNG",
+    "path": "assets/teacher-session.png",
+    "pixels": [
+      2391,
+      1329
+    ],
+    "maximum_css_width": 1120,
+    "method": "pypdf native image extraction with PDF soft mask",
+    "status": "native dimensions checked; browser verification pending",
+    "purpose": "Teacher coordination",
+    "maximum_css_height": 622.53,
+    "DPR2_dimension_budget_passes": true,
+    "browser_verified": false,
+    "higher_resolution_source_needed": false
+  },
+  {
+    "name": "teacher-training",
+    "source": "sources/Innovation_Project (7).pdf",
+    "page": 20,
+    "object": "Im26.png",
+    "format": "PNG",
+    "path": "assets/teacher-training.png",
+    "pixels": [
+      2407,
+      1350
+    ],
+    "maximum_css_width": 1120,
+    "method": "pypdf native image extraction with PDF soft mask",
+    "status": "native dimensions checked; browser verification pending",
+    "purpose": "Collection settings (expanded detail)",
+    "maximum_css_height": 628.17,
+    "DPR2_dimension_budget_passes": true,
+    "browser_verified": false,
+    "higher_resolution_source_needed": false
+  },
+  {
+    "name": "teacher-ready",
+    "source": "sources/Innovation_Project (7).pdf",
+    "page": 20,
+    "object": "Im27.png",
+    "format": "PNG",
+    "path": "assets/teacher-ready.png",
+    "pixels": [
+      2408,
+      1343
+    ],
+    "maximum_css_width": 1120,
+    "method": "pypdf native image extraction with PDF soft mask",
+    "status": "native dimensions checked; browser verification pending",
+    "purpose": "Model state before training",
+    "maximum_css_height": 624.65,
+    "DPR2_dimension_budget_passes": true,
+    "browser_verified": false,
+    "higher_resolution_source_needed": false
+  },
+  {
+    "name": "system-sketch",
+    "source": "sources/Innovation_Project (7).pdf",
+    "page": 3,
+    "object": "Im3.png",
+    "format": "PNG",
+    "path": "assets/system-sketch.png",
+    "pixels": [
+      2560,
+      1444
+    ],
+    "maximum_css_width": 1120,
+    "method": "pypdf native image extraction with PDF soft mask",
+    "status": "native dimensions checked; browser verification pending",
+    "purpose": "Shared-model concept",
+    "maximum_css_height": 631.75,
+    "DPR2_dimension_budget_passes": true,
+    "browser_verified": false,
+    "higher_resolution_source_needed": false
+  },
+  {
+    "name": "teacher-predictions",
+    "source": "sources/Innovation_Project (7).pdf",
+    "page": 21,
+    "object": "Im22.png",
+    "format": "PNG",
+    "path": "assets/teacher-predictions.png",
+    "pixels": [
+      2411,
+      1346
+    ],
+    "maximum_css_width": 1120,
+    "method": "pypdf native image extraction with PDF soft mask",
+    "status": "visually inspected native image; browser verification pending",
+    "purpose": "Visible success and failure",
+    "maximum_css_height": 625.27,
+    "DPR2_dimension_budget_passes": true,
+    "browser_verified": false,
+    "higher_resolution_source_needed": false
+  },
+  {
+    "name": "avatar-1",
+    "source": "/Users/daphene_chan/Downloads/semester8-main 2/src/assets/avatars/avatar-1.png",
+    "path": "assets/source-avatars/avatar-1.png",
+    "format": "PNG",
+    "pixels": [
+      338,
+      340
+    ],
+    "maximum_css_width": 84,
+    "maximum_css_height": 84.5,
+    "method": "byte-for-byte copy from supplied local repository",
+    "purpose": "Source avatar strip / meaningful personalisation",
+    "DPR2_dimension_budget_passes": true,
+    "browser_verified": false,
+    "higher_resolution_source_needed": false
+  },
+  {
+    "name": "avatar-2",
+    "source": "/Users/daphene_chan/Downloads/semester8-main 2/src/assets/avatars/avatar-2.png",
+    "path": "assets/source-avatars/avatar-2.png",
+    "format": "PNG",
+    "pixels": [
+      336,
+      340
+    ],
+    "maximum_css_width": 84,
+    "maximum_css_height": 85.0,
+    "method": "byte-for-byte copy from supplied local repository",
+    "purpose": "Source avatar strip / meaningful personalisation",
+    "DPR2_dimension_budget_passes": true,
+    "browser_verified": false,
+    "higher_resolution_source_needed": false
+  },
+  {
+    "name": "avatar-3",
+    "source": "/Users/daphene_chan/Downloads/semester8-main 2/src/assets/avatars/avatar-3.png",
+    "path": "assets/source-avatars/avatar-3.png",
+    "format": "PNG",
+    "pixels": [
+      328,
+      340
+    ],
+    "maximum_css_width": 84,
+    "maximum_css_height": 87.07,
+    "method": "byte-for-byte copy from supplied local repository",
+    "purpose": "Source avatar strip / meaningful personalisation",
+    "DPR2_dimension_budget_passes": true,
+    "browser_verified": false,
+    "higher_resolution_source_needed": false
+  },
+  {
+    "name": "avatar-4",
+    "source": "/Users/daphene_chan/Downloads/semester8-main 2/src/assets/avatars/avatar-4.png",
+    "path": "assets/source-avatars/avatar-4.png",
+    "format": "PNG",
+    "pixels": [
+      322,
+      334
+    ],
+    "maximum_css_width": 84,
+    "maximum_css_height": 87.13,
+    "method": "byte-for-byte copy from supplied local repository",
+    "purpose": "Source avatar strip / meaningful personalisation",
+    "DPR2_dimension_budget_passes": true,
+    "browser_verified": false,
+    "higher_resolution_source_needed": false
+  },
+  {
+    "name": "avatar-5",
+    "source": "/Users/daphene_chan/Downloads/semester8-main 2/src/assets/avatars/avatar-5.png",
+    "path": "assets/source-avatars/avatar-5.png",
+    "format": "PNG",
+    "pixels": [
+      330,
+      338
+    ],
+    "maximum_css_width": 84,
+    "maximum_css_height": 86.04,
+    "method": "byte-for-byte copy from supplied local repository",
+    "purpose": "Source avatar strip / meaningful personalisation",
+    "DPR2_dimension_budget_passes": true,
+    "browser_verified": false,
+    "higher_resolution_source_needed": false
+  },
+  {
+    "name": "avatar-6",
+    "source": "/Users/daphene_chan/Downloads/semester8-main 2/src/assets/avatars/avatar-6.png",
+    "path": "assets/source-avatars/avatar-6.png",
+    "format": "PNG",
+    "pixels": [
+      330,
+      336
+    ],
+    "maximum_css_width": 84,
+    "maximum_css_height": 85.53,
+    "method": "byte-for-byte copy from supplied local repository",
+    "purpose": "Source avatar strip / meaningful personalisation",
+    "DPR2_dimension_budget_passes": true,
+    "browser_verified": false,
+    "higher_resolution_source_needed": false
+  }
+]

@@ -1,0 +1,31 @@
+# ---------------------------------------------------------------------------
+# CONFIDENTIAL — must never be published.
+# The Haier internship boards were redacted and put behind a password gate in
+# haier.html. These folders hold the SAME boards unencrypted, plus the script
+# that contains the gate password in plain text. Publishing them would undo
+# the whole redaction.
+# ---------------------------------------------------------------------------
+haier-locked/
+_unused/assets/haier/
+
+# Working files, not part of the site
+reviews/
+.claude/
+.DS_Store
+**/.DS_Store
+
+# Superseded by the 4.2 MB assets/ecco/ecco-report.pdf; 66 MB and unreferenced
+assets/ecco/Ecco_report.pdf
+
+# Source PDFs already converted to web assets and unreferenced
+assets/ecco/Poster1.pdf
+assets/ecco/Poster2.pdf
+assets/ecco/passport_2.pdf
+assets/ecco/Stickers.pdf
+assets/ecco/Stickers 2.pdf
+assets/ecco/stickers2.pdf
+assets/ecco/A2_POSTER.jpg
+
+# You asked for the icon library to stay off the site; it is unreferenced,
+# but a staged file is still reachable by direct URL.
+assets/haier/icon-library.jpg

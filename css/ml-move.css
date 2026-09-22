@@ -1,0 +1,165 @@
+.ml-case { --ml-green:#286e47; --ml-orange:#994c1a; }
+.ml-case .project-hero-title { font-size:clamp(48px,6.5vw,96px); line-height:1.04; letter-spacing:-.055em; max-width:1200px; }
+.ml-case .project-hero-description { max-width:790px; }
+.ml-case .section-heading h2 { font-size:clamp(36px,4.3vw,64px); line-height:1.1; letter-spacing:-.045em; }
+.ml-case .project-hero .media { margin-top:64px; }
+.ml-muted,.ml-small { color:#62625f; }
+.ml-small {font-size:15px;line-height:1.65;}
+.ml-tags {display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;}
+.ml-tags span {border:1px solid var(--color-line);border-radius:40px;padding:6px 14px;font-size:13px;}
+.ml-intro-title {font-size:30px;line-height:1.2;letter-spacing:-.03em;}
+.ml-section-nav {display:flex;gap:16px 28px;flex-wrap:wrap;border-top:1px solid var(--color-line);border-bottom:1px solid var(--color-line);padding-top:22px;padding-bottom:22px;font-size:13px;}
+.ml-case section[id] {scroll-margin-top:90px;}
+.ml-section-nav a:hover,.ml-footer a:hover {text-decoration:underline;text-underline-offset:5px;}
+.ml-case .media {max-width:1120px;margin-left:auto;margin-right:auto;}
+/* Deck boards are slide-proportioned artwork; let them use the whole page column. */
+.ml-case .ml-board {max-width:none;}
+.ml-image-button {position:relative;display:block;width:100%;padding:0;border:0;background:transparent;cursor:zoom-in;text-align:left;color:inherit;border-radius:12px;overflow:hidden;}
+.ml-image-button img {width:100%;height:auto;}
+.ml-image-action {position:absolute;right:10px;bottom:10px;border:1px solid #d8d8d4;border-radius:24px;background:#fffef8f2;padding:5px 10px;font-size:11px;}
+.ml-case figcaption {font-size:13px;line-height:1.55;color:#62625f;margin-top:14px;max-width:720px;}
+.ml-flow {list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin:48px 0;}
+.ml-flow li {border-top:1px solid var(--color-line);padding-top:24px;}
+.ml-flow li>span,.ml-number {display:block;color:var(--ml-green);font-size:13px;margin-bottom:24px;}
+.ml-flow h3,.ml-role-grid h3,.ml-observations h3 {font-size:24px;line-height:1.25;letter-spacing:-.025em;}
+.ml-flow p,.ml-role-grid p,.ml-observations p {max-width:540px;}
+.ml-role-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px;}
+.ml-role-grid article {border-left:2px solid #e4b88f;padding-left:24px;}
+.ml-role-grid article+article {border-left-color:#8db29a;}
+.ml-role-label {display:block;color:var(--ml-orange);font-size:13px;margin-bottom:16px;}
+.ml-role-label.teacher {color:var(--ml-green);}
+.ml-evidence {padding:40px;background:#e8eee7;border-radius:14px;}
+.ml-evidence h3 {font-size:clamp(28px,3vw,42px);line-height:1.18;letter-spacing:-.035em;}
+.ml-evidence p:last-child {margin-bottom:0;}
+.ml-stats {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;border-block:1px solid var(--color-line);padding:36px 0;margin-bottom:52px;}
+.ml-stats strong {display:block;font-size:clamp(32px,4vw,60px);line-height:1.2;letter-spacing:-.04em;font-weight:500;}
+.ml-stats span {display:block;font-size:14px;margin-top:12px;color:#62625f;}
+.ml-observations {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:36px;}
+.ml-detail-grid {display:grid;grid-template-columns:1fr 2fr;gap:32px;align-items:start;}
+.ml-case .asset-collection-low-resolution {max-width:311px;}
+.ml-case .asset-moveband {max-width:378px;}
+.ml-case .asset-welcome {max-width:628px;}
+.ml-concept-grid {display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:64px;align-items:center;}
+.ml-concept-grid figure {margin:0 auto;}
+.ml-concept-grid h3 {font-size:30px;line-height:1.2;margin-top:24px;}
+.ml-status {display:inline-block;font-size:12px;color:var(--ml-orange);padding:6px 12px;border-radius:30px;background:#f2e5d8;}
+/* A 22px closing statement carries a longer line than body copy, so it runs
+   wider than --reading-width instead of sitting in a narrow left column. */
+.ml-closing {margin-top:64px;max-width:1000px;}
+.ml-footer {display:flex;gap:24px;justify-content:space-between;flex-wrap:wrap;border-top:1px solid var(--color-line);padding-top:32px;padding-bottom:40px;font-size:14px;}
+.ml-case :focus-visible {outline:3px solid #286e47;outline-offset:5px;}
+.ml-viewer {width:calc(100% - 32px);max-width:1320px;max-height:calc(100dvh - 32px);padding:24px;border:0;border-radius:12px;background:#ffffff;color:#111;}
+.ml-viewer::backdrop {background:#111c;}
+.ml-viewer-bar {display:flex;justify-content:space-between;align-items:start;gap:24px;}
+.ml-viewer-bar p {max-width:900px;font-size:15px;}
+.ml-close {white-space:nowrap;background:white;border:1px solid #bbb;border-radius:24px;padding:8px 16px;cursor:pointer;}
+.ml-viewer-hint {font-size:13px;color:#62625f;}
+.ml-viewer-scroll {overflow:auto;max-height:72dvh;}
+.ml-viewer-scroll img {max-width:none;height:auto;}
+html:has(.ml-viewer[open]) {overflow:hidden;}
+@media(min-width:1600px) { .ml-case .page {max-width:1440px;} }
+@media(max-width:760px) {
+ .ml-case .project-hero {padding-top:110px;}
+ .ml-case .project-hero-meta {gap:16px;font-size:12px;}
+ .ml-muted {display:block;}
+ .ml-case .project-hero-description {font-size:19px;}
+ .ml-case .project-hero .media {margin-top:40px;}
+ .ml-case .media-wide {width:100%;}
+ .ml-flow,.ml-role-grid,.ml-observations,.ml-concept-grid,.ml-detail-grid {grid-template-columns:1fr;gap:28px;}
+ .ml-flow li>span {margin-bottom:12px;}
+ .ml-evidence {padding:24px;}
+ .ml-stats {gap:12px;}
+ .ml-stats span {font-size:12px;}
+ .ml-stats strong {font-size:32px;}
+ .ml-section-nav {gap:12px 24px;}
+ .ml-case .ml-detail-grid .media {margin:16px auto;}
+ .ml-concept-grid {align-items:start;}
+ .ml-viewer {padding:16px;}
+ .ml-viewer-bar {gap:12px;}
+ .ml-viewer-bar p {font-size:13px;}
+ .ml-image-action {font-size:10px;bottom:6px;right:6px;}
+}
+@media(prefers-reduced-motion:reduce) {html {scroll-behavior:auto;}}
+
+/* Source-informed collection-state explanation; all labels are real text. */
+.ml-collection-explainer {display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:56px;align-items:center;margin-top:64px;}
+.ml-collection-explainer h3 {font-size:30px;line-height:1.2;letter-spacing:-.025em;}
+.ml-sample-card {padding:28px;border:1px solid #d7e1d8;border-radius:16px;background:#fff;max-width:370px;width:100%;justify-self:center;}
+.ml-sample-heading {display:flex;justify-content:space-between;gap:12px;align-items:center;}
+.ml-sample-heading>strong {color:#286e47;font-size:22px;}
+.ml-sample-badge {font-size:12px;color:#465d4d;background:#eef3ee;padding:4px 10px;border-radius:20px;}
+.ml-progress-ring {position:relative;width:140px;height:140px;margin:12px auto;}
+.ml-progress-ring svg {display:block;}
+.ml-sample-count {position:absolute;inset:0;display:grid;place-items:center;font-size:24px;color:#286e47;}
+.ml-sample-description {font-size:14px;min-height:44px;text-align:center;color:#62625f;}
+.ml-sample-controls {display:flex;justify-content:center;gap:12px;flex-wrap:wrap;}
+.ml-sample-controls button {font-size:13px;padding:10px 14px;border-radius:24px;cursor:pointer;border:1px solid #b9cabc;background:#fff;color:#244f32;}
+.ml-sample-controls .ml-sample-add {background:#286e47;color:white;border-color:#286e47;}
+.ml-sample-controls button:disabled {background:#edf1ed;color:#566357;border-color:#d7e1d8;cursor:default;}
+.ml-sample-card.is-complete {border-color:#286e47;}
+.ml-sample-card.is-complete .ml-sample-badge {background:#e0f1e1;color:#245533;}
+.ml-progress-track {transition:stroke-dashoffset .35s ease;}
+.ml-avatar-context {max-width:760px;margin:0 0 48px;}
+.ml-avatar-strip {display:grid;grid-template-columns:repeat(6,minmax(0,1fr));list-style:none;gap:16px;margin:0 0 20px;padding:0;align-items:center;}
+.ml-avatar-strip li {display:flex;align-items:center;justify-content:center;min-width:0;}
+.ml-avatar-strip img {display:block;width:84px;max-width:100%;height:auto;}
+@media(max-width:760px){.ml-collection-explainer {grid-template-columns:1fr;gap:24px;}.ml-avatar-strip {grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;}}
+@media(prefers-reduced-motion:reduce){.ml-progress-track {transition:none;}}
+
+/* Added with the three-phase block and the source figures from the team report.
+   Bitmap caps keep every image at DPR 2 or better against its native pixels. */
+.ml-phases {margin:56px 0;}
+.ml-phases h3 {font-size:30px;line-height:1.2;letter-spacing:-.03em;margin-bottom:12px;}
+.ml-phases > .ml-small {max-width:640px;margin-bottom:40px;}
+.ml-case .asset-dancecode {max-width:1017px;}
+.ml-case .asset-ueq {max-width:525px;}
+@media (max-width:760px) {
+  .ml-phases h3 {font-size:24px;}
+}
+
+/* Hero video: 16:9 box that keeps the same width as the image media above it. */
+.ml-video-frame {position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#111;}
+.ml-video-frame iframe {position:absolute;inset:0;width:100%;height:100%;border:0;}
+
+/* Rule-framed aside block. These were <details> accordions; they are now
+   always open, so the old summary is a plain heading. */
+.ml-expanded {border-block:1px solid var(--color-line);margin-top:40px;padding-top:24px;padding-bottom:28px;}
+.ml-expanded-title {font-size:16px;font-weight:500;}
+.ml-expanded > * + * {margin-top:28px;}
+.ml-expanded > .media {margin-top:40px;margin-bottom:40px;}
+.ml-expanded > .media:last-child {margin-bottom:0;}
+.ml-expanded a {text-decoration:underline;text-underline-offset:3px;}
+
+/* When the block carries prose, run it as a split: heading left, prose right,
+   boards across both. Without this the text sits in a 680px column and leaves
+   the right half of a 1329px page empty. A block holding only a board keeps
+   the simple stacked layout above, so its heading is not marooned beside a gap. */
+.ml-expanded:has(> .project-copy) {display:grid;grid-template-columns:5fr 7fr;column-gap:80px;row-gap:28px;align-items:start;}
+.ml-expanded:has(> .project-copy) > * {margin-top:0;}
+.ml-expanded:has(> .project-copy) > .ml-expanded-title {grid-column:1;}
+.ml-expanded:has(> .project-copy) > :not(.ml-expanded-title) {grid-column:2;}
+.ml-expanded:has(> .project-copy) > .media {grid-column:1 / -1;margin-block:12px;}
+.ml-expanded > .project-copy {max-width:none;}
+
+/* .text-split (project.css) puts the heading left and the prose right. */
+.text-split .ml-benchmark {max-width:none;}
+
+@media(max-width:900px) {
+ .ml-expanded:has(> .project-copy) {grid-template-columns:1fr;row-gap:20px;}
+ .ml-expanded:has(> .project-copy) > * {grid-column:1 !important;}
+ .ml-expanded:has(> .project-copy) > .media {margin-block:8px;}
+}
+
+/* Benchmark of the four existing tools. One strength per row, with the tools
+   it applies to on the right, because the strengths group across products
+   rather than belonging to one each. */
+.ml-benchmark {list-style:none;padding:0;margin:28px 0 0;max-width:var(--reading-width);}
+.ml-benchmark li {display:grid;grid-template-columns:minmax(0,1fr) minmax(0,190px);gap:16px 32px;align-items:start;border-top:1px solid var(--color-line);padding:20px 0;}
+.ml-benchmark li:last-child {border-bottom:1px solid var(--color-line);}
+.ml-benchmark strong {display:block;font-weight:500;}
+.ml-benchmark p {margin-top:6px;color:var(--color-secondary);}
+.ml-benchmark span {font-size:13px;line-height:1.5;color:var(--color-tertiary);text-align:right;}
+@media(max-width:700px) {
+ .ml-benchmark li {grid-template-columns:1fr;gap:10px;}
+ .ml-benchmark span {text-align:left;}
+}

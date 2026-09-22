@@ -1,0 +1,47 @@
+/* ==========================================================================
+   PLUS
+   ========================================================================== */
+
+/* The research question, set once and carried through every phase. */
+.pl-rq {
+  max-width: 900px;
+  margin: 48px 0 0;
+  padding-left: 28px;
+
+  border-left: 2px solid var(--color-accent);
+
+  font-size: 27px;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+}
+
+@media (max-width: 860px) {
+  .pl-rq {
+    font-size: 21px;
+    padding-left: 20px;
+    margin-top: 32px;
+  }
+}
+
+
+/* --------------------------------------------------------------------------
+   INFO BLOCK
+   Six fields, four awards and five names make the meta column about 714px tall
+   against 183px of copy beside it. The product board fills the ~490px that
+   would otherwise sit empty, and it belongs here anyway: it is the first look
+   at the thing the rest of the page explains.
+   -------------------------------------------------------------------------- */
+
+.pl-intro-figure {
+  /* .project-copy caps at --reading-width; the board should use the whole
+     right-hand column, which is wider. */
+  width: 100%;
+  max-width: none;
+  margin: 40px 0 0;
+}
+
+.project-info-grid .project-copy:has(.pl-intro-figure) {
+  max-width: none;
+}

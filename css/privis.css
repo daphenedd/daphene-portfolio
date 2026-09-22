@@ -1,0 +1,316 @@
+/* ==========================================================================
+   PRIVIS
+   Diagrams built from real elements, so they scale and stay sharp.
+   ========================================================================== */
+
+
+/* --------------------------------------------------------------------------
+   THE INFERENCE CHAIN
+   The paper's opening argument: the risk is not the sensitive object, it is the
+   ordinary one. Three cards, each running top to bottom from what the camera
+   sees to what the model reads out of it. Laid out as rows this left a third of
+   the page empty on either side of a short arrow.
+   -------------------------------------------------------------------------- */
+
+.pv-chain {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+
+  list-style: none;
+  padding: 0;
+  margin: 56px 0 0;
+}
+
+.pv-chain li {
+  display: flex;
+  flex-direction: column;
+
+  padding: 26px 26px 28px;
+
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  box-shadow: var(--ring-figure);
+}
+
+/* the two halves are labelled once, by the cards themselves */
+.pv-seen::before,
+.pv-read::before {
+  display: block;
+  margin-bottom: 10px;
+
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-tertiary);
+}
+
+.pv-seen::before { content: "The camera sees"; }
+.pv-read::before { content: "The model infers"; }
+
+.pv-seen {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.45;
+  color: var(--color-secondary);
+}
+
+.pv-read {
+  margin: 0;
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+}
+
+.pv-read b {
+  display: block;
+  margin-top: 8px;
+
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--pv-tag, #9a7f83);
+}
+
+/* the turn from seen to inferred, drawn downward */
+.pv-arrow {
+  position: relative;
+  height: 26px;
+  margin: 20px 0;
+}
+
+.pv-arrow::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 6px;
+  width: 1px;
+
+  background: var(--color-line);
+}
+
+.pv-arrow::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+
+  width: 6px;
+  height: 6px;
+  transform: translate(-2.5px, 0) rotate(135deg);
+
+  border-top: 1px solid var(--color-tertiary);
+  border-right: 1px solid var(--color-tertiary);
+}
+
+.pv-chain-note {
+  margin: 28px 0 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-secondary);
+  max-width: var(--reading-width);
+}
+
+
+/* --------------------------------------------------------------------------
+   RESEARCH QUESTIONS
+   -------------------------------------------------------------------------- */
+
+.pv-rqs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pv-rqs li {
+  padding: 30px 30px 32px;
+
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  box-shadow: var(--ring-figure);
+}
+
+.pv-rq-n {
+  display: block;
+  margin-bottom: 16px;
+
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-tertiary);
+}
+
+.pv-rqs p {
+  margin: 0;
+  font-size: 21px;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+}
+
+
+@media (max-width: 860px) {
+
+  .pv-chain { grid-template-columns: 1fr; gap: 14px; }
+
+  .pv-rqs { grid-template-columns: 1fr; gap: 16px; }
+  .pv-rqs p { font-size: 19px; }
+}
+
+
+/* .text-split (project.css) gives the heading-left / prose-right grid; this
+   just sets it off from the chain above. */
+.pv-note {
+  margin-top: 40px;
+  padding-top: 28px;
+  border-top: 1px solid var(--color-line);
+}
+
+
+/* --------------------------------------------------------------------------
+   THE THREE PHASES
+   The figure above shows panels (a), (b) and (c). The phases sit underneath in
+   three columns so each one lands under the panel it describes, instead of
+   stacking beside a short image and leaving the page half empty.
+   -------------------------------------------------------------------------- */
+
+.pv-phases {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 36px;
+
+  list-style: none;
+  padding: 0;
+  margin: 40px 0 0;
+}
+
+.pv-phases li {
+  padding-top: 20px;
+  border-top: 2px solid var(--color-text);
+}
+
+.pv-phase-n {
+  display: block;
+  margin-bottom: 10px;
+
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-tertiary);
+}
+
+.pv-phases h3 {
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.3;
+  margin: 0 0 10px;
+}
+
+.pv-phases p {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--color-secondary);
+  margin: 0;
+}
+
+@media (max-width: 860px) {
+  .pv-phases { grid-template-columns: 1fr; gap: 24px; }
+}
+
+
+/* --------------------------------------------------------------------------
+   THE STUDY FLAT
+   The plan was a 766x966 portrait that rendered over 1000px tall and took the
+   page over. It is now rotated to landscape, so it can take the wider track
+   with the copy beside it.
+   -------------------------------------------------------------------------- */
+
+.pv-plan {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: 56px;
+  align-items: center;
+
+  margin-top: 56px;
+}
+
+.pv-plan figure { margin: 0; }
+
+.pv-plan img {
+  width: 100%;
+  height: auto;
+}
+
+.pv-plan h3 {
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin: 0 0 16px;
+}
+
+.pv-plan p {
+  color: var(--color-secondary);
+  margin: 0;
+  max-width: 52ch;
+}
+
+.pv-plan p + p { margin-top: 14px; }
+
+@media (max-width: 860px) {
+
+  .pv-plan {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .pv-plan img { max-width: 100%; }
+}
+
+
+/* --------------------------------------------------------------------------
+   RESULTS GRID
+   Six charts. Run full width they are blown up to 1329px, which magnifies
+   every artefact in the exported plots; paired they sit at roughly half that
+   and read as one body of evidence rather than six separate claims.
+   -------------------------------------------------------------------------- */
+
+.pv-results {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 56px 40px;
+
+  margin-top: 56px;
+}
+
+/* .media supplies the image framing; the grid owns the spacing now. */
+.pv-results .media {
+  margin: 0;
+  width: 100%;
+}
+
+.pv-results img {
+  width: 100%;
+  height: auto;
+}
+
+.pv-results figcaption {
+  margin-top: 16px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+@media (max-width: 860px) {
+  .pv-results { grid-template-columns: 1fr; gap: 44px; }
+}

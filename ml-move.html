@@ -1,0 +1,768 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      MoveML &middot; Mindan Chen
+    </title>
+    <meta name="description" content="Making machine learning visible through movement: student and teacher interfaces, classroom evaluation, and the Animal Buddies wearable concept.">
+    <script>
+    document.documentElement.className += " js";</script>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/project.css">
+    <link rel="stylesheet" href="css/ml-move.css">
+  </head>
+  <body class="ml-case">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <nav class="site-nav" aria-label="Main">
+        <a class="site-logo" href="index.html">Mindan Chen</a>
+        <div class="nav-links">
+          <a data-nav="work" href="index.html#work">Work</a><a data-nav="about" href="about.html">About</a><a data-nav="contact" href="mailto:mindan.chen@mail.polimi.it">Contact</a>
+        </div>
+      </nav>
+    </header>
+    <main id="main">
+
+      <!-- ============ HERO ============ -->
+      <section class="project-hero page" id="top">
+        <div class="project-hero-meta">
+          <span>MoveML <span class="ml-muted">/ Embodied machine learning</span></span><span>2026</span>
+        </div>
+        <h1 class="project-hero-title">
+          Machine learning starts<br>with a movement.
+        </h1>
+        <p class="project-hero-description">
+          A classroom platform where children train a shared machine-learning model with their own gestures, and discover how their data shapes what it learns.
+        </p>
+        <div class="ml-tags">
+          <span>Interaction design</span><span>Learning through movement</span><span>Research prototype</span>
+        </div>
+        <figure class="media media-wide ml-video">
+          <div class="ml-video-frame">
+            <iframe src="https://www.youtube.com/embed/JJ6YedQxD3Q" title="MoveML product video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+          </div>
+          <figcaption>
+            Product video of the MoveML classroom activity.
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- ============ PROJECT INFO ============ -->
+      <section class="project-info-block page">
+        <div class="project-info-grid">
+          <div class="project-meta-list">
+            <div class="meta-item">
+              <p>
+                My role
+              </p>
+              <strong>User Experience Interaction design,Front-end Development <br>User study, Evaluation Analysis, 
+Wearable concept</strong>
+            </div>
+            <div class="meta-item">
+              <p>
+                Context
+              </p>
+              <strong>Innovation Project, Aarhus University</strong>
+            </div>
+            <div class="meta-item">
+              <p>
+                Team
+              </p>
+              <strong>Tobias,Bak
+                      Mindan,Chen
+                      Peter Mærsk, Clausen
+                      Daniel Anker,Poulsen</strong>
+            </div>
+          </div>
+          <div class="project-copy">
+            <h2 class="ml-intro-title">
+              From “the computer got it wrong”<br>to “what did we teach it?”
+            </h2>
+            <p>
+              MoveML turns the whole class into a source of training data. Children wear micro:bit wristbands, record movements and test a model built from everyone’s samples. A shared teacher display makes its behaviour available for discussion.
+            </p>
+            <p>
+              The work covered the student and teacher interfaces, front-end components built on an existing React and Chakra UI foundation, the storyboard for the session flow, and analysis of the evaluation findings. The Animal Buddies wearable concept came after the study.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SECTION NAV ============ -->
+      <nav class="ml-section-nav page" aria-label="Case study sections">
+        <a href="#background">Background</a><a href="#experience">01 The experience</a><a href="#interfaces">02 Two perspectives</a><a href="#failure">03 Visible failure</a><a href="#evaluation">04 Evidence</a><a href="#buddies">05 Animal Buddies</a><a href="#reflection">06 Reflection</a>
+      </nav>
+
+      <!-- ============ 01 BACKGROUND / WHY MOVEML ============ -->
+      <section class="project-section page" id="background">
+        <div class="section-heading">
+          <p class="eyebrow">
+            Background / Why MoveML
+          </p>
+          <h2>
+            Children already live with machine learning.<br>They are rarely shown what it runs on.
+          </h2>
+          <p>
+            Recommendation feeds, voice assistants, camera filters and smart watches are all machine learning, and all of it is invisible at the point of use. Where ML does get taught, it is usually taught as a finished black box: here is a model, here is what it predicts.
+          </p>
+        </div>
+        <figure class="media media-full ml-board" data-reveal-image>
+          <img src="assets/ml-move/challenge.jpg" width="2380" height="1264" alt="The challenge: children are growing up inside machine-learning systems they cannot see. Everyday exposure through apps and devices feeds hidden ML systems, which are then taught as a black box." loading="lazy" decoding="async">
+          <figcaption class="caption">
+            Everyday exposure, hidden systems, and a black box in the classroom.
+          </figcaption>
+        </figure>
+        <div class="project-copy text-split">
+          <h3>
+            Four tools teach children to train a model. None shows them what shapes it.
+          </h3>
+          <p>
+            The benchmark covered the four tools children already use, which are Google Teachable Machine, Machine Learning for Kids, LearningML and micro:bit CreateAI. It showed how much they already get right.
+          </p>
+          <ul class="ml-benchmark">
+            <li>
+              <div>
+                <strong>Browser-based, with a low barrier to entry.</strong>
+                <p>
+                  A child starts training within minutes.
+                </p>
+              </div>
+              <span>Google Teachable Machine<br>Machine Learning for Kids</span>
+            </li>
+            <li>
+              <div>
+                <strong>Step-by-step worksheets written for teachers.</strong>
+                <p>
+                  They make machine learning classroom-ready.
+                </p>
+              </div>
+              <span>Machine Learning for Kids<br>LearningML</span>
+            </li>
+            <li>
+              <div>
+                <strong>Embodied data from micro:bit hardware.</strong>
+                <p>
+                  A model becomes something you feel, not only something you see.
+                </p>
+              </div>
+              <span>micro:bit CreateAI</span>
+            </li>
+          </ul>
+          <p>
+            What none of them answers is the next question. All four solve <em>how do kids train a model?</em> None solves <em>how do kids notice what shapes the model?</em> Training is individual: one learner records their own data, tests it, and never sees how their examples compare with anyone else&rsquo;s.
+          </p>
+        </div>
+        <figure class="media media-full ml-board" data-reveal-image>
+          <img src="assets/ml-move/product-gap.jpg" width="2380" height="1264" alt="Product gap: Google Teachable Machine, Machine Learning for Kids, LearningML and micro:bit CreateAI all answer how children train a model, but none answers how children notice what shapes the model." loading="lazy" decoding="async">
+          <figcaption class="caption">
+            The four tools benchmarked, and the question none of them asks.
+          </figcaption>
+        </figure>
+        <figure class="media media-full ml-board" data-reveal-image>
+          <img src="assets/ml-move/research-gap.jpg" width="2380" height="1264" alt="Research gap: the design principles for teaching machine learning to children are established, but classroom implementation is still insufficient. There is a lack of activities that assess learning outcomes, and the combination of embodied, classroom-staged dataset properties remains unexplored." loading="lazy" decoding="async">
+          <figcaption>
+            The literature gap sits alongside the product gap. Design principles for teaching machine learning to children are well established. What is missing is classroom implementation, activities that assess what was learned, and any study of collaborative, embodied work on the properties of a dataset.
+          </figcaption>
+        </figure>
+        <div class="project-copy text-split">
+          <h3>
+            Building on micro:bit rather than beside it.
+          </h3>
+          <p>
+            The micro:bit is the reason the activity can be physical at all. It is already in classrooms, children have often met it before, and it carries an accelerometer, so a gesture becomes a data sample without anyone setting up equipment. Extending that platform, rather than building a new one, keeps the unfamiliar part of the lesson on the machine learning.
+          </p>
+          <p>
+            MoveML takes what CreateAI makes possible for one child and moves it to the whole room: a single shared model, trained by everyone at once, where variation, consistency and balance in the data stop being definitions and become things the class can watch happen.
+          </p>
+        </div>
+        <figure class="media media-full ml-board" data-reveal-image>
+          <img src="assets/ml-move/research-question.jpg" width="2380" height="1264" alt="Research question: how can a collaborative, embodied machine-learning activity with micro:bit support 8 to 12 year olds in noticing how variation, consistency and balance in training data affect machine-learning model behaviour?" loading="lazy" decoding="async">
+          <figcaption class="caption">
+            The question the classroom activity was built to answer.
+          </figcaption>
+        </figure>
+        <figure class="media media-full ml-board" data-reveal-image>
+          <img src="assets/ml-move/related-work.jpg" width="2400" height="1474" alt="From related work to MoveML's design contribution: five strands of prior work, which are embodied learning, collaborative learning, critical AI literacy, socially meaningful learning and early AI education, set against what beginner ML tools still miss, and what MoveML adds." loading="lazy" decoding="async">
+          <figcaption class="caption">
+            Embodied learning, collaborative learning and critical AI literacy are each well established. What was missing was an activity that used all three at once, in a classroom, on a dataset the children could see themselves in.
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- ============ 02 THE EXPERIENCE ============ -->
+      <section class="project-section page" id="experience">
+        <div class="section-heading">
+          <p class="eyebrow">
+            01 / The experience
+          </p>
+          <h2>
+            One classroom.<br>One shared model.
+          </h2>
+          <p>
+            The design challenge was to make training data tangible: something children could create, compare and question together. A session ran three rounds of the same loop, about ten minutes each.
+          </p>
+        </div>
+        <figure class="media media-full ml-board" data-reveal-image>
+          <img src="assets/ml-move/concept.jpg" width="2380" height="1264" alt="Concept: a thirty minute classroom activity in which children learn machine-learning concepts by generating movement data with their bodies. Using a micro:bit wristband and a shared teacher display, students train a model by creating moves and observe how their data affects recognition by testing moves." loading="lazy" decoding="async">
+          <figcaption>
+            The activity is thirty minutes long. Children generate the training data with their own bodies, then watch what the model does with it.
+          </figcaption>
+        </figure>
+        <figure class="media media-full ml-board" data-reveal-image>
+          <img src="assets/ml-move/learning-focus.jpg" width="2380" height="1264" alt="Learning focus across the three rounds. Variation: models need diverse examples, because movements are seldom performed exactly the same way. Consistency: repeated patterns make recognition more reliable. Balance: the model recognises movements better when each movement has enough examples. The teacher pauses between stages to guide reflection and connect the embodied experience to machine-learning concepts." loading="lazy" decoding="async">
+          <figcaption>
+            One property per round, with a teacher pause between stages to connect what just happened to the concept behind it.
+          </figcaption>
+        </figure>
+        <ol class="ml-flow">
+          <li>
+            <span>01</span>
+            <h3>
+              Move & record
+            </h3>
+            <p>
+              A wrist-worn micro:bit captures movement. Children contribute labelled gesture samples.
+            </p>
+          </li>
+          <li>
+            <span>02</span>
+            <h3>
+              Train together
+            </h3>
+            <p>
+              The teacher coordinates collection and trains one model using the class’s shared dataset.
+            </p>
+          </li>
+          <li>
+            <span>03</span>
+            <h3>
+              Test & discuss
+            </h3>
+            <p>
+              The class tries the model, observes its mistakes and considers what needs to change in the data.
+            </p>
+          </li>
+        </ol>
+        <div class="ml-phases">
+          <p class="eyebrow">
+            The activity
+          </p>
+          <h3>
+            Three rounds, three things to notice.
+          </h3>
+          <p class="ml-small">
+            Each round of the session was built to surface one property of training data through experience rather than explanation. The concepts were never named in advance.
+          </p>
+          <div class="ml-observations">
+            <article>
+              <span class="ml-number">01</span>
+              <h3>
+                Variation
+              </h3>
+              <p>
+                Each child invents a movement and records three samples of it. The model is trained, and the class tries someone else’s gesture. It fails, because the model has only ever seen one person perform it, one way.
+              </p>
+            </article>
+            <article>
+              <span class="ml-number">02</span>
+              <h3>
+                Consistency
+              </h3>
+              <p>
+                Everyone records the same movement ten times. Recognition improves immediately, and the class can say why: the model has now seen many versions of the same thing.
+              </p>
+            </article>
+            <article>
+              <span class="ml-number">03</span>
+              <h3>
+                Balance
+              </h3>
+              <p>
+                That shared gesture now dominates the dataset. The model starts predicting it for almost everything, until the children even out the distribution themselves.
+              </p>
+            </article>
+          </div>
+        </div>
+        <figure class="media media-wide asset-system-sketch">
+          <button class="ml-image-button" data-image="assets/ml-move/system-sketch.jpg" data-width="2400" data-height="1354" aria-label="Explore image: System concept: individual movement samples feed a shared model, with the teacher coordinating training and reflection."><img src="assets/ml-move/system-sketch.jpg" width="2400" height="1354" alt="System concept: individual movement samples feed a shared model, with the teacher coordinating training and reflection." loading="lazy" decoding="async"><span class="ml-image-action">Explore image ↗</span></button>
+          <figcaption>
+            System concept: individual movement samples feed a shared model, with the teacher coordinating training and reflection.
+          </figcaption>
+        </figure>
+        <figure class="media media-full asset-storyboard">
+          <button class="ml-image-button" data-image="assets/ml-move/storyboard.jpg" data-width="1303" data-height="810" aria-label="Explore image: Storyboard of the classroom activity, setting out the session flow: setup, joining, collecting gestures, training the shared model, noticing a wrong prediction, and reflecting before the next round."><img src="assets/ml-move/storyboard.jpg" width="1303" height="810" alt="Storyboard of the classroom activity, setting out the session flow: setup, joining, collecting gestures, training the shared model, noticing a wrong prediction, and reflecting before the next round." loading="lazy" decoding="async"><span class="ml-image-action">Explore image ↗</span></button>
+          <figcaption>
+            Storyboard of the classroom activity, setting out the session flow: setup, joining, collecting gestures, training the shared model, noticing a wrong prediction, and reflecting before the next round.
+          </figcaption>
+        </figure>
+        <div class="ml-expanded">
+          <h3 class="ml-expanded-title">
+            Why we moved on from DanceCode
+          </h3>
+          <div class="project-copy">
+            <p>
+              The earlier concept combined dance and coding, but hardware constraints and overlap with existing tools weakened its purpose. The project was reframed around a more specific question: how could collective movement make variation, consistency and balance in training data visible?
+            </p>
+            <p>
+              The final platform carried forward the earlier research on engagement and personalisation, while changing the learning activity itself.
+            </p>
+            <figure class="media media-full asset-dancecode">
+              <button class="ml-image-button" data-image="assets/ml-move/dancecode.jpg" data-width="2034" data-height="1094" aria-label="Explore image: DanceCode, the abandoned first concept: children unlocked dance moves the system recognised. Team prototype, shown here as process documentation."><img src="assets/ml-move/dancecode.jpg" width="2034" height="1094" alt="DanceCode, the abandoned first concept: children unlocked dance moves the system recognised. Team prototype, shown here as process documentation." loading="lazy" decoding="async"><span class="ml-image-action">Explore image ↗</span></button>
+              <figcaption>
+                DanceCode, the abandoned first concept: children unlocked dance moves the system recognised. Team prototype, shown here as process documentation.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 03 INTERFACES ============ -->
+      <section class="project-section page" id="interfaces">
+        <div class="section-heading">
+          <p class="eyebrow">
+            02 / Interface as translation
+          </p>
+          <h2>
+            Two roles need<br>two different answers.
+          </h2>
+          <p>
+            I treated role separation as an information-architecture decision. Students need a clear next action; teachers need to understand and coordinate the whole session.
+          </p>
+        </div>
+        <div class="ml-role-grid">
+          <article>
+            <span class="ml-role-label">Student</span>
+            <h3>
+              “What should I do now?”
+            </h3>
+            <p>
+              Onboarding establishes identity. Gesture cards and progress indicators turn recording into a concrete task, helping children connect their actions to samples.
+            </p>
+          </article>
+          <article>
+            <span class="ml-role-label teacher">Teacher</span>
+            <h3>
+              “What is happening in class?”
+            </h3>
+            <p>
+              Connected students, sample counts, training state and predictions support decisions about when to move the activity forward.
+            </p>
+          </article>
+        </div>
+        <figure class="media media-wide asset-teacher-session">
+          <button class="ml-image-button" data-image="assets/ml-move/teacher-session.jpg" data-width="2391" data-height="1329" aria-label="Explore image: Teacher setup: connected students are visible before data collection begins."><img src="assets/ml-move/teacher-session.jpg" width="2391" height="1329" alt="Teacher setup: connected students are visible before data collection begins." loading="lazy" decoding="async"><span class="ml-image-action">Explore image ↗</span></button>
+          <figcaption>
+            Teacher setup: connected students are visible before data collection begins.
+          </figcaption>
+        </figure>
+        <figure class="media media-wide asset-teacher-ready">
+          <button class="ml-image-button" data-image="assets/ml-move/teacher-ready.png" data-width="2408" data-height="1343" aria-label="Explore image: Before training: the shared screen makes the number of moves, samples and contributing students visible."><img src="assets/ml-move/teacher-ready.png" width="2408" height="1343" alt="Before training: the shared screen makes the number of moves, samples and contributing students visible." loading="lazy" decoding="async"><span class="ml-image-action">Explore image ↗</span></button>
+          <figcaption>
+            Before training: the shared screen makes the number of moves, samples and contributing students visible.
+          </figcaption>
+        </figure>
+        <div class="ml-collection-explainer">
+          <div class="project-copy">
+            <p class="eyebrow">
+              A closer look / collection states
+            </p>
+            <h3>
+              Make each sample count.
+            </h3>
+            <p>
+              The prototype’s progress card connects a gesture name, sample target and completion state. Try the state change below to see how that relationship becomes visible.
+            </p>
+            <p class="ml-small">
+              Interactive explanation adapted from the original progress-card components, using illustrative data. Recording clarity still needed improvement in the evaluated prototype.
+            </p>
+          </div>
+          <div class="ml-sample-card">
+            <div class="ml-sample-heading">
+              <strong>Wave</strong><span class="ml-sample-badge">Collecting</span>
+            </div>
+            <div class="ml-progress-ring" role="progressbar" aria-label="Illustrative gesture samples" aria-valuemin="0" aria-valuemax="3" aria-valuenow="1">
+              <svg viewBox="0 0 140 140" width="140" height="140" aria-hidden="true"><circle cx="70" cy="70" r="45" fill="none" stroke="#e2e8f0" stroke-width="8"/><circle class="ml-progress-track" cx="70" cy="70" r="45" fill="none" stroke="#286e47" stroke-width="8" stroke-linecap="round" stroke-dasharray="282.743" stroke-dashoffset="188.495" transform="rotate(-90 70 70)"/></svg><strong class="ml-sample-count">1 / 3</strong>
+            </div>
+            <p class="ml-sample-description" aria-live="polite" aria-atomic="true">
+              1 sample collected. 2 more to reach the target.
+            </p>
+            <div class="ml-sample-controls">
+              <button type="button" class="ml-sample-add" hidden>Add example sample</button><button type="button" class="ml-sample-reset" hidden>Reset</button>
+            </div>
+          </div>
+        </div>
+        <div class="ml-expanded">
+          <h3 class="ml-expanded-title">
+            The collection screen and session controls
+          </h3>
+          <div class="ml-detail-grid">
+            <figure class="media media-full asset-collection-low-resolution">
+              <button class="ml-image-button" data-image="assets/ml-move/collection-low-resolution.png" data-width="623" data-height="333" aria-label="Explore image: Gesture cards expose collection progress. The available source is small; a higher-resolution original is needed."><img src="assets/ml-move/collection-low-resolution.png" width="623" height="333" alt="Gesture cards expose collection progress. The available source is small; a higher-resolution original is needed." loading="lazy" decoding="async"><span class="ml-image-action">Explore image ↗</span></button>
+              <figcaption>
+                Gesture cards expose collection progress. The available source is small; a higher-resolution original is needed.
+              </figcaption>
+            </figure>
+            <figure class="media media-full asset-teacher-training">
+              <button class="ml-image-button" data-image="assets/ml-move/teacher-training.png" data-width="2407" data-height="1350" aria-label="Explore image: The teacher chooses how many samples to collect before the activity starts."><img src="assets/ml-move/teacher-training.png" width="2407" height="1350" alt="The teacher chooses how many samples to collect before the activity starts." loading="lazy" decoding="async"><span class="ml-image-action">Explore image ↗</span></button>
+              <figcaption>
+                The teacher chooses how many samples to collect before the activity starts.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+      <section class="project-section page">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">
+            Prototype
+          </p>
+          <h2>
+            The two views, as built.
+          </h2>
+        </div>
+        <figure class="media media-full ml-board" data-reveal-image>
+          <div class="media-triplet" style="margin:0">
+            <img src="assets/ml-move/teacher-train-1.jpg" width="1334" height="734" alt="Teacher screen: data collection has ended, showing three moves, nine samples and three students, with a Train Model button." loading="lazy" decoding="async"><img src="assets/ml-move/teacher-train-2.jpg" width="1278" height="734" alt="Teacher screen: training in progress, with a progress bar at 48 per cent." loading="lazy" decoding="async"><img src="assets/ml-move/teacher-train-3.jpg" width="1326" height="734" alt="Teacher screen: model trained successfully, with a training summary of total moves, total samples and data contributors, and buttons to test the model or collect more data." loading="lazy" decoding="async">
+          </div>
+          <figcaption>
+            The teacher view through training. The class can see how many moves, samples and contributors went in, which is the number that matters when a prediction later goes wrong.
+          </figcaption>
+        </figure>
+        <figure class="media media-full ml-board" data-reveal-image>
+          <div class="media-pair" style="margin:0">
+            <img src="assets/ml-move/teacher-monitor.jpg" width="1334" height="732" alt="Teacher screen: testing the model and monitoring students, listing each connected student and their gesture attempts in real time." loading="lazy" decoding="async"><img src="assets/ml-move/teacher-dashboard.jpg" width="1326" height="732" alt="Teacher dashboard: counts for students, samples and model state, with controls for data collection, sending the class to a page, and the teacher’s own moves." loading="lazy" decoding="async">
+          </div>
+          <figcaption>
+            Monitoring and the dashboard. The teacher can watch attempts as they happen and move the whole class to a screen without asking them to navigate.
+          </figcaption>
+        </figure>
+        <figure class="media media-full ml-board" data-reveal-image>
+          <img src="assets/ml-move/prototype-student.jpg" width="2380" height="1264" alt="Prototype, student view: six screens covering joining a session, naming a gesture, collecting samples, waiting for training and testing a movement against the shared model." loading="lazy" decoding="async">
+          <figcaption>
+            The student screens, which run on each child's own device beside the wristband.
+          </figcaption>
+        </figure>
+        <figure class="media media-full ml-board" data-reveal-image>
+          <img src="assets/ml-move/technology.jpg" width="2380" height="1264" alt="Technology implementation: micro:bit wristbands stream accelerometer data to a browser-based application, which trains a shared model on the collected samples and returns predictions to the teacher display and the student devices." loading="lazy" decoding="async">
+          <figcaption>
+            How the parts connect. The wristband sends accelerometer data, the browser application holds the shared model, and predictions return to both the teacher display and the children's own screens.
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- ============ 04 VISIBLE FAILURE ============ -->
+      <section class="project-section page" id="failure">
+        <div class="section-heading">
+          <p class="eyebrow">
+            03 / A key design decision
+          </p>
+          <h2>
+            Make failure<br>something to discuss.
+          </h2>
+          <p>
+            A wrong prediction can reveal the relationship between a model and its data. I kept model state and prediction outcomes visible so the teacher could use them as shared material for reflection.
+          </p>
+        </div>
+        <figure class="media media-wide asset-teacher-predictions">
+          <button class="ml-image-button" data-image="assets/ml-move/teacher-predictions.png" data-width="2411" data-height="1346" aria-label="Explore image: Teacher testing view: successful, failed and waiting states remain visible together. Prototype interface values are illustrative, not evaluation metrics."><img src="assets/ml-move/teacher-predictions.png" width="2411" height="1346" alt="Teacher testing view: successful, failed and waiting states remain visible together. Prototype interface values are illustrative, not evaluation metrics." loading="lazy" decoding="async"><span class="ml-image-action">Explore image ↗</span></button>
+          <figcaption>
+            Teacher testing view: successful, failed and waiting states remain visible together. Prototype interface values are illustrative, not evaluation metrics.
+          </figcaption>
+        </figure>
+        <div class="ml-evidence">
+          <p class="eyebrow">
+            Observed during evaluation
+          </p>
+          <h3>
+            The model kept choosing the gesture<br>with the most samples.
+          </h3>
+          <div class="ml-role-grid">
+            <p>
+              Once every group had recorded ten samples of the same shared movement, it stood at roughly forty samples while the earlier individual gestures had three each. The model then predicted the dominant class regardless of what was performed. Students noticed this themselves and explained it.
+            </p>
+            <p>
+              These explanations mattered more to me than a correct prediction: children were beginning to reason about the data behind the output.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 05 EVIDENCE & LIMITS ============ -->
+      <section class="project-section page" id="evaluation">
+        <div class="section-heading">
+          <p class="eyebrow">
+            04 / Evidence & limits
+          </p>
+          <h2>
+            Promising observations.<br>Specific limitations.
+          </h2>
+          <p>
+            The high-fidelity prototype was evaluated in a classroom at Aarhus University.
+          </p>
+        </div>
+        <figure class="media media-full ml-board" data-reveal-image>
+          <img src="assets/ml-move/validation.jpg" width="2380" height="1264" alt="Validation: three photographs of the classroom sessions, with the protocol. A warm-up established what the children already knew about AI, then they tested the system across three task rounds. Fourteen students in seven groups." loading="lazy" decoding="async">
+          <figcaption>
+            Each session opened with a warm-up on what the children already believed about AI, including whether it can make mistakes and what it is good and bad at, before three rounds with the prototype.
+          </figcaption>
+        </figure>
+        <div class="ml-stats">
+          <div>
+            <strong>14</strong><span>sixth-grade participants</span>
+          </div>
+          <div>
+            <strong>3</strong><span>sessions, with different groups</span>
+          </div>
+          <div>
+            <strong>~50 min</strong><span>per session, working in pairs</span>
+          </div>
+        </div>
+        <div class="ml-observations">
+          <article>
+            <p class="eyebrow">
+              What the study suggested
+            </p>
+            <h3>
+              Children connected errors to data.
+            </h3>
+            <p>
+              Discussion revealed emerging explanations of sample imbalance and movement variation. Physical activity also sustained participation across the sessions.
+            </p>
+          </article>
+          <article>
+            <p class="eyebrow">
+              Where the interaction broke down
+            </p>
+            <h3>
+              Recording was not clear enough.
+            </h3>
+            <p>
+              Some students could not tell when to move or when recording had started. Setup needed facilitator help; a countdown sound was one participant’s suggestion.
+            </p>
+          </article>
+          <article>
+            <p class="eyebrow">
+              What remains uncertain
+            </p>
+            <h3>
+              Engagement is not a learning score.
+            </h3>
+            <p>
+              The study was small and researcher-facilitated. Some children struggled with the UEQ wording, so I treated those scores as supplementary evidence, not proof of learning gains.
+            </p>
+          </article>
+        </div>
+        <div class="ml-expanded">
+          <h3 class="ml-expanded-title">
+            Methods and interpretation
+          </h3>
+          <div class="project-copy">
+            <p>
+              The study used observation, semi-structured discussion and the User Experience Questionnaire. Each session included a warm-up, three rounds of collecting, training and testing, then reflection. There were six children in one session and four in each of the other two.
+            </p>
+            <p>
+              The intended audience was ages 8–12; the evaluated participants were sixth-graders, approximately 12. These sessions do not establish outcomes for the full age range or for independent teacher-led use.
+            </p>
+          </div>
+          <figure class="media media-full ml-board" data-reveal-image>
+            <img src="assets/ml-move/insights.jpg" width="2380" height="1264" alt="Insights: children understood by the end that you train a model by giving it examples, and that more examples usually mean better predictions. Timing during the movement parts was unclear and they asked for a countdown sound; group dynamics varied, with some pairs competing rather than collaborating; they wanted stronger feedback than a victory sound. Alongside, the User Experience Questionnaire result across all item pairs." loading="lazy" decoding="async">
+            <figcaption>
+              What the sessions surfaced, with the User Experience Questionnaire result across all 26 item pairs. Ratings were strongest on friendliness, clarity and ease of learning, and weakest on novelty and leading edge.
+            </figcaption>
+          </figure>
+          <div class="project-copy">
+            <p>
+              I read the lower novelty scores as a question about the interface rather than the activity: what is new in MoveML is the shared dataset and the classroom structure around it, which a questionnaire about an interface does not reach. Words such as <em>conservative</em> and <em>innovative</em> also asked a lot of eleven- and twelve-year-olds.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 06 FOLLOW-UP CONCEPT ============ -->
+      <section class="project-section page" id="buddies">
+        <div class="section-heading">
+          <p class="eyebrow">
+            05 / Individual follow-up concept
+          </p>
+          <h2>
+            Animal Buddies.<br>Identity beyond an avatar.
+          </h2>
+          <p>
+            Children invested attention in choosing avatars, but those identities had little role afterwards. Feedback on the bare wristband suggested an opportunity to connect the physical and digital experience.
+          </p>
+        </div>
+        <div class="ml-avatar-context">
+          <ul class="ml-avatar-strip" aria-label="Original student avatar options">
+            <li>
+              <img src="assets/ml-move/source-avatars/avatar-1.png" width="338" height="340" alt="Student avatar option 1" loading="lazy" decoding="async">
+            </li>
+            <li>
+              <img src="assets/ml-move/source-avatars/avatar-2.png" width="336" height="340" alt="Student avatar option 2" loading="lazy" decoding="async">
+            </li>
+            <li>
+              <img src="assets/ml-move/source-avatars/avatar-3.png" width="328" height="340" alt="Student avatar option 3" loading="lazy" decoding="async">
+            </li>
+            <li>
+              <img src="assets/ml-move/source-avatars/avatar-4.png" width="322" height="334" alt="Student avatar option 4" loading="lazy" decoding="async">
+            </li>
+            <li>
+              <img src="assets/ml-move/source-avatars/avatar-5.png" width="330" height="338" alt="Student avatar option 5" loading="lazy" decoding="async">
+            </li>
+            <li>
+              <img src="assets/ml-move/source-avatars/avatar-6.png" width="330" height="336" alt="Student avatar option 6" loading="lazy" decoding="async">
+            </li>
+          </ul>
+          <p class="ml-small">
+            The avatar assets in the supplied source build. (The course report describes eight options at the time of the study.) The next question was how these identities could stay meaningful beyond onboarding.
+          </p>
+        </div>
+        <div class="ml-concept-grid">
+          <div>
+            <figure class="media media-full asset-animal-buddies">
+              <button class="ml-image-button" data-image="assets/ml-move/animal-buddies.jpg" data-width="756" data-height="567" aria-label="Explore image: Animal Buddies concept board: animal characters surrounding a visible micro:bit. Proposed after evaluation; not user-tested."><img src="assets/ml-move/animal-buddies.jpg" width="756" height="567" alt="Animal Buddies concept board: animal characters surrounding a visible micro:bit. Proposed after evaluation; not user-tested." loading="lazy" decoding="async"><span class="ml-image-action">Explore image ↗</span></button>
+              <figcaption>
+                Animal Buddies concept board: animal characters surrounding a visible micro:bit. Proposed after evaluation; not user-tested.
+              </figcaption>
+            </figure>
+          </div>
+          <div class="project-copy">
+            <span class="ml-status">Proposal / not evaluated</span>
+            <h3>
+              Make personalisation part of participation.
+            </h3>
+            <p>
+              A family of animal wearables could connect a child’s on-screen identity to the device they wear and the samples they contribute.
+            </p>
+            <p>
+              The design has practical constraints: the display and buttons must remain accessible, the battery must be stable, and the case and strap must accommodate different wrists.
+            </p>
+            <p>
+              Light, sound or display feedback could make recording and prediction more tangible. These are directions for a future iteration, not tested features of the concept.
+            </p>
+            <p class="ml-small">
+              The concept board is preserved at its available quality. A higher-resolution design source is needed for larger presentation.
+            </p>
+          </div>
+        </div>
+        <div class="ml-expanded">
+          <h3 class="ml-expanded-title">
+            Wristband constraints and references
+          </h3>
+          <figure class="media media-wide asset-wristband-exploration">
+            <button class="ml-image-button" data-image="assets/ml-move/wristband-exploration.jpg" data-width="2400" data-height="1175" aria-label="Explore image: Original exploration board: wristband fit, micro:bit access and reference products. Reference products are not claimed as my designs."><img src="assets/ml-move/wristband-exploration.jpg" width="2400" height="1175" alt="Original exploration board: wristband fit, micro:bit access and reference products. Reference products are not claimed as my designs." loading="lazy" decoding="async"><span class="ml-image-action">Explore image ↗</span></button>
+            <figcaption>
+              Original exploration board: wristband fit, micro:bit access and reference products. Reference products are not claimed as my designs.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- ============ 07 REFLECTION ============ -->
+      <section class="project-section page" id="reflection">
+        <div class="section-heading">
+          <p class="eyebrow">
+            06 / Reflection
+          </p>
+          <h2>
+            The interaction structure<br>is my responsibility, too.
+          </h2>
+        </div>
+        <div class="ml-observations">
+          <article>
+            <span class="ml-number">01</span>
+            <h3>
+              Understand the system to explain it.
+            </h3>
+            <p>
+              Making the model legible required understanding training data and prediction failures. Visual clarity depended on that conceptual understanding.
+            </p>
+          </article>
+          <article>
+            <span class="ml-number">02</span>
+            <h3>
+              Apply visibility consistently.
+            </h3>
+            <p>
+              Model state was visible, but recording time was not communicated well enough. Explicit timing and multimodal feedback would be priorities in the next iteration.
+            </p>
+          </article>
+          <article>
+            <span class="ml-number">03</span>
+            <h3>
+              Design collaboration into the activity.
+            </h3>
+            <p>
+              The interface still repeated a single-user flow. Pair work and facilitation created much of the collaboration. A future design should support shared roles and participation directly.
+            </p>
+          </article>
+        </div>
+        <div class="ml-closing project-copy copy-wide">
+          <p class="text-large">
+            I came to see the interface as one contribution within a larger learning experience, one that only works when the physical device, the model and classroom facilitation work together.
+          </p>
+        </div>
+        <div class="ml-expanded">
+          <h3 class="ml-expanded-title">
+            Project documentation and credits
+          </h3>
+          <div class="project-copy">
+            <p>
+              Edited from the project’s reflective and course reports, June 2026. Project screens are prototype documentation; Animal Buddies is a subsequent concept.
+            </p>
+            <ul>
+              <li>
+                <a href="https://github.com/saki0400/semester8">Project source repository</a>
+              </li>
+              <li>
+                <a href="assets/ml-move/sources/semester8/LICENSE">Source software licence and attribution</a>
+              </li>
+              <li>
+                <a href="assets/ml-move/sources/Individual%20process%20portfolio%20.pdf">Individual reflective report (PDF)</a>
+              </li>
+              <li>
+                <a href="assets/ml-move/sources/Innovation_Project%20(7).pdf">Team report and original figures (PDF, 48 MB)</a>
+              </li>
+            </ul>
+            <p>
+              Advisors: Marianne Graves Petersen, Majken Kirkegaard Rasmussen, Mille Skovhus Lunding and Maja Dybboe.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ NEXT PROJECT ============ -->
+      <a class="next-project page" href="labbridge.html" data-reveal>
+      <p class="next-project-label">
+        Next project
+      </p>
+      <h2>
+        LabBridge &rarr;
+      </h2>
+      </a>
+    </main>
+    <footer class="page ml-footer">
+      <a href="index.html#work">← All projects</a><a href="#top">Back to top ↑</a><span>Mindan Chen · <span data-year>2026</span></span>
+    </footer>
+    <dialog class="ml-viewer" aria-labelledby="viewer-title">
+    <div class="ml-viewer-bar">
+      <p id="viewer-title">
+        Project image
+      </p>
+      <button type="button" class="ml-close" autofocus>Close ×</button>
+    </div>
+    <p class="ml-viewer-hint">
+      Scroll horizontally to explore on smaller screens.
+    </p>
+    <div class="ml-viewer-scroll" tabindex="0" role="region" aria-label="Scrollable project image">
+      <img alt="">
+    </div>
+    </dialog>
+    <script src="js/main.js">
+    </script>
+    <script src="js/ml-move.js">
+    </script>
+  </body>
+</html>

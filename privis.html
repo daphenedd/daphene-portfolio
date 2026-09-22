@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>PriVis &middot; Mindan Chen</title>
+  <meta name="description" content="PriVis: proactive, explainable visualization of the private attributes an AI-powered AR headset infers from the objects around you, and per-object control over them.">
+
+  <script>document.documentElement.className += " js";</script>
+
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/project.css">
+  <link rel="stylesheet" href="css/privis.css">
+
+</head>
+
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+
+  <nav class="site-nav">
+
+    <a class="site-logo" href="index.html">Mindan Chen</a>
+
+    <div class="nav-links">
+      <a data-nav="work"    href="index.html#work">Work</a>
+      <a data-nav="about"   href="about.html">About</a>
+      <a data-nav="contact" href="mailto:mindan.chen@mail.polimi.it">Contact</a>
+    </div>
+
+  </nav>
+
+</header>
+
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+
+<section class="project-hero page">
+
+  <div class="project-hero-meta" data-reveal>
+    <span>PriVis</span>
+    <span>2026</span>
+  </div>
+
+  <h1 class="project-hero-title" data-reveal data-delay="1">Your glasses can tell your income from a cardboard box.</h1>
+
+  <p class="project-hero-description" data-reveal data-delay="2">AI-powered AR glasses stream what you see to a vision-language model, which can read sensitive attributes out of ordinary objects, and never tells you. PriVis makes those inferences visible as they happen, shows which objects produced them, and lets you switch individual objects off.</p>
+
+</section>
+
+
+<div class="page">
+
+    <figure class="media media-full">
+      <img src="assets/privis/interaction-flow.jpg" width="2400" height="673" alt="Three AR views of the same room. In the first, floating bubbles read sex: male, age: 25-35, education: bachelor and income: medium. In the second, the objects that produced one inference are highlighted. In the third, those objects have been anonymised." loading="lazy" decoding="async">
+      <figcaption class="caption">The interaction loop. An app takes camera permission and PriVis analyses the stream; high-sensitivity inferences surface as floating bubbles whose placement is computationally optimised; selecting a bubble highlights the objects that contributed to it; those objects can then be anonymised individually or by attribute category.</figcaption>
+    </figure>
+
+</div>
+
+
+<!-- ============ PROJECT INFO ============ -->
+
+<section class="project-info-block page">
+
+  
+
+  <div class="project-info-grid">
+
+    <div class="project-meta-list">
+
+      <div class="meta-item">
+        <p>My role</p>
+        <strong>User interaction design<br>System Interaction <br> Paper Writing</strong>
+      </div>
+
+      <div class="meta-item">
+        <p>Collaborators</p>
+        <strong>Shuning Zhang<br>Qucheng Zang<br>Yongquan &lsquo;Owen&rsquo; Hu<br>Yi Wang<br>Qinjie Wang<br>Yibo Meng<br>Xinyi Fu<br>Prof. Yi Xin<br>Hantao Zhao</strong>
+      </div>
+
+      <div class="meta-item">
+        <p>Built with</p>
+        <strong>Microsoft HoloLens&nbsp;2 &middot; Unity (C#) &middot; MRTK<br>YOLOv10n via Unity Sentis &middot; qwen3-vl-max</strong>
+      </div>
+
+    </div>
+
+    <div class="project-copy">
+      <p class="text-large">A camera you know about is not the same as a camera you understand.</p>
+      <p>People wearing AR glasses know they are being filmed. What they do not know is that a vision-language model can read a prescription bottle as a medical condition, a set of children&rsquo;s toys as family composition, or a stack of delivery boxes as an income bracket, and that this reasoning is invisible to them. Prior work has visualised direct intrusions and demonstrated that inference attacks are possible, but has not given the wearer real-time awareness of what is being inferred, from which objects, inside a continuous egocentric stream.</p>
+      <p>PriVis is a technique for closing that gap: a reasoning module that names the inferred attribute, its confidence and its evidence, and a visualisation module that places all of it in the field of view without taking the field of view over.</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<div class="page">
+  <div class="divider"></div>
+</div>
+
+
+<!-- ============ 01 BACKGROUND ============ -->
+
+<section class="project-section page">
+
+  <div class="section-heading" data-reveal>
+    <p class="eyebrow">01 / Background</p>
+    <h2>The risk is not the sensitive object. It is the ordinary one.</h2>
+    <p>A traditional camera captures visual data as discrete instances. AI-powered AR glasses process a continuous stream of the wearer&rsquo;s environment, which lets a vision-language model derive sensitive personal attributes from explicitly private content and from seemingly innocuous contextual cues alike.</p>
+  </div>
+
+  <ul class="pv-chain" data-reveal>
+    <li>
+      <p class="pv-seen">A prescription bottle left on a table</p>
+      <span class="pv-arrow"></span>
+      <p class="pv-read">A medical condition <b>Health status</b></p>
+    </li>
+    <li>
+      <p class="pv-seen">A set of children&rsquo;s toys on the floor</p>
+      <span class="pv-arrow"></span>
+      <p class="pv-read">A household with young children <b>Family composition</b></p>
+    </li>
+    <li>
+      <p class="pv-seen">A stack of delivery boxes by the door</p>
+      <span class="pv-arrow"></span>
+      <p class="pv-read">A spending bracket <b>Income</b></p>
+    </li>
+  </ul>
+
+  <p class="pv-chain-note">None of these objects is private on its own. The attribute is produced by the model reasoning across them, and that reasoning is the part the wearer cannot see. People know they are being filmed. They do not know what is being inferred, from which objects, or for what purpose.</p>
+
+  <div class="text-split pv-note" data-reveal>
+    <h3>Prior work stops short of the wearer.</h3>
+    <div>
+      <p>Research on wearable and smart-home privacy has visualised direct intrusions, demonstrated that inference attacks are possible, and flagged text-based disclosure risks. What none of it provides is real-time awareness of an <em>inferred</em> threat while it is happening.</p>
+      <p>That gap is specific to this device. The warning has to arrive inside a continuous egocentric stream, while the wearer is doing something else, and within the attention a pair of glasses can reasonably ask for.</p>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ============ RESEARCH QUESTIONS ============ -->
+
+<section class="project-section page">
+
+  <div class="section-heading" data-reveal>
+    <p class="eyebrow">Research questions</p>
+    <h2>Two questions, one about the design and one about the people.</h2>
+  </div>
+
+  <ol class="pv-rqs" data-reveal>
+    <li>
+      <span class="pv-rq-n">RQ1</span>
+      <p>How can we design a technique on AI-powered AR glasses to visualise inferred privacy and increase users&rsquo; awareness?</p>
+    </li>
+    <li>
+      <span class="pv-rq-n">RQ2</span>
+      <p>How do users perceive and interact with a technique that enables real-time visualisation and control of inferred privacy on AI-powered AR glasses?</p>
+    </li>
+  </ol>
+
+</section>
+
+
+<!-- ============ 02 THREAT MODEL ============ -->
+
+<section class="project-section page">
+
+  <div class="section-heading">
+    <p class="eyebrow">02 / The threat</p>
+    <h2>The attacker does not need to break in. It ships an app.</h2>
+    <p>The threat model follows LINDDUN, and concentrates on three of its categories: linkability, identifiability and unawareness. The last one is the point, because the harm begins with the wearer not knowing.</p>
+  </div>
+
+  <div class="insight-grid">
+
+    <article class="insight-card">
+      <span class="insight-number">01</span>
+      <h3>Distribution</h3>
+      <p>The attacker publishes an app through the official AR glasses marketplace like anyone else, and it asks for camera permission like anyone else.</p>
+    </article>
+
+    <article class="insight-card">
+      <span class="insight-number">02</span>
+      <h3>Inference</h3>
+      <p>A backend runs a general-purpose VLM over the camera feed. No fine-tuning, no special access, because off-the-shelf capability is already enough to build a behavioural profile.</p>
+    </article>
+
+    <article class="insight-card">
+      <span class="insight-number">03</span>
+      <h3>Opacity</h3>
+      <p>Nothing in the interface reports what was inferred or why. The wearer consented to a camera, not to a profile assembled from the contents of their living room.</p>
+    </article>
+
+  </div>
+
+  <p class="caption">Downstream harms, such as targeted advertising and data sale, are out of scope. The inference itself is treated as the primary breach, because everything else follows from it. Network-layer attacks such as packet sniffing and side-channel analysis are named as future work.</p>
+
+</section>
+
+
+<!-- ============ DESIGN GUIDELINES ============ -->
+
+<section class="project-section major page">
+
+  <div class="section-heading">
+    <p class="eyebrow">Guidelines</p>
+    <h2>Three constraints, pulling against each other.</h2>
+    <p>Continuous sensing, opaque reasoning, and a wearer whose attention is already committed to the real world. Any solution has to satisfy all three at once.</p>
+  </div>
+
+  <div class="insight-grid">
+
+    <article class="insight-card">
+      <span class="insight-number">DG 1</span>
+      <h3>Make the inference pipeline legible</h3>
+      <p>Show how a private attribute was derived from raw environmental data, so the wearer can tell the difference between a camera capturing pixels and a model synthesising a personal trait.</p>
+    </article>
+
+    <article class="insight-card">
+      <span class="insight-number">DG 2</span>
+      <h3>Prioritise by risk, not by volume</h3>
+      <p>Continuous sensing produces continuous events. Filter and rank by sensitivity so attention goes to the high-stakes inferences instead of being spent on routine ones.</p>
+    </article>
+
+    <article class="insight-card">
+      <span class="insight-number">DG 3</span>
+      <h3>Protect attentional bandwidth</h3>
+      <p>Privacy information belongs in the visual field but not in the way. Spatial placement and peripheral awareness keep monitoring a low-effort activity rather than a second task.</p>
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- ============ 02 INTERACTION ============ -->
+
+<section class="project-section major page">
+
+  <div class="section-heading">
+    <p class="eyebrow">03 / Interaction</p>
+    <h2>Confidence decides where a warning stands.</h2>
+    <p>Rather than a static trigger or a stacked notification queue, the loop runs continuously in three phases, and the layout itself carries information.</p>
+  </div>
+
+  <figure class="media media-full" data-reveal-image>
+    <img src="assets/privis/interaction-flow.jpg" width="2400" height="673" alt="The three interaction stages side by side: bubbles floating over the room, one bubble selected with its contributing objects highlighted, and the same objects anonymised" loading="lazy" decoding="async">
+  </figure>
+
+  <ol class="pv-phases" data-reveal>
+    <li>
+      <span class="pv-phase-n">(a) Phase one</span>
+      <h3>Real-time attribute feedback</h3>
+      <p>As the glasses analyse the field of view, inferred attributes surface as interactive floating bubbles anchored to the objects that produced them, such as gender inferred from a mustard bottle.</p>
+    </li>
+    <li>
+      <span class="pv-phase-n">(b) Phase two</span>
+      <h3>Confidence-based spatial cuing</h3>
+      <p>Placement maps to the model&rsquo;s confidence. Confident inferences move toward the centre and turn red; uncertain ones stay green and stay in the periphery. Salience is proportional to certainty, so the interface does not shout about a guess.</p>
+    </li>
+    <li>
+      <span class="pv-phase-n">(c) Phase three</span>
+      <h3>On-demand direct manipulation</h3>
+      <p>Tapping a bubble reveals the inference, its confidence and the contributing objects, highlighted in place on their bounding boxes. Links are drawn only on selection, because persistent connectors would clutter the view. Each box can be toggled independently.</p>
+    </li>
+  </ol>
+
+  <p class="caption">Anonymising is a real trade: removing an object from the model&rsquo;s view also removes it from the assistant&rsquo;s context, and can degrade the answer the wearer asked for. Participants were told this before they used it.</p>
+
+</section>
+
+
+<!-- ============ 03 ALGORITHM ============ -->
+
+<section class="project-section major page">
+
+  <div class="section-heading">
+    <p class="eyebrow">04 / Reasoning module</p>
+    <h2>Two clocks, one prompt, one tuple.</h2>
+  </div>
+
+  <div class="project-copy copy-split">
+    <p>The camera feed is downsampled to <strong>1 FPS</strong> for the VLM, which is where the contextual reasoning happens, while <strong>YOLOv10n</strong>, pretrained on MS-COCO 2017, detects objects and bounding boxes at <strong>4 FPS</strong> for anchoring. Splitting the rates is what keeps the overlay smooth without either flooding the model or letting the bubbles drift off their objects.</p>
+    <div class="copy-split-body"><p>The VLM is queried with a structured prompt in three parts: a <strong>task definition</strong> asking it to identify the shooter&rsquo;s personal attributes; an <strong>input context</strong> combining the current frame with historically detected objects, boxes and relative timeframes; and an <strong>output structure</strong> that forces the answer into a parseable shape. Every prediction comes back as a tuple containing the attribute, a self-assessed confidence, and the contributing objects with their individual weights. Explanation is not reconstructed after the fact; it is a required field of the prediction.</p></div></div>
+
+  <div class="stat-grid">
+
+    <div class="stat">
+      <p class="stat-number">1 / 4</p>
+      <p class="stat-label">FPS for VLM reasoning and for local object detection</p>
+    </div>
+
+    <div class="stat">
+      <p class="stat-number">7</p>
+      <p class="stat-label">Attribute types inferred: gender, age, education, income, marriage, occupation, location</p>
+    </div>
+
+    <div class="stat">
+      <p class="stat-number">&beta; = 0.3</p>
+      <p class="stat-label">Exponential smoothing on confidence, so bubbles do not flicker between frames</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ============ LAYOUT OPTIMISATION ============ -->
+
+<section class="project-section major page">
+
+  <div class="section-heading">
+    <p class="eyebrow">Visualisation module</p>
+    <h2>Where a bubble goes is a constrained optimisation, not a preference.</h2>
+    <p>Each bubble&rsquo;s 2D screen position minimises a weighted sum of four cost terms, solved with five gradient-descent iterations per decision timestamp and projected back onto the feasible set after each step. The layout is solved in 2D rather than 3D to keep the cost down and the interaction simple.</p>
+  </div>
+
+  <div class="insight-grid">
+
+    <article class="insight-card">
+      <span class="insight-number">E<sub>dist</sub></span>
+      <h3>Minimum separation</h3>
+      <p>Bubbles that sit too close read as clutter. A soft penalty pushes any pair below the minimum screen distance apart.</p>
+    </article>
+
+    <article class="insight-card">
+      <span class="insight-number">E<sub>center</sub></span>
+      <h3>Centre alignment by confidence</h3>
+      <p>Distance from the centre of the field of view is penalised in proportion to <em>(1 &minus; confidence)</em>. A confident inference pays almost nothing to sit centrally; an uncertain one is pushed outward.</p>
+    </article>
+
+    <article class="insight-card">
+      <span class="insight-number">E<sub>prox</sub></span>
+      <h3>Proximity to evidence</h3>
+      <p>Each bubble stays near the object it came from, with a target distance inversely proportional to that object&rsquo;s contribution, so strong evidence keeps its bubble close, weak evidence can tolerate an offset.</p>
+    </article>
+
+    <article class="insight-card">
+      <span class="insight-number">E<sub>occl</sub></span>
+      <h3>Non-occlusion</h3>
+      <p>A bubble must never cover the object it is explaining. This one is a hard constraint; where no feasible placement exists, the bubble is offset to minimise the overlap.</p>
+    </article>
+
+  </div>
+
+  <p class="caption">Contributing objects are colour-coded on a linear red-to-blue map, with red for the objects driving the inference, blue for the ones barely involved. The same exponential smoothing applied to confidence is optionally applied to position, to stop bubbles jumping.</p>
+
+</section>
+
+
+<!-- ============ IMPLEMENTATION ============ -->
+
+<section class="project-section compact page">
+
+  <div class="section-heading">
+    <p class="eyebrow">Implementation</p>
+    <h2>What it runs on.</h2>
+  </div>
+
+  <div class="project-copy copy-split">
+    <p>PriVis is deployed on a Microsoft HoloLens 2. Visual understanding is offloaded to the cloud-hosted <strong>qwen3-vl-max</strong> API; localised perception runs on-device with <strong>YOLOv10n (ONNX)</strong> through Unity Sentis, which is the accuracy-versus-latency trade the headset can actually afford. To fit temporal context inside the model&rsquo;s window, the input is hybrid: the current frame arrives as a raw image plus anchors and labels, while historical frames contribute anchors and labels only.</p>
+    <div class="copy-split-body"><p>Interface and visualisation are built with the Mixed Reality Toolkit; the gradient-based layout solver is custom C# in Unity, iterating to satisfy the soft and hard constraints above. The application ships through the Universal Windows Platform, which is what manages its permissions.</p></div></div>
+
+</section>
+
+
+<!-- ============ QUOTE ============ -->
+
+<section class="quote-block page">
+  <blockquote>Users typically lack insight into what attributes are being inferred, from which objects, and for what purposes.</blockquote>
+  <p class="quote-source">The gap the technique is built against.</p>
+</section>
+
+
+<!-- ============ 04 EVALUATION ============ -->
+
+<section class="project-section major page">
+
+  <div class="section-heading">
+    <p class="eyebrow">05 / Evaluation</p>
+    <h2>Twenty-four people, three versions, one living room.</h2>
+    <p>A within-subjects study compared PriVis against two ablations, each removing one of its core modules, which isolates what the explanation and the control are actually contributing.</p>
+  </div>
+
+  <div class="insight-grid">
+
+    <article class="insight-card">
+      <span class="insight-number">PV</span>
+      <h3>PriVis</h3>
+      <p>The full technique: inferred attributes linked to their evidence objects, computationally optimised layout, confidence shown, per-object control.</p>
+    </article>
+
+    <article class="insight-card">
+      <span class="insight-number">Ne</span>
+      <h3>No explanation</h3>
+      <p>Results without spatial optimisation and without the link between attribute and source. Selecting an attribute highlights <em>every</em> detected object, adapting the mechanism used in prior work.</p>
+    </article>
+
+    <article class="insight-card">
+      <span class="insight-number">Nc</span>
+      <h3>No control</h3>
+      <p>Visually identical to PriVis, but the wearer can only look. Attributes and their objects are anonymised by default with no way to intervene.</p>
+    </article>
+
+  </div>
+
+  <div class="stat-grid">
+
+    <div class="stat">
+      <p class="stat-number">24</p>
+      <p class="stat-label">Participants: 11 male, 13 female, mean age 23.3 (SD 3.6, range 18&ndash;55)</p>
+    </div>
+
+    <div class="stat">
+      <p class="stat-number">4.3</p>
+      <p class="stat-label">Mean IUIPC privacy concern (SD 1.5, 1&ndash;7 scale\). The sample was moderately privacy-conscious to begin with</p>
+    </div>
+
+    <div class="stat">
+      <p class="stat-number">90 min</p>
+      <p class="stat-label">Roughly 60 minutes of tasks plus a 30-minute semi-structured interview, IRB approved</p>
+    </div>
+
+  </div>
+
+  <div class="pv-plan" data-reveal>
+    <figure class="media">
+      <img src="assets/privis/home-environment.jpg" width="966" height="766" alt="Cutaway plan of the simulated flat used for the study: bedroom, living room with sofa and television, kitchen and bathroom" loading="lazy" decoding="async">
+    </figure>
+    <div>
+      <h3>A flat that belongs to nobody.</h3>
+      <p>The study ran in a simulated home rather than participants&rsquo; own flats, so that real personal objects were never sent to the VLM.</p>
+      <p>It is a neat detail: a study about inference privacy that refuses to create the exposure it is measuring.</p>
+    </div>
+  </div>
+
+  <figure class="media media-full">
+    <img src="assets/privis/study-interface.jpg" width="2400" height="963" alt="Three screens from the study platform: a menu of twelve tasks across four scenarios, a voice-input prompt, and an answer panel" loading="lazy" decoding="async">
+    <figcaption class="caption">Twelve tasks across four scenarios: daily health monitoring, lifestyle management, social interaction and work assistance. Participants triggered the assistant by voice, which also captured a photo, and could toggle the privacy controls freely throughout. Technique order was counterbalanced with a Latin square; task order was held fixed to keep the workflow realistic.</figcaption>
+  </figure>
+
+</section>
+
+
+<!-- ============ RESULTS ============ -->
+
+<section class="project-section major page">
+
+  <div class="section-heading">
+    <p class="eyebrow">Results</p>
+    <h2>Awareness went up. Time and workload did not.</h2>
+    <p>Objective metrics were analysed with repeated-measures ANOVA, subjective ratings with Friedman tests, and significant effects followed up pairwise with Bonferroni correction.</p>
+  </div>
+
+  <div class="pv-results" data-reveal>
+
+  <figure class="media">
+    <img src="assets/privis/results-awareness.jpg" width="2400" height="965" alt="Box plots of perceived privacy protection ratings across risk awareness, inference awareness and understanding, comparing PriVis, No explanation and No control" loading="lazy" decoding="async">
+    <figcaption class="caption">PriVis significantly outperformed both ablations on all three dimensions, with risk awareness and inference awareness at p&nbsp;&lt;&nbsp;.001, understanding at p&nbsp;&lt;&nbsp;.05. This is the headline: removing either the explanation or the control measurably costs the wearer awareness, so neither module is decoration.</figcaption>
+  </figure>
+
+  <figure class="media">
+    <img src="assets/privis/results-time.jpg" width="2400" height="745" alt="Bar chart of average task time and average privacy management time for PriVis, No explanation and No control, with standard error bars" loading="lazy" decoding="async">
+    <figcaption class="caption">Total task time did not differ significantly between techniques. Privacy management time did (F<sub>2,46</sub>&nbsp;=&nbsp;6.37, p&nbsp;=&nbsp;.004, &eta;<sub>p</sub><sup>2</sup>&nbsp;=&nbsp;.217\), and it was the version <em>without</em> explanations that took longer, not the one with them. Explaining the inference pays for itself.</figcaption>
+  </figure>
+
+  <figure class="media">
+    <img src="assets/privis/results-clicks.jpg" width="2400" height="1681" alt="Bar charts of click counts for viewing and for controlling, broken down by the attributes gender, age, education, income, marriage, occupation and location" loading="lazy" decoding="async">
+    <figcaption class="caption">Attribute type drove engagement (F<sub>6,138</sub>&nbsp;=&nbsp;4.27, p&nbsp;&lt;&nbsp;.001, &eta;<sub>p</sub><sup>2</sup>&nbsp;=&nbsp;.157): participants inspected and managed <strong>age and gender</strong> most, and occupation and income least. Worth sitting with, because the attributes people policed were not the ones with the most obvious economic consequences.</figcaption>
+  </figure>
+
+  <figure class="media">
+    <img src="assets/privis/results-usability.jpg" width="2400" height="1030" alt="Box plots of usability ratings across ease of use, error prone and complexity" loading="lazy" decoding="async">
+    <figcaption class="caption">Ease of use showed a significant effect (p&nbsp;&lt;&nbsp;.01): PriVis and the no-explanation version were both rated easier than the version with no control. Error-proneness and complexity showed no significant differences, so adding explanation and control did not make the system feel heavier.</figcaption>
+  </figure>
+
+  <figure class="media">
+    <img src="assets/privis/results-trust.jpg" width="2400" height="840" alt="Box plots of trust ratings across information accuracy, app respects decisions and device respects decisions, plus overall perception" loading="lazy" decoding="async">
+    <figcaption class="caption">Every trust dimension moved. Granting control significantly improved perceived accuracy, the sense that the app respects the wearer&rsquo;s decisions, and the sense that the device respects their privacy; explanation improved them further. Overall perception varied significantly between conditions at p&nbsp;&lt;&nbsp;.001.</figcaption>
+  </figure>
+
+  <figure class="media">
+    <img src="assets/privis/results-workload.jpg" width="2400" height="873" alt="Box plots of NASA-TLX workload ratings across mental, physical and temporal demand, performance, effort and frustration" loading="lazy" decoding="async">
+    <figcaption class="caption">NASA-TLX found no significant differences on mental, physical or temporal demand, or on effort. The two dimensions that did move, which are perceived performance (p&nbsp;&lt;&nbsp;.05) and frustration (p&nbsp;&lt;&nbsp;.001\), both favoured PriVis. The cost of transparency here is not cognitive load; the cost of <em>withholding</em> it is frustration.</figcaption>
+  </figure>
+
+  </div>
+
+</section>
+
+
+<!-- ============ QUALITATIVE ============ -->
+
+<section class="project-section major page">
+
+  <div class="section-heading">
+    <p class="eyebrow">What participants said</p>
+    <h2>The link was the thing.</h2>
+  </div>
+
+  <div class="insight-grid">
+
+    <article class="insight-card">
+      <span class="insight-number">P12</span>
+      <h3>Clarity</h3>
+      <p>&ldquo;[What are visualized by] PriVis made sense. I could see why something might be risky because it showed the link [to evidence objects]. The others just showed boxes.&rdquo;</p>
+    </article>
+
+    <article class="insight-card">
+      <span class="insight-number">P5</span>
+      <h3>Cognitive load</h3>
+      <p>&ldquo;I liked that PriVis didn&rsquo;t always show everything with the same intensity. It drew my attention when needed but faded back otherwise. The version with all objects highlighted was exhausting.&rdquo;</p>
+    </article>
+
+    <article class="insight-card">
+      <span class="insight-number">P21</span>
+      <h3>Agency</h3>
+      <p>&ldquo;Being able to click and remove the inferred connection felt empowering. With other techniques, I just saw boxes, I couldn&rsquo;t really do anything about the information itself.&rdquo;</p>
+    </article>
+
+  </div>
+
+  <div class="project-copy copy-wide">
+    <p>The no-explanation version was described as &ldquo;chaotic&rdquo; and &ldquo;impossible to parse&rdquo;. The no-control version fared better but left participants uncertain, saying &ldquo;better, but I wasn&rsquo;t sure if it was missing things to control&rdquo; (P13). Some participants raised concerns about the accuracy of the underlying model regardless of how well it was visualised (P2, P5), and asked for sensitivity thresholds they could set themselves (P13) and a textual reasoning trace on request (P16). One preferred gaze selection over touch for anonymising (P11).</p>
+  </div>
+
+</section>
+
+
+<!-- ============ DESIGN IMPLICATIONS ============ -->
+
+<section class="project-section major page">
+
+  <div class="section-heading">
+    <p class="eyebrow">06 / Implications</p>
+    <h2>Three things that generalise past AR.</h2>
+  </div>
+
+  <div class="insight-grid">
+
+    <article class="insight-card">
+      <span class="insight-number">01</span>
+      <h3>Anchor privacy cues in the environment, not a dashboard</h3>
+      <p>Mapping an abstract inferential risk onto the specific object or data stream that caused it is what makes it legible. A detached settings panel cannot do this.</p>
+    </article>
+
+    <article class="insight-card">
+      <span class="insight-number">02</span>
+      <h3>Trace the pipeline, visibly</h3>
+      <p>Node-link graphs or interactive data-flow overlays that map benign inputs to sensitive outputs let people audit automated profiling, in recommendation systems and personalised generative AI as much as in AR.</p>
+    </article>
+
+    <article class="insight-card">
+      <span class="insight-number">03</span>
+      <h3>Warn before the inference lands, not after</h3>
+      <p>People cannot anticipate secondary inferences from continuous sensing, so passive disclosure is not enough. Monitor collection and fire a localised, just-in-time alert before a high-stakes inference is finalised or transmitted.</p>
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- ============ LIMITATIONS ============ -->
+
+<section class="project-section major page">
+
+  <div class="section-heading">
+    <p class="eyebrow">Limitations</p>
+    <h2>What the paper is careful not to claim.</h2>
+  </div>
+
+  <div class="project-copy copy-split">
+    <p><strong>It protects the wearer, not the room.</strong> Bystanders in close relationships, such as family and partners, can be profiled through shared context, and identifying and protecting them is left open.</p>
+    <div class="copy-split-body"><p><strong>The confidence scores are the model&rsquo;s own.</strong> They have not been externally validated, and the system&rsquo;s inference error rate was not technically evaluated. The paper positions PriVis as an educational framework for critical thinking rather than a permission tool, aligned with sandboxed approaches.</p>
+    <p><strong>Highlighting some risks may hide others.</strong> Selective awareness is a live concern: a wearer may become hyper-vigilant about the attributes shown and neglect the ones that are not. A heightened sense of risk could also become persistent unease.</p>
+    <p><strong>The sample and the setting are narrow.</strong> Mostly Chinese university students and staff, in a representative home rather than their own, on one headset. Privacy norms are culturally specific, so whether the same inferences feel equally sensitive elsewhere is untested.</p>
+    <p><strong>Memory is bounded by the context window.</strong> The system does not reason over the full history of past frames, which, the paper notes, an attacker without that constraint could exploit to build something more potent.</p></div></div>
+
+</section>
+
+
+<!-- ============ NEXT ============ -->
+
+<a class="next-project page" href="haier.html" data-reveal>
+  <p class="next-project-label">Next project</p>
+  <h2>Haier Europe &rarr;</h2>
+</a>
+
+
+</main>
+
+<footer class="site-footer page">
+
+  <div class="footer-inner">
+    <p>&copy; <span data-year>2026</span> Mindan Chen</p>
+    <p>Milan / Europe</p>
+  </div>
+
+</footer>
+
+<script src="js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Initiator &middot; Mindan Chen</title>
+  <meta name="description" content="Initiator is a browser-side conversational tool that supports the pre-action moment, the threshold between intention and first action, for adults with ADHD in low-structure knowledge work.">
+
+  <!-- Set before first paint: scoping the reveal styles to .js means
+       nothing is ever hidden if this script does not run. -->
+  <script>document.documentElement.className += " js";</script>
+
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/project.css">
+  <link rel="stylesheet" href="css/initiator.css">
+
+</head>
+
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+
+  <nav class="site-nav">
+
+    <a class="site-logo" href="index.html">Mindan Chen</a>
+
+    <div class="nav-links">
+      <a data-nav="work"    href="index.html#work">Work</a>
+      <a data-nav="about"   href="about.html">About</a>
+      <a data-nav="contact" href="mailto:mindan.chen@mail.polimi.it">Contact</a>
+    </div>
+
+  </nav>
+
+</header>
+
+<main id="main" class="initiator-page">
+
+<!-- ============ HERO ============ -->
+
+<section class="project-hero page">
+
+  <div class="project-hero-meta" data-reveal>
+    <span>Initiator</span>
+    <span>2026</span>
+  </div>
+
+  <h1 class="project-hero-title" data-reveal data-delay="1">When starting is the hardest part.</h1>
+
+  <p class="project-hero-description" data-reveal data-delay="2">Initiator is a browser-side conversational agent for people who struggle to begin low-structure knowledge work. It supports the moment between intention and the first action.</p>
+
+  <div class="project-hero-image" data-reveal-image>
+    <img src="assets/initiator/device-hero.jpg" alt="Initiator running as a browser side panel beside a grant-application draft, with the profile picker and chat floating alongside" width="2400" height="1350">
+  </div>
+
+</section>
+
+<!-- ============ PROJECT INFO ============ -->
+
+<section class="project-info-block page">
+
+  <div class="project-info-grid">
+
+    <div class="project-meta-list" data-reveal>
+
+      <div class="meta-item">
+        <p>My role</p>
+        <strong>Literature Review, Market Research, User Research, Interaction &amp; UI Design, Design Engineering, User Evaluation, Thesis Author</strong>
+      </div>
+
+      <div class="meta-item">
+        <p>Timeline</p>
+        <strong>Dec 2025 &ndash; Jul 2027</strong>
+      </div>
+
+      <div class="meta-item">
+        <p>Area</p>
+        <strong>HCI, conversational AI, task initiation, neurodiversity</strong>
+      </div>
+
+      <div class="meta-item">
+        <p>Context</p>
+ <strong>
+    M.Sc. thesis, Politecnico di Milano<br>
+    Supervisor Prof. Marzia Mortati<br>
+    Co-supervisor Prof. Andrea Bonarini
+  </strong>
+</div>
+
+    </div>
+
+    <div class="project-copy" data-reveal data-delay="1">
+      <p>Task-initiation difficulty is usually treated as a problem of motivation, planning or focus. This project asked whether the more important gap sits earlier: after the intention to act has formed, but before the first action feels reachable.</p>
+      <p><strong>Research Question:</strong> How can conversational AI support task-initiation difficulty for adults with ADHD in low-structure knowledge work?</p>
+    </div>
+
+  </div>
+
+</section>
+
+<div class="page">
+  <div class="divider"></div>
+</div>
+
+<!-- ============ 01 CONTEXT ============ -->
+
+<section class="project-section page">
+
+  <div class="section-heading" data-reveal>
+    <p class="eyebrow">01 / Context</p>
+    <h2>The gap is not intention. It is getting from intention to action.</h2>
+    <p>The research focus is the middle box: the moment between deciding to start and starting.</p>
+  </div>
+
+  <figure class="media media-full ini-scroll" data-reveal-image>
+    <img src="assets/initiator/context.jpg" width="2400" height="1350" alt="Intention leads to the pre-action moment and then to first action, with the pre-action moment marked as the research focus. 70% of childhood ADHD persists into adulthood. Below, three misreadings: procrastination, poor motivation, poor planning." loading="lazy" decoding="async">
+  </figure>
+
+  <p class="caption" data-reveal>Barkley, 1997; Modesto-Lowe et al., 2013; Sirois &amp; Pychyl, 2013; Sheeran &amp; Webb, 2016; Ramsay, 2016; Altgassen et al., 2019; Kooij et al., 2019; Cortese et al., 2025.</p>
+
+  <div class="media media-full ini-scroll" data-reveal-image>
+    <img src="assets/initiator/literature-review.jpg" alt="Literature review scope moving from task initiation in ADHD, affective dimension, women&rsquo;s experience, epistemic emotions, digital health technologies and LLM-augmented approaches toward the research gap" width="2400" height="1350" loading="lazy" decoding="async">
+  </div>
+
+  <p class="caption" data-reveal>The review moved from adults with ADHD and task initiation toward the narrower question, and four questions framed it: how task initiation is defined, what shapes the pre-action moment, how far research has gone on lived experience, and what current systems leave unsupported. Informed by Cooper (1988).</p>
+
+</section>
+
+<!-- ============ 02 RESEARCH ============ -->
+
+<section class="project-section major page">
+
+  <div class="section-heading" data-reveal>
+    <p class="eyebrow">02 / Research</p>
+    <h2>Three phases, moving from scale, to mechanism, to design gap.</h2>
+    <p>A sequential mixed-methods study. I ran each phase to answer a different question: how common the problem is, what actually happens in the moment, and where existing tools stop being useful.</p>
+  </div>
+
+  <div class="ini-phases" data-reveal>
+
+    <div class="ini-phase">
+      <span class="ini-phase-step">Phase 1</span>
+      <h3>Questionnaire</h3>
+      <strong class="ini-phase-figure">40</strong>
+      <p>participants across Europe and China. Identify key patterns.</p>
+    </div>
+
+    <div class="ini-phase">
+      <span class="ini-phase-step">Phase 2</span>
+      <h3>Episodic interviews</h3>
+      <strong class="ini-phase-figure">7</strong>
+      <p>participants revisiting concrete past starting experiences.</p>
+    </div>
+
+    <div class="ini-phase">
+      <span class="ini-phase-step">Phase 3</span>
+      <h3>Netnographic benchmarking</h3>
+      <strong class="ini-phase-figure">86</strong>
+      <p>user quotes across 8 tools. Examine support logic and breakdown.</p>
+    </div>
+
+  </div>
+
+  <figure class="media media-full ini-scroll" data-reveal-image>
+    <img src="assets/initiator/research-process.jpg" width="2400" height="1350" alt="Research process across six phases, which are discover, define, synthesis, develop, evaluate and reflect, grouped under research, design, evaluation and synthesis, with the goal, method and output of each" loading="lazy" decoding="async">
+  </figure>
+
+  <p class="caption" data-reveal>Each phase had to produce something the next one could use: the Action Threshold Model, the pre-action findings and the initiation mechanisms all feed the design requirements.</p>
+
+</section>
+
+<!-- ============ FINDINGS: WHAT THE DATA SAID ============ -->
+
+<section class="project-section major page">
+
+  <div class="section-heading" data-reveal>
+    <h2>People did not need a better plan. They needed the first action to feel survivable.</h2>
+    <p>The questionnaire pointed at affect rather than organisation: what blocked people was emotional avoidance and negative self-evaluation, not a missing to-do list.</p>
+  </div>
+
+  <div class="ini-figures" data-reveal>
+
+    <div class="ini-figure">
+      <strong class="ini-figure-number">63<sup>%</sup></strong>
+      <p>were primarily avoiding uncomfortable emotions, rather than the task itself.</p>
+    </div>
+
+    <div class="ini-figure">
+      <strong class="ini-figure-number">54<sup>%</sup></strong>
+      <p>were stuck on a task with no clear deadline.</p>
+    </div>
+
+    <div class="ini-figure">
+      <strong class="ini-figure-number">4.08<sup>/5</sup></strong>
+      <p>mean agreement with &ldquo;I judged myself negatively at that moment.&rdquo;</p>
+    </div>
+
+  </div>
+
+  <p class="caption" data-reveal>What people did instead of starting: lay down or slept 88%, did something unrelated 83%, scrolled phone or social media 67%.</p>
+
+  <div class="project-copy copy-wide" data-reveal style="margin-top:56px">
+    <p>The interviews then separated that single label into distinct mechanisms. Three recurred, and each one fails for a different reason which is why a single, just break it down&rdquo; response does not work.</p>
+  </div>
+
+  <figure class="media media-full ini-scroll" data-reveal-image>
+    <img src="assets/initiator/research-02.svg" width="1920" height="1080" alt="User interview findings: three participants. Butter, emotional regulation type, triggered when beginning activates shame or self-attack; Cby, external structure type, where the task lacks an accessible entry action; Lan, readiness-waiting type, where action is delayed until the person feels ready. Each is shown with a quote from their interview" loading="lazy" decoding="async">
+  </figure>
+
+  <p class="caption" data-reveal>Participants are identified by pseudonym, and their portraits are blurred, because the consent given for the thesis does not extend to publishing recognisable faces on a public site.</p>
+
+</section>
+
+<!-- ============ THE GAP ============ -->
+
+<section class="quote-block page">
+  <blockquote data-reveal>Existing tools support planning, structure and co-presence, but they assume the user can already articulate, enter, or commit to the task.</blockquote>
+  <p class="quote-source" data-reveal>The design opportunity is the threshold <em>before</em> those assumptions hold.</p>
+</section>
+
+<section class="project-section compact page">
+
+  <div class="ini-bleed ini-plot-wrap" data-reveal>
+
+    <div class="ini-plot" role="img" aria-label="Benchmarking matrix. Vertical axis runs from cognitive scaffolding at the bottom to social co-regulation at the top. Horizontal axis runs from reactive on the left to embedded on the right. Goblin Tools, Structured and Llama Life sit low and left; Tiimo and Sunsama low and right; Numo ADHD just above centre-left; Focusmate and Flow Club high and right. The reactive, socially supported corner is empty.">
+
+      <span class="ini-plot-axis is-x" aria-hidden="true"></span>
+      <span class="ini-plot-axis is-y" aria-hidden="true"></span>
+
+      <span class="ini-plot-cap is-top" aria-hidden="true">Social co-regulation</span>
+      <span class="ini-plot-cap is-bottom" aria-hidden="true">Cognitive scaffolding</span>
+      <span class="ini-plot-cap is-left" aria-hidden="true">Reactive</span>
+      <span class="ini-plot-cap is-right" aria-hidden="true">Embedded</span>
+
+      <div class="ini-plot-item" style="left:39.2%;top:39.9%">
+        <img src="assets/initiator/tools/numo-adhd.png" alt="" width="72" height="72" loading="lazy" decoding="async">
+        <span>Numo ADHD</span>
+      </div>
+      <div class="ini-plot-item is-wordmark is-selected" style="left:82.1%;top:25.1%">
+        <img src="assets/initiator/tools/focusmate.png" alt="Focusmate" width="256" height="59" loading="lazy" decoding="async">
+      </div>
+      <div class="ini-plot-item is-wordmark" style="left:88.5%;top:31.2%">
+        <img src="assets/initiator/tools/flow-club.png" alt="Flow Club" width="139" height="25" loading="lazy" decoding="async">
+      </div>
+      <div class="ini-plot-item" style="left:22.1%;top:62.1%">
+        <img src="assets/initiator/tools/llama-life.png" alt="" width="256" height="256" loading="lazy" decoding="async">
+        <span>Llama Life</span>
+      </div>
+      <div class="ini-plot-item is-selected" style="left:25.3%;top:75.6%">
+        <img src="assets/initiator/tools/structured.png" alt="" width="256" height="256" loading="lazy" decoding="async">
+        <span>Structured</span>
+      </div>
+      <div class="ini-plot-item is-selected" style="left:12.4%;top:81.8%">
+        <img src="assets/initiator/tools/goblin-tools.png" alt="" width="149" height="148" loading="lazy" decoding="async">
+        <span>Goblin Tools</span>
+      </div>
+      <div class="ini-plot-item" style="left:74.6%;top:59.7%">
+        <img src="assets/initiator/tools/sunsama.png" alt="" width="154" height="148" loading="lazy" decoding="async">
+        <span>Sunsama</span>
+      </div>
+      <div class="ini-plot-item is-selected" style="left:66.0%;top:71.9%">
+        <img src="assets/initiator/tools/tiimo.png" alt="" width="148" height="148" loading="lazy" decoding="async">
+        <span>Tiimo</span>
+      </div>
+
+    </div>
+
+  </div>
+
+  <p class="caption" data-reveal>Eight tools on two axes: what kind of support they give (cognitive scaffolding &rarr; social co-regulation) and what triggers it (reactive &rarr; embedded). The four marked with an orange dot, which are Focusmate, Tiimo, Structured and Goblin Tools, were taken forward for deeper case analysis. The top-left quadrant is empty: nothing offers socially warm support that arrives when you are already stuck.</p>
+
+</section>
+
+<!-- ============ JOURNEY MAP ============ -->
+
+<section class="project-section major page">
+
+  <div class="section-heading" data-reveal>
+    <p class="eyebrow">Synthesis</p>
+    <h2>Six stages, from intention to re-entry.</h2>
+    <p>The interviews and the questionnaire were mapped against one another to see where the threshold actually sits in a working day, covering touchpoints, thoughts and emotions, and needs at each stage.</p>
+  </div>
+
+  <div class="media media-full ini-scroll" data-reveal-image>
+    <img src="assets/initiator/journey-map.jpg" alt="User journey map across six stages, which are intention, approaching the task, threshold friction, drift, later loop and re-entry, with touchpoints, thoughts and emotions, and needs at each stage" width="2400" height="1350" loading="lazy" decoding="async">
+  </div>
+
+  <p class="caption" data-reveal>This map is what turned &ldquo;drift&rdquo; and &ldquo;re-entry&rdquo; into states the system had to handle, rather than failures it should prevent. The needs row on the bottom is where the four design requirements below come from.</p>
+
+</section>
+
+<!-- ============ DESIGN REQUIREMENTS ============ -->
+
+<section class="project-section major page">
+
+  <div class="section-heading" data-reveal>
+    <p class="eyebrow">Design requirements</p>
+    <h2>Four rules the system had to obey.</h2>
+  </div>
+
+  <figure class="media media-full ini-scroll" data-reveal-image>
+    <img src="assets/initiator/design-requirements.png" width="2400" height="1350" alt="Four design requirements. DR1, support the pre-action moment: focus on the threshold between intention and first action, before planning or execution. DR2, respond to affective barriers: acknowledge overwhelm, self-judgment, avoidance or cognitive fog before asking users to clearly define the task. DR3, lower the entry cost: offer minimal, concrete first actions rather than complete plans or heavy structure. DR4, minimise evaluative pressure: avoid motivational prompts, performance pressure, surveillance cues or failure labels." loading="lazy" decoding="async">
+  </figure>
+
+</section>
+
+<!-- ============ 03 SYSTEM ============ -->
+
+<section class="project-section major page">
+
+  <div class="section-heading" data-reveal>
+    <p class="eyebrow">03 / System</p>
+    <h2>A model of the threshold, then a system that acts on it.</h2>
+    <p>The Action Threshold Model is the conceptual output of the research: a design-oriented reading of what raises and lowers the cost of a first action.</p>
+  </div>
+
+  <figure class="media media-full ini-scroll" data-reveal-image>
+    <img src="assets/initiator/action-threshold-model.jpg" width="2400" height="1350" alt="The Action Threshold Model: intention to start leads to a pre-action threshold and then to first observable action. Three factors act on the threshold. Affective load (shame, pressure, self-threat) raises it, epistemic engagement (curiosity, interest, investigability) lowers it, and contextual support (external, social, interactional) shapes the entry point, and all three converge on a design opportunity for low-pressure, affect-first action support." loading="lazy" decoding="async">
+  </figure>
+
+  <div class="project-copy text-split" data-reveal style="margin-top:88px">
+    <h3>Why the language model is not in charge</h3>
+    <p>The hardest architectural decision was how much to let an LLM decide. Free-form generation can infer emotional states it has no basis for, escalate pressure, or quietly take over the user&rsquo;s judgment, and all three were named as risks in the expert review.</p>
+    <p>So the system runs in three layers and the language model only occupies the last one. A finite-state machine, driven by explicit user events, decides <em>what kind</em> of response is permitted; the model only decides how to word it.</p>
+  </div>
+
+  <div class="ini-layers ini-bleed" data-reveal>
+
+    <div class="ini-layer">
+      <h4 class="ini-layer-name"><span>Layer 1</span>User input</h4>
+      <div class="ini-layer-body">
+        <p>Every action is explicit and user-initiated. Nothing is inferred from behaviour, and nothing runs in the background.</p>
+        <ul class="ini-chips">
+          <li>Profile selection</li>
+          <li>Task input</li>
+          <li>Chat interface</li>
+          <li>Session controls</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ini-layer">
+      <h4 class="ini-layer-name"><span>Layer 2</span>Finite-state logic</h4>
+      <div class="ini-layer-body">
+        <p>A state machine, driven by explicit user events, determines the current condition and limits what kind of response is allowed. This is where the bounded control actually lives.</p>
+        <ul class="ini-chips is-states">
+          <li>Priming</li>
+          <li>Initiating</li>
+          <li>Focused</li>
+          <li>Drifting</li>
+          <li>Blocked</li>
+          <li>Paused</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ini-layer">
+      <h4 class="ini-layer-name"><span>Layer 3</span>LLM language</h4>
+      <div class="ini-layer-body">
+        <p>The model supplies flexible wording inside permitted mechanisms, tone and action constraints. It phrases the response; it does not choose what kind of response is appropriate.</p>
+        <ul class="ini-chips">
+          <li>Bounded role</li>
+          <li>Response constraints</li>
+          <li>Wording within boundaries</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="media media-full ini-scroll" data-reveal-image>
+    <img src="assets/initiator/event-model.jpg" alt="Statechart of a session: not started, getting ready, starting hard, initiating, focused, drifting, extended drift, re-entry, sanctuary, and completed or abandoned, with the interaction variables that drive each transition" width="1920" height="1080" loading="lazy" decoding="async">
+  </div>
+</section>
+
+<!-- ============ FEATURE ONE / PROFILES ============ -->
+
+<section class="project-section major page">
+
+  <div class="section-heading" data-reveal>
+    <p class="eyebrow">Design decision 01</p>
+    <h2>Four ways of being stuck, declared by the user, not detected.</h2>
+    <p>The interviews produced distinct mechanisms, so the system had to respond differently to each. The alternative was to infer the user&rsquo;s emotional state, which DR4 rules out and which the expert review flagged as overclaiming. So the profile is self-declared, phrased as a situation rather than a diagnosis, and switchable at any time.</p>
+  </div>
+
+  <div class="ini-profiles ini-bleed" data-reveal>
+
+    <article class="ini-profile" style="background:#E8C7C8">
+      <span class="ini-profile-mech">Emotional regulation</span>
+      <h3>Heavy Heart</h3>
+      <p>Affective heaviness</p>
+      <span class="ini-profile-basis">From an observed emotion-regulation mechanism</span>
+    </article>
+
+    <article class="ini-profile" style="background:#FFF1C7">
+      <span class="ini-profile-mech">Deadline pressure</span>
+      <h3>Time Panic</h3>
+      <p>Deadline pressure</p>
+      <span class="ini-profile-basis">Design-derived profile</span>
+    </article>
+
+    <article class="ini-profile" style="background:#D6EDF8">
+      <span class="ini-profile-mech">External structure</span>
+      <h3>Blank Mind</h3>
+      <p>No clear starting point</p>
+      <span class="ini-profile-basis">From an observed external-structure mechanism</span>
+    </article>
+
+    <article class="ini-profile" style="background:#C8DDD0">
+      <span class="ini-profile-mech">Readiness-waiting</span>
+      <h3>Just Stuck</h3>
+      <p>Unclear friction</p>
+      <span class="ini-profile-basis">Low-threshold catch-all entry</span>
+    </article>
+
+  </div>
+
+  <p class="caption" data-reveal>Three profiles come straight from an observed mechanism. <strong>Time Panic</strong> is design-derived, and <strong>Just Stuck</strong> exists so that friction the user cannot name still has an entry point. The card colours are the product&rsquo;s own state cues, below.</p>
+
+  <div class="media media-medium" data-reveal-image>
+    <img src="assets/initiator/ui-profile-picker.png" alt="The shipped profile picker: &lsquo;How are you stuck right now?&rsquo; with the four profiles as selectable cards" width="1494" height="936" loading="lazy" decoding="async">
+  </div>
+
+  <p class="caption" data-reveal>The same four in the interface. The question is asked in the present tense, using &ldquo;right now&rdquo; and &ldquo;you can switch back anytime&rdquo;, so choosing one is not a claim about who you are.</p>
+
+</section>
+
+<!-- ============ FEATURE TWO / LANGUAGE ============ -->
+
+<section class="project-section major page">
+
+  <div class="section-heading" data-reveal>
+    <p class="eyebrow">Design decision 02</p>
+    <h2>The tone is a constraint list, not a personality.</h2>
+    <p>Encouragement is the default register of productivity tools, and it is exactly what DR4 forbids: praise implies evaluation, and evaluation is part of what raises the threshold. So the rules are enforced in the system prompt rather than left to the model&rsquo;s judgment.</p>
+  </div>
+
+  <div class="text-media">
+
+    <div class="text-media-copy" data-reveal>
+      <ul class="ini-rules">
+        <li>30 words maximum</li>
+        <li>One question at a time, never stacked</li>
+        <li>No directive language, so &ldquo;want to&hellip;?&rdquo; not &ldquo;you should&hellip;&rdquo;</li>
+        <li>No praise or moral judgment</li>
+        <li>Intensity calibrated to the current state</li>
+      </ul>
+      <p style="margin-top:32px">The banned list is specific: <em>Acknowledged</em> reads cold; <em>Great job</em> is performative praise; <em>Don&rsquo;t worry</em> invalidates; <em>Just&hellip;</em> minimises; <em>You got this</em> is cheerleading. The aim is a response the user does not have to decode.</p>
+    </div>
+
+    <div data-reveal-image>
+      <img src="assets/initiator/prompt-design.jpg" alt="The system prompt source: register matching, length limits, a never-use list, agency-preserving phrasings and response templates" width="1624" height="1752" loading="lazy" decoding="async">
+    </div>
+
+  </div>
+
+  <p class="caption" data-reveal>The rules live in <code>chat.service.ts</code> as an explicit never-use list and a set of response templates the model paraphrases rather than recites. Design grounding: Emotional Support Conversation strategies (Liu et al., 2021); autonomy-supportive communication and Motivational Interviewing (Miller &amp; Rollnick, 2013); Self-Determination Theory (Ryan &amp; Deci, 2000).</p>
+
+</section>
+
+<!-- ============ FEATURE THREE / FIRST ACTION ============ -->
+
+<section class="project-section page">
+
+  <div class="section-heading" data-reveal>
+    <p class="eyebrow">Design decision 03</p>
+    <h2>Decompose only when the user is already moving.</h2>
+    <p>The model interprets the described task and proposes one manageable first action. It breaks the goal into sub-goals only when needed, because a full plan produced at the threshold is itself a source of load.</p>
+  </div>
+
+  <div class="media media-medium" data-reveal-image>
+    <img src="assets/initiator/decomposition.jpg" alt="Diagram: a goal passed to the LLM agent, decomposed into sub-goals and then into individual tasks only when required" width="2400" height="1624" loading="lazy" decoding="async">
+  </div>
+
+  <p class="caption" data-reveal>The service also surfaces one question, unknown element or personally meaningful point to inspect, raising the task&rsquo;s investigability to create a small pull toward the first action. Ref: Wei et al., 2022; Huang et al., 2024; Prasad et al., 2024; Steglich-Petersen &amp; Varga, 2025. Service logic developed by the author.</p>
+
+  <div class="text-media" style="margin-top:80px">
+
+    <div class="text-media-copy" data-reveal>
+      <h3>Four ways in, none of them &ldquo;start the task&rdquo;.</h3>
+      <p>What the decomposition produces has to land as something the user can pick without committing. Each option names a cost rather than a goal: a two-minute version, a timed burst with company, unstructured typing, or no task at all.</p>
+      <p><strong>Just be here</strong> is the one that matters most. It lets someone open the tool without doing any work, which keeps the tool available on the days it is needed most.</p>
+    </div>
+
+    <div data-reveal-image>
+      <img class="ini-ui-still" src="assets/initiator/ui-help-menu.png" alt="Initiator&rsquo;s help menu: smallest first move, 5 minute cozy start, brain dump, and just be here" width="485" height="430" loading="lazy" decoding="async">
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ============ WIREFRAMES ============ -->
+
+<section class="project-section major page">
+
+  <div class="section-heading" data-reveal>
+    <p class="eyebrow">Structure</p>
+    <h2>Ten element groups, wired end to end before any visual work.</h2>
+  </div>
+
+  <div class="media media-full ini-wide-figure ini-scroll" data-reveal-image>
+    <img src="assets/initiator/wireframes.jpg" alt="Wireframe set covering on-boarding, support profile details, chat home, state selection, task session, meditation, history and reflection, timer, settings and calendar sync, connected by navigation flows" width="2400" height="1350" loading="lazy" decoding="async">
+  </div>
+
+  <p class="caption" data-reveal>On-boarding, support profiles, chat home, state selection, task session, meditation, history and reflection, timer, settings, calendar sync. The coloured routes show which selections change the conversational prompt downstream. Ref: Medium UX Design for ADHD Guide; accessibilitychecker.org neurodivergent UX guidance.</p>
+
+</section>
+
+<!-- ============ DESIGN SYSTEM ============ -->
+
+<section class="project-section major page">
+
+  <div class="section-heading" data-reveal>
+    <p class="eyebrow">Design system</p>
+    <h2>Warm neutrals, soft pastels, and a character that never asks for anything.</h2>
+    <p>The visual language had the same job as the copy: stay present without applying pressure. No alert reds, no progress greens and no badges. The palette is built from warm neutrals, with one soft pastel per emotional state so a state change reads as a shift in temperature rather than a score.</p>
+  </div>
+
+  
+
+  
+
+  <div class="media media-full ini-scroll" data-reveal-image>
+    <img src="assets/initiator/design-system.jpg" alt="The design system board: logo construction, the Inter type specimen, the full colour palette, the icon set, component samples and Momo&rsquo;s state expressions" width="2400" height="1350" loading="lazy" decoding="async">
+  </div>
+
+  <p class="caption" data-reveal>The board as built. The logo combines the initial &ldquo;I&rdquo; with Momo, giving initiation and gentle co-presence in one mark, and the expression set on the right is the whole emotional range the character is allowed.</p>
+
+  <div class="media media-medium" data-reveal-image>
+    <img src="assets/initiator/momo.jpg" alt="Momo, the companion character at the centre of Initiator&rsquo;s interface" width="1672" height="941" loading="lazy" decoding="async">
+  </div>
+
+  <p class="caption" data-reveal>Momo is the system&rsquo;s presence, not its voice. The evaluation later showed this is the riskiest part of the design, as the reflection below explains.</p>
+
+</section>
+
+<!-- ============ PROTOTYPE FLOW ============ -->
+
+<section class="project-section major page">
+
+  <div class="section-heading" data-reveal>
+    <p class="eyebrow">Prototype</p>
+    <h2>Seven screens, end to end.</h2>
+  </div>
+
+  <div class="media media-full ini-scroll" data-reveal-image>
+    <img src="assets/initiator/prototype-flow.jpg" alt="Seven prototype screens in sequence: install and open the side panel, welcome, choose a profile, the seven-state overview, sidebar chat, task entry, and reflection" width="2400" height="1350" loading="lazy" decoding="async">
+  </div>
+
+  <p class="caption" data-reveal>Add the extension and open the side panel, then: welcome, profile selection, the state overview, a constrained state-sensitive conversation, naming a task and choosing a first action, and a lightweight session trace.</p>
+
+</section>
+
+<!-- ============ IN USE ============ -->
+
+<section class="project-section major page">
+
+  <div class="section-heading" data-reveal>
+    <h2>It lives in the browser, beside the work.</h2>
+    <p>Initiator is a Chrome extension with a side panel, so support arrives in the tab where the task already is. There is no separate app to open, which would be one more thing to start.</p>
+  </div>
+
+  <figure class="media media-full" data-reveal-image>
+    <div class="video-frame">
+      <iframe src="https://www.youtube.com/embed/cpseKGypXYA" title="Initiator: simulated task usage in different scenarios" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+  </figure>
+
+  <p class="caption" data-reveal>Simulated task usage across different scenarios: the side panel opening in the tab where the task already is, a state declared, a task named, and a first action chosen.</p>
+
+</section>
+
+<!-- ============ IMPLEMENTATION ============ -->
+
+<section class="project-section compact page">
+
+  <div class="section-heading" data-reveal>
+    <p class="eyebrow">Implementation</p>
+    <h2>What it is built on.</h2>
+  </div>
+
+  <div class="media media-full ini-wide-figure ini-scroll" data-reveal-image>
+    <img src="assets/initiator/technical-architecture.jpg" alt="Technical architecture in five layers: user interaction, a Chrome MV3 extension with an Angular side panel, agent state orchestration with a rule-based finite state machine, local persistence only, and an Azure OpenAI backend behind an Express proxy" width="2400" height="1246" loading="lazy" decoding="async">
+  </div>
+
+  <p class="caption" data-reveal>Chrome MV3 extension, Angular 21 side panel, a rule-based state machine holding the ten internal states, GPT-4o reached through an Express proxy. Local storage only, with no backend database and no cloud sync, which is what keeps the privacy claim honest.</p>
+
+</section>
+
+<!-- ============ QUOTE ============ -->
+
+<section class="quote-block page">
+  <blockquote data-reveal>Starting is not always a motivation problem.</blockquote>
+</section>
+
+<!-- ============ 04 EVALUATION ============ -->
+
+<section class="project-section major page">
+
+  <div class="section-heading" data-reveal>
+    <p class="eyebrow">04 / Evaluation</p>
+    <h2>What happened when it met real tasks.</h2>
+    <p>Before user testing, the prototype was reviewed from an ADHD coaching perspective by Clare Dudeney, a counsellor and ADHD coach with 17 years of experience, who confirmed the affect-first approach and pushed to keep the system low-pressure.</p>
+  </div>
+
+  <figure class="media media-full ini-scroll" data-reveal-image>
+    <img src="assets/initiator/expert-review.jpg" width="2400" height="1350" alt="Proxy-based expert review by Clare Dudeney, a counsellor and ADHD coach with 17 years of experience. Key feedback: the affect-first approach is appropriate, the four emotional entry states are meaningful, the language design is suitable, micro-actions are valuable, Momo works as quiet support, and the Chrome extension format is justified." loading="lazy" decoding="async">
+  </figure>
+
+  <div class="section-heading" data-reveal style="margin-top:72px">
+    <p class="eyebrow">Academic review</p>
+  </div>
+
+  <div class="ini-types ini-bleed" data-reveal>
+
+    <div class="ini-type">
+      <h3>Prof. Niklas Elmqvist</h3>
+      <p class="ini-type-mech">HCI and human-centred AI system design</p>
+      <p>Reviewed the system architecture from a human-computer interaction and human-centred AI perspective.</p>
+    </div>
+
+    <div class="ini-type">
+      <h3>Prof. Somogy Varga</h3>
+      <p class="ini-type-mech">Conceptual framing of affect and curiosity</p>
+      <p>Reviewed the philosophical grounding of curiosity, affect and cognitive scaffolding in ADHD, and the framing of task initiation.</p>
+    </div>
+
+    <div class="ini-type">
+      <h3>Concerns raised</h3>
+      <p class="ini-type-mech">Four constraints that changed the build</p>
+      <ul class="ini-rules" style="margin-top:0">
+        <li>Avoid overclaiming affective inference</li>
+        <li>Make system states interpretable</li>
+        <li>Avoid patronising micro-prompts</li>
+        <li>Clarify the ethical scope</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <p class="caption" data-reveal>Three of the four went straight into the architecture: self-declared profiles instead of inferred affect, visible session states, and the ban on micro-prompts. The fourth, ethical scope, is what keeps the system local-storage only.</p>
+
+  <div class="project-copy copy-wide" data-reveal>
+    <p>18 participants (age 18&ndash;35; 12 female, 6 male; 9 master&rsquo;s students, 4 full-time workers, 5 others) each chose a real task of their own, used Initiator, reflected aloud, and completed a five-dimension post-test questionnaire.</p>
+  </div>
+
+  <figure class="media media-full ini-scroll" data-reveal-image>
+    <img src="assets/initiator/user-evaluation.jpg" width="2400" height="1350" alt="User evaluation results. 18 participants aged 18 to 35, 12 female and 6 male, 9 master&rsquo;s students, 4 full-time workers and 5 others, each chose a real task, used Initiator, reflected aloud and completed a five-dimension post-test questionnaire. Positive dimensions: pre-action concept clarity 4.61, trust and boundary clarity 4.28, profile and state legibility 4.23, low-pressure tone and emotional safety 4.17, first-action support 4.13. Concern dimensions, where lower is better: dependency concern 1.89, privacy concern 1.67." loading="lazy" decoding="async">
+  </figure>
+
+  
+
+  
+
+  <ol class="ini-findings" data-reveal>
+
+    <li>
+      <h3>Initiator made the pre-action threshold legible.</h3>
+    </li>
+
+    <li>
+      <h3>Profile-based support helped, but some users needed it to stay lighter.</h3>
+    </li>
+
+    <li>
+      <h3>First-action support worked best when it became physical and immediate.</h3>
+      <blockquote>&ldquo;The system was most useful when it translated a wide task into a low-cost action the body could perform now.&rdquo;</blockquote>
+    </li>
+
+    <li>
+      <h3>Low-stress support is valued, but tone and presence need calibration.</h3>
+      <blockquote>&ldquo;Some users read Momo and gentle language as childish or condescending.&rdquo;<br>&ldquo;Others found the tone safe but formulaic when the emotional context was more complex.&rdquo;</blockquote>
+    </li>
+
+  </ol>
+
+</section>
+
+<!-- ============ 05 REFLECTION ============ -->
+
+<section class="project-section major page">
+
+  <div class="section-heading" data-reveal>
+    <p class="eyebrow">05 / Reflection</p>
+    <h2>The tone finding is the one that matters.</h2>
+  </div>
+
+  <div class="project-copy copy-split" data-reveal>
+    <p>The fourth finding cuts against the design&rsquo;s central move. Gentleness was chosen to remove evaluative pressure, and for some participants it read as condescension, which is its own kind of pressure. A calm register is not neutral; it is still a register, and it lands differently depending on who is receiving it. Calibrating that, rather than defaulting to softness, is the open problem.</p>
+    <div class="copy-split-body"><p>The next step is to make Initiator&rsquo;s support more situated, accountable and reliable.</p></div></div>
+
+  <div class="ini-figures" data-reveal>
+
+    <div class="ini-figure">
+      <p><strong>Longitudinal use.</strong> Does support remain useful during real work over time?</p>
+    </div>
+
+    <div class="ini-figure">
+      <p><strong>Support profile calibration.</strong> How can profiles remain lightweight without oversimplifying experience?</p>
+    </div>
+
+    <div class="ini-figure">
+      <p><strong>Situated wording.</strong> How can adaptive support preserve autonomy, privacy and clear boundaries?</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ============ CONTRIBUTION ============ -->
+
+<section class="project-section major page">
+
+  <div class="section-heading" data-reveal>
+    <p class="eyebrow">Contribution</p>
+    <h2>Task initiation as a designable threshold.</h2>
+    <p>The thesis reframes starting as a threshold between intention and the first concrete action, something a system can be built against, rather than a deficit of motivation to be corrected.</p>
+  </div>
+
+  <div class="insight-grid">
+
+    <article class="insight-card" data-reveal data-delay="1">
+      <span class="insight-number">01</span>
+      <h3>Conceptual</h3>
+      <p>The Action Threshold Model: affective load, epistemic engagement and contextual support as the three forces that raise or lower the threshold before a first action.</p>
+    </article>
+
+    <article class="insight-card" data-reveal data-delay="2">
+      <span class="insight-number">02</span>
+      <h3>Empirical</h3>
+      <p>Initiation mechanisms, drawn from 40 questionnaire responses, seven episodic interviews and 86 user quotes across eight tools, giving scale, then mechanism, then the gap current tools leave.</p>
+    </article>
+
+    <article class="insight-card" data-reveal data-delay="3">
+      <span class="insight-number">03</span>
+      <h3>Design</h3>
+      <p>The Initiator prototype and its system logic: self-declared profiles, bounded generation, and support that stops at the first action rather than managing the whole task.</p>
+    </article>
+
+  </div>
+
+</section>
+
+<!-- ============ NEXT ============ -->
+
+<a class="next-project page" href="ml-move.html" data-reveal>
+  <p class="next-project-label">Next project</p>
+  <h2>MoveML &rarr;</h2>
+</a>
+
+</main>
+
+<footer class="site-footer page">
+
+  <div class="footer-inner">
+    <p>&copy; <span data-year>2026</span> Mindan Chen</p>
+    <p>Milan / Europe</p>
+  </div>
+
+</footer>
+
+<script src="js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img"
+     aria-label="LabBridge cover: the question you never sent — under review, CHI 2027">
+  <rect width="1600" height="900" fill="#eeede8"/>
+  <text x="232" y="392" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="92"
+        font-weight="500" letter-spacing="-4" fill="#111111">The question</text>
+  <text x="232" y="500" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="92"
+        font-weight="500" letter-spacing="-4" fill="#111111">you never sent.</text>
+  <path d="M232 576 H560" stroke="#9fc8a5" stroke-width="5"/>
+  <text x="232" y="662" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="25"
+        letter-spacing="3.4" fill="#727272">UNDER REVIEW &#183; CHI 2027</text>
+</svg>

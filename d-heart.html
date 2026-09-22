@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>D-heart &middot; Mindan Chen</title>
+  <meta name="description" content="Redesigning the D-heart ECG app and product for people with no clinical training, so a first reading is something they can complete on their own.">
+
+  <script>document.documentElement.className += " js";</script>
+
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/project.css">
+
+</head>
+
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+
+  <nav class="site-nav">
+
+    <a class="site-logo" href="index.html">Mindan Chen</a>
+
+    <div class="nav-links">
+      <a data-nav="work"    href="index.html#work">Work</a>
+      <a data-nav="about"   href="about.html">About</a>
+      <a data-nav="contact" href="mailto:mindan.chen@mail.polimi.it">Contact</a>
+    </div>
+
+  </nav>
+
+</header>
+
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+
+<section class="project-hero page">
+
+  <div class="project-hero-meta" data-reveal>
+    <span>D-heart</span>
+    <span>2024</span>
+  </div>
+
+  <h1 class="project-hero-title" data-reveal data-delay="1">Making an ECG readable by someone who has never taken one.</h1>
+
+  <p class="project-hero-description" data-reveal data-delay="2">D-heart is a hospital-grade portable electrocardiograph: users take their own ECG and receive a report from a cardiologist. In a university&ndash;enterprise collaboration between Politecnico di Milano and D-heart, our team analysed that experience and redesigned the interface around the people it was actually reaching, who are users with no clinical training, taking a reading alone.</p>
+
+  <div class="project-hero-image" data-reveal-image><img src="assets/d-heart/hero.jpg" width="2240" height="1260" alt="D-heart Redesign: the portable ECG device beside the redesigned app, held in one hand" fetchpriority="high" decoding="async"></div>
+
+</section>
+
+
+<!-- ============ PROJECT INFO ============ -->
+
+<section class="project-info-block page">
+
+  <div class="project-info-grid">
+
+    <div class="project-meta-list" data-reveal>
+
+      <div class="meta-item">
+        <p>My role</p>
+        <strong>User research, UI/UX design, high-fidelity prototyping, usability testing, data analysis, video production, and academic report writing.</strong>
+      </div>
+
+      <div class="meta-item">
+        <p>Timeline</p>
+        <strong>Feb 2024 &ndash; May 2024</strong>
+      </div>
+
+      <div class="meta-item">
+        <p>Client</p>
+        <strong>D-heart<br>Healthcare</strong>
+      </div>
+
+      <div class="meta-item">
+        <p>Team</p>
+        <strong>Team project</strong>
+      </div>
+
+    </div>
+
+    <div class="project-copy" data-reveal data-delay="1">
+      <p class="text-large">The company was selling to customers who had never performed a professional ECG test. The existing device and app assumed otherwise.</p>
+      <p>The interface offered no instruction, no plain-language explanation of what was on screen, and nothing that helped a first-time user finish the task with minimal effort. Our goal was to keep the product competitive by making it usable by the audience it was already reaching, through research rather than assertion.</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<div class="page">
+  <div class="divider"></div>
+</div>
+
+
+<!-- ============ 01 CONTEXT ============ -->
+
+<section class="project-section page">
+
+  <div class="section-heading" data-reveal>
+    <p class="eyebrow">01 / The challenge</p>
+    <h2>A medical-grade device sold to people with no medical training.</h2>
+    <p>An ECG reading is only useful if it is taken correctly. That puts the whole burden of accuracy on a user who has never done it before, usually alone, often worried about their heart.</p>
+  </div>
+
+  <div class="project-copy copy-wide" data-reveal>
+    <p>Current ECG devices and apps were not user-friendly enough for this audience. The interface lacked instruction, lacked easy-to-understand information, and lacked the features that would let a new user complete the task with minimal effort.</p>
+  </div>
+
+  <figure class="media media-full" data-reveal-image><div class="video-frame"><iframe src="https://www.youtube.com/embed/C5qWinvH9dM" title="D-heart: the users the device has to work for" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><figcaption class="caption">The people the device has to work for: users with no ECG experience, and the caregivers taking a reading for someone else.</figcaption></figure>
+
+</section>
+
+
+<!-- ============ 02 RESEARCH ============ -->
+
+<section class="project-section major page">
+
+  <div class="section-heading" data-reveal>
+    <p class="eyebrow">02 / Explorative research</p>
+    <h2>Two ways the device actually gets used.</h2>
+    <p>I studied the key process and the usability scenarios around it, rather than the interface in isolation.</p>
+  </div>
+
+  <figure class="media media-full" data-reveal-image><img src="assets/d-heart/research.jpg" width="2240" height="1260" alt="Explorative research board: standalone and collaborative usage scenarios, with the research goals" loading="lazy" decoding="async"><figcaption class="caption">Key process and usability scenarios. The same device is used alone to watch your own heart, and together as a caregiver for someone else&rsquo;s.</figcaption></figure>
+
+  <div class="insight-grid">
+
+    <article class="insight-card" data-reveal data-delay="1">
+      <span class="insight-number">01</span>
+      <h3>Standalone</h3>
+      <p>Users buy D-heart primarily to monitor or prevent health issues of their own. They typically use it alone, and rarely share it with anyone.</p>
+    </article>
+
+    <article class="insight-card" data-reveal data-delay="2">
+      <span class="insight-number">02</span>
+      <h3>Collaborative</h3>
+      <p>Users buy it for convenient ECG monitoring of themselves <em>and</em> others, acting both as care receivers and as caregivers within their families.</p>
+    </article>
+
+    <article class="insight-card" data-reveal data-delay="3">
+      <span class="insight-number">03</span>
+      <h3>What the research set out to answer</h3>
+      <p>Evaluate the overall experience with UX research methods, identify the key pain points and usability obstacles during use, and propose improvements grounded in both.</p>
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- ============ METHOD ============ -->
+
+<section class="project-section page">
+
+  <div class="section-heading" data-reveal>
+    <p class="eyebrow">Method</p>
+    <h2>I ran the research and the testing. The team took the results into the redesign.</h2>
+    <p>Three passes, each producing evidence the next one had to act on, so the redesign was answerable to measurements rather than to taste.</p>
+  </div>
+
+  <div class="insight-grid">
+
+    <article class="insight-card" data-reveal data-delay="1">
+      <span class="insight-number">01</span>
+      <h3>Diagnose</h3>
+      <p>I ran usability testing and multi-angle user research on the existing product, covering system usability, user experience, interaction difficulty and emotional response, alongside the team&rsquo;s heuristic evaluation and cognitive walkthrough. That established what was actually going wrong, and for whom.</p>
+    </article>
+
+    <article class="insight-card" data-reveal data-delay="2">
+      <span class="insight-number">02</span>
+      <h3>Restructure</h3>
+      <p>I used tree testing and card sorting to surface the mental model users already had. The team built a linear workflow and information architecture on it, and I ran a second tree test to check the new structure held.</p>
+    </article>
+
+    <article class="insight-card" data-reveal data-delay="3">
+      <span class="insight-number">03</span>
+      <h3>Verify</h3>
+      <p>Five-second tests settled the visual direction and A/B testing resolved the points where opinion split. I then repeated the original usability measures, so the before and after were directly comparable rather than merely asserted.</p>
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- ============ FINDINGS ============ -->
+
+<section class="project-section major page">
+
+  <div class="section-heading" data-reveal>
+    <p class="eyebrow">Findings</p>
+    <h2>Three failures, and the tasks where they showed up.</h2>
+    <p>Cross-referencing the task data against the emotional evaluation put each complaint on a specific step, rather than leaving it as a general impression that the app was hard.</p>
+  </div>
+
+  <figure class="media media-full" data-reveal-image><img src="assets/d-heart/insights.jpg" width="2240" height="1260" alt="Cross data insights and emotional evaluation: radar charts of task performance annotated with where users failed" loading="lazy" decoding="async"><figcaption class="caption">Task-level data crossed with emotional response. The annotations mark where the trouble concentrated.</figcaption></figure>
+
+  <div class="insight-grid">
+
+    <article class="insight-card" data-reveal data-delay="1">
+      <span class="insight-number">01</span>
+      <h3>Unclear feedback and navigation</h3>
+      <p>When users did something wrong in T5 they could not find a way back, because the return button was not obvious. The system rarely confirmed what had just happened.</p>
+    </article>
+
+    <article class="insight-card" data-reveal data-delay="2">
+      <span class="insight-number">02</span>
+      <h3>Inconsistent, unreliable behaviour</h3>
+      <p>In T2 every user made mistakes, misread the screen and retried. In T8 the information architecture ran contrary to what users expected to find.</p>
+    </article>
+
+    <article class="insight-card" data-reveal data-delay="3">
+      <span class="insight-number">03</span>
+      <h3>Redundant, overcomplicated flows</h3>
+      <p>Almost every subject repeated mistakes on T1, which was password and verification-code entry, before reaching the actual product. In T4 they could not work out how to switch patient.</p>
+    </article>
+
+  </div>
+
+</section>
+
+
+<section class="project-section page">
+
+  <div class="section-heading" data-reveal>
+    <p class="eyebrow">Problem statement</p>
+    <h2>Who it fails, what fails, and why it matters.</h2>
+  </div>
+
+  <figure class="media media-full" data-reveal-image><img src="assets/d-heart/persona.jpg" width="2240" height="1260" alt="Problem statement and persona board: user segmentation and the primary persona, Ben" loading="lazy" decoding="async"><figcaption class="caption">Segmenting on ECG experience, underlying condition and region isolated the group the redesign had to serve: customers with no professional ECG testing experience.</figcaption></figure>
+
+  <div class="project-copy copy-wide" data-reveal>
+    <p><strong>Who:</strong> customers who lack professional ECG testing experience. <strong>What:</strong> the current devices and app are not user-friendly enough for them; the interface lacks instruction, easy-to-understand information and supporting features. <strong>Why it matters:</strong> a new user has to be able to complete the task with minimal effort, or the reading does not happen at all.</p>
+  </div>
+
+</section>
+
+
+<!-- ============ 03 DESIGN PROCESS ============ -->
+
+<section class="project-section major page">
+
+  <div class="section-heading" data-reveal>
+    <p class="eyebrow">03 / Design process</p>
+    <h2>Wireframe, prototype, test, repeat.</h2>
+  </div>
+
+  <figure class="media media-full" data-reveal-image><img src="assets/d-heart/process.jpg" width="2240" height="1260" alt="Design process board: wireframe and testing sessions alongside the wireframe set" loading="lazy" decoding="async"><figcaption class="caption">Task cards were set from users&rsquo; operational needs; after each task users filled in the SEQ, and each session closed with an interview.</figcaption></figure>
+
+</section>
+
+
+<section class="quote-block page">
+  <blockquote data-reveal>Prototyping was the most effective way to gain meaningful feedback.</blockquote>
+</section>
+
+
+<!-- ============ BEYOND THE INTERFACE ============ -->
+
+<section class="quote-block page">
+  <blockquote data-reveal>Our focus is on the entire interaction process, including product design.</blockquote>
+</section>
+
+
+<section class="project-section major page">
+
+  <div class="section-heading" data-reveal>
+    <p class="eyebrow">04 / Beyond the interface</p>
+    <h2>The redesign did not stop at the screen.</h2>
+    <p>The device itself decides whether a first reading succeeds. How the knob turns, how the electrode wires pay out, whether you can tell it is charging. The same testing that found the app&rsquo;s failures found the hardware&rsquo;s.</p>
+  </div>
+
+  <figure class="media media-full" data-reveal-image><div class="video-frame" style="--ratio: 1280 / 689"><iframe src="https://www.youtube.com/embed/bKSmZp7-b-Y" title="D-heart: structure redesign and the intended user experience" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><figcaption class="caption">The structure redesign, and what we wanted the user to feel using it.</figcaption></figure>
+
+  <figure class="media media-full" data-reveal-image><img src="assets/d-heart/product-draft.jpg" width="2240" height="1260" alt="Product draft version: the device annotated with fourteen numbered usability problems and the design responses to them" loading="lazy" decoding="async"><figcaption class="caption">Fourteen problems, located on the object. Users could not tell the on/off switch was the button in the middle, did not know the knob could rotate, mistook the outer ring for the part that turns, and hit the switch by accident while turning it.</figcaption></figure>
+
+  <div class="project-copy copy-wide" data-reveal>
+    <p>The central move was the knob: from a part you had to rotate whole, to a toggle paddle that reads as something you push. The rotation then earned a second job, which is an orange progress arc showing how much electrode wire is still available to pay out, which was the problem users could not otherwise see. The switch moved away from the knob so the two could not be confused, and a breathing light took over power state: blinking when low, breathing while charging.</p>
+  </div>
+
+  <figure class="media media-full" data-reveal-image><img src="assets/d-heart/second-version.jpg" width="2240" height="1260" alt="Second version: 3D-printed top cover parts fitted to the real device and handled in testing" loading="lazy" decoding="async"><figcaption class="caption">A set of top-cover parts was printed and fitted to the actual device, so the redesign could be handled rather than judged from a render.</figcaption></figure>
+
+  <figure class="media media-full" data-reveal-image><img src="assets/d-heart/internal-structure.jpg" width="2240" height="1260" alt="Internal structure study: exploded view of the redesigned housing, with a UEQ word cloud comparing the original and the redesign" loading="lazy" decoding="async"><figcaption class="caption">The exterior change costs almost nothing inside: only the centre shaft needs to double in diameter. The UEQ comparison is the part worth reading. The original returned <em>boring, conventional, usual</em>; the redesign returned <em>easy to learn, inventive, practical, enjoyable</em>.</figcaption></figure>
+
+</section>
+
+
+<!-- ============ 04 RESULTS ============ -->
+
+<section class="project-section major page">
+
+  <div class="section-heading" data-reveal>
+    <p class="eyebrow">05 / Results</p>
+    <h2>A clean interface, and two projected gains.</h2>
+    <p>The redesigned app features a clean, clutter-free interface, making it easier for users to navigate and reach the features that matter.</p>
+  </div>
+
+  <div class="stat-grid">
+
+    <div class="stat" data-reveal data-delay="1">
+      <div class="stat-number">+35%</div>
+      <div class="stat-label">Projected new user adoption, after the improved onboarding</div>
+    </div>
+
+    <div class="stat" data-reveal data-delay="2">
+      <div class="stat-number">+25%</div>
+      <div class="stat-label">Projected user retention, after adding personalisation and customisation</div>
+    </div>
+
+    <div class="stat" data-reveal data-delay="3">
+      <div class="stat-number">2</div>
+      <div class="stat-label">Use scenarios the redesign had to serve at once</div>
+    </div>
+
+  </div>
+
+  <div class="project-copy copy-wide" data-reveal>
+    <p>Both percentages are projections estimated from the usability sessions rather than figures measured after release. They describe the expected effect of the redesigned onboarding and of the added personalisation, set against how the original app performed on the same tasks.</p>
+  </div>
+
+</section>
+
+
+<!-- ============ NEXT ============ -->
+
+<a class="next-project page" href="plus.html" data-reveal>
+  <p class="next-project-label">Next project</p>
+  <h2>Plus: Everybody Counts &rarr;</h2>
+</a>
+
+
+</main>
+
+<footer class="site-footer page">
+
+  <div class="footer-inner">
+    <p>&copy; <span data-year>2026</span> Mindan Chen</p>
+    <p>Milan / Europe</p>
+  </div>
+
+</footer>
+
+<script src="js/main.js"></script>
+
+</body>
+
+</html>
