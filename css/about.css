@@ -21,9 +21,11 @@
   padding-bottom: var(--space-xl);
 }
 
-.ab-intro h1 {
+/* An h2, not an h1: the hero statement above is the page's title. Sized
+   below it so the two do not compete. */
+.ab-intro h2 {
   margin: 0 0 var(--space-md);
-  font-size: clamp(38px, 5vw, 62px);
+  font-size: clamp(30px, 3.6vw, 46px);
   line-height: 1.06;
   letter-spacing: -0.02em;
   font-weight: 400;
