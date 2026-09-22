@@ -550,3 +550,149 @@
   .lg-shot:hover img { transform: none; }
   .st-tab.is-selected .st-tab-num::before { animation: none; display: none; }
 }
+
+
+/* ==========================================================================
+   COMPACT
+   The page was 4.5 screens tall, most of it air. These rules are scoped to
+   .about-page so the project pages keep the roomier rhythm they were tuned
+   for. The aim is that the opening statement, the facts, the research
+   paragraphs and the start of the gallery all arrive without hunting.
+   ========================================================================== */
+
+/* --- opening: title, description and facts in one screen --- */
+
+/* The opening is one row: the statement on the left, the facts on the right,
+   so the two do not stack into a screen and a half. */
+.about-page .project-hero {
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-md);
+
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+  column-gap: var(--space-xl);
+  align-items: start;
+}
+
+/* The About / Mindan Chen label row belongs to the page edges, not to the
+   text column, or the right-hand label lands in the middle of the screen. */
+.about-page .project-hero-meta { grid-column: 1 / -1; }
+
+.about-page .project-hero-title,
+.about-page .project-hero-description,
+.about-page .ab-route { grid-column: 1; }
+
+.about-page .project-hero .project-meta-list {
+  grid-column: 2;
+  grid-row: 2 / span 3;          /* alongside the title, not under the label */
+  padding-top: 6px;              /* optically level with the title's cap height */
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .about-page .project-hero { grid-template-columns: minmax(0, 1fr); }
+  .about-page .project-hero .project-meta-list {
+    grid-column: 1;
+    grid-row: auto;
+    margin-top: var(--space-lg);
+  }
+}
+
+/* project.css leaves a 93px gap above this title, which is right on a case
+   study opening and too much here. */
+.about-page .project-hero-title {
+  margin-top: var(--space-md);
+  font-size: clamp(30px, 3.5vw, 46px);
+  line-height: 1.1;
+  max-width: 21ch;
+}
+
+.about-page .project-hero-description {
+  margin-top: var(--space-sm);
+  font-size: 19px;
+  line-height: 1.55;
+  max-width: 62ch;
+}
+
+.about-page .ab-route {
+  margin-top: var(--space-sm);
+}
+
+.about-page .project-info-block {
+  padding-top: 0;
+  padding-bottom: var(--space-md);
+}
+
+/* Facts on the left, the research paragraphs on the right, and the
+   paragraphs set in two columns so three of them do not become a tall
+   ribbon down one side. */
+/* The meta column moved up into the hero, so the paragraphs get the whole
+   width here and set themselves in two columns. */
+.about-page .project-info-grid {
+  display: block;
+}
+
+.about-page .project-meta-list .meta-item + .meta-item {
+  margin-top: var(--space-md);
+}
+
+.about-page .project-copy {
+  columns: 2;
+  column-gap: var(--space-xl);
+  max-width: none;
+}
+
+.about-page .project-copy p {
+  break-inside: avoid;
+  margin: 0 0 var(--space-md);
+  font-size: 15.5px;
+  line-height: 1.62;
+}
+
+.about-page .project-copy p.text-large {
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+/* --- gallery and story: tighter, and the pictures a little shorter --- */
+
+.about-page .ab-gallery,
+.about-page .ab-story { padding-bottom: var(--space-xl); }
+
+.about-page .ab-head { padding-top: var(--space-md); }
+
+.about-page .lg-track {
+  --row-h: 380px;
+  margin-top: var(--space-md);
+}
+
+.about-page .st-rail { margin-top: var(--space-xl); }
+
+.about-page .st-panels {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-lg);
+}
+
+.about-page .st-panel h3 { margin-bottom: var(--space-md); }
+
+.about-page .st-panel p {
+  font-size: 16.5px;
+  line-height: 1.62;
+  margin-bottom: var(--space-md);
+}
+
+.about-page .st-nav {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-sm);
+}
+
+/* Two columns of prose only make sense when there is room for two. */
+@media (max-width: 900px) {
+  .about-page .project-copy { columns: 1; }
+  .about-page .lg-track { --row-h: 300px; }
+  .about-page .project-hero-title { max-width: none; }
+}
+
+@media (max-width: 560px) {
+  .about-page .lg-track { --row-h: 240px; }
+}
