@@ -1,0 +1,550 @@
+/* ==========================================================================
+   ABOUT
+   The intro, the horizontal life gallery, and the horizontal story timeline.
+   Everything here sits on the tokens in global.css; the only new colour is a
+   restrained terracotta, used for the selected story node and nowhere else.
+   ========================================================================== */
+
+:root {
+  --about-accent: #b4674a;              /* terracotta, selected node only */
+  --about-accent-soft: rgba(180, 103, 74, 0.12);
+}
+
+
+/* ========================================
+   INTRO
+   Compact on purpose: the gallery should start before the first scroll ends.
+======================================== */
+
+.ab-intro {
+  padding-top: var(--space-2xl);
+  padding-bottom: var(--space-xl);
+}
+
+.ab-intro h1 {
+  margin: 0 0 var(--space-md);
+  font-size: clamp(38px, 5vw, 62px);
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+}
+
+.ab-intro p {
+  max-width: var(--reading-width);
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.6;
+  color: var(--color-secondary);
+}
+
+/* Specific enough to beat `.ab-intro p { margin: 0 }`, which otherwise
+   flattens the gap above this line. */
+.ab-intro .ab-route {
+  margin-top: var(--space-lg);
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+}
+
+
+/* ========================================
+   SECTION HEADS
+======================================== */
+
+.ab-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-md);
+
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--color-line);
+}
+
+.ab-head h2 {
+  margin: 0;
+  font-size: clamp(26px, 3vw, 36px);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  font-weight: 400;
+}
+
+.ab-head p {
+  margin: var(--space-xs) 0 0;
+  font-size: 15px;
+  color: var(--color-secondary);
+}
+
+.ab-eyebrow {
+  margin: 0 0 var(--space-sm);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+}
+
+
+/* ========================================
+   LIFE GALLERY
+   One row, scrolled sideways. The track is the only thing that overflows;
+   the page itself never scrolls horizontally.
+======================================== */
+
+.ab-gallery { padding-bottom: var(--space-2xl); }
+
+.lg-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.lg-arrow {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+
+  border: 1px solid var(--color-line);
+  border-radius: 50%;
+  background: var(--color-bg);
+  color: var(--color-text);
+
+  cursor: pointer;
+  transition: background 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+
+.lg-arrow:hover:not(:disabled) { background: var(--color-surface); }
+.lg-arrow:disabled { opacity: 0.3; cursor: default; }
+.lg-arrow svg { width: 16px; height: 16px; display: block; }
+
+.lg-counter {
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-secondary);
+  min-width: 4.5em;
+  text-align: right;
+}
+
+/* The track. `scroll-padding` keeps a snapped item off the very edge, and the
+   right-hand padding is what lets the next photo peek in. */
+.lg-track {
+  --row-h: 520px;                       /* the one place the row height lives */
+  margin-top: var(--space-lg);
+
+  display: flex;
+  gap: 10px;                            /* tight, so the row reads as a feed */
+
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x proximity;
+  scroll-padding-left: var(--page-padding);
+
+  /* Bleed to the page edges so the row reads as continuing past the screen. */
+  margin-left: calc(-1 * var(--page-padding));
+  margin-right: calc(-1 * var(--page-padding));
+  padding: 0 var(--page-padding) var(--space-sm);
+
+  scrollbar-width: none;                /* the custom bar below replaces it */
+  -ms-overflow-style: none;
+  cursor: grab;
+}
+
+.lg-track::-webkit-scrollbar { display: none; }
+.lg-track.is-dragging { cursor: grabbing; scroll-snap-type: none; }
+.lg-track.is-dragging .lg-shot { pointer-events: none; }
+
+.lg-item {
+  flex: 0 0 auto;
+  margin: 0;
+  scroll-snap-align: start;
+}
+
+/* Photo-forward: no frame, no shadow, just the picture. The only chrome is
+   a 2px radius, so a row of photographs reads as photographs. */
+/* One height for the whole row; each photo's own ratio sets its width. */
+.lg-shot {
+  display: block;
+  height: var(--row-h);
+  aspect-ratio: var(--ar, 3 / 2);
+  max-width: 86vw;
+  padding: 0;
+  border: 0;
+  background: var(--color-surface);
+  cursor: zoom-in;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.lg-shot img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+  -webkit-user-drag: none;
+  transition: transform 0.6s var(--ease), filter 0.4s var(--ease);
+}
+
+.lg-shot:hover img { transform: scale(1.03); }
+
+/* Captions sit quietly under the picture and only come forward on hover,
+   so the row is a run of images rather than a run of labelled cards. */
+.lg-caption {
+  margin-top: 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  color: var(--color-tertiary);
+  transition: color 0.3s var(--ease);
+}
+
+.lg-item:hover .lg-caption { color: var(--color-secondary); }
+
+.lg-location {
+  display: block;
+  color: var(--color-tertiary);
+}
+
+/* The scroll indicator: a hairline with a filled portion tracking position. */
+.lg-bar {
+  position: relative;
+  height: 2px;
+  margin-top: var(--space-md);
+  background: var(--color-line);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.lg-bar::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 28%;
+  background: var(--color-text);
+  border-radius: 2px;
+  transform: translateX(calc(var(--progress, 0) * (100cqw - 100%)));
+  transition: transform 0.12s linear;
+}
+
+.lg-bar { container-type: inline-size; }
+
+
+/* ========================================
+   ENLARGED VIEW
+======================================== */
+
+.lg-dialog {
+  width: min(94vw, 1200px);
+  max-width: none;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.lg-dialog::backdrop { background: rgba(28, 26, 23, 0.82); }
+
+.lg-dialog-inner {
+  position: relative;
+  background: var(--color-bg);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.lg-dialog img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 78vh;
+  object-fit: contain;
+  background: var(--color-surface);
+}
+
+.lg-dialog figcaption {
+  padding: var(--space-md);
+  font-size: 14px;
+  color: var(--color-secondary);
+}
+
+.lg-close {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+
+/* ========================================
+   STORY TIMELINE
+   One rail, five nodes, one reading panel. The rail scrolls sideways on
+   narrow screens rather than stacking, so it stays a timeline.
+======================================== */
+
+.ab-story { padding-bottom: var(--space-2xl); }
+
+.st-rail {
+  margin-top: var(--space-2xl);
+
+  display: flex;
+  gap: var(--space-md);
+
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  margin-left: calc(-1 * var(--page-padding));
+  margin-right: calc(-1 * var(--page-padding));
+  padding: 0 var(--page-padding) var(--space-sm);
+}
+
+.st-rail::-webkit-scrollbar { display: none; }
+
+.st-tab {
+  flex: 1 0 200px;
+  position: relative;
+
+  display: block;
+  padding: var(--space-xl) var(--space-sm) 0;
+  border: 0;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  color: var(--color-secondary);
+}
+
+/* The line runs through every node, so it reads as one timeline rather than
+   five separate cards. The first and last stop at their own node.
+   Chapters already passed carry the accent, so the rail doubles as a
+   progress bar through the story. */
+.st-tab::before {
+  content: "";
+  position: absolute;
+  top: 25px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--color-line);
+  transition: background 0.4s var(--ease);
+}
+
+.st-tab:first-child::before { left: 50%; }
+.st-tab:last-child::before { right: 50%; }
+
+.st-tab.is-past::before { background: var(--about-accent); opacity: 0.55; }
+
+/* On the selected node the line arrives in colour and leaves in grey. */
+.st-tab.is-selected::before {
+  background: linear-gradient(
+    to right,
+    rgba(180, 103, 74, 0.55) 0%,
+    rgba(180, 103, 74, 0.55) 50%,
+    var(--color-line) 50%,
+    var(--color-line) 100%
+  );
+}
+
+.st-tab:first-child.is-selected::before { background: var(--color-line); }
+
+.st-tab::after {
+  content: "";
+  position: absolute;
+  top: 19px;
+  left: calc(50% - 6px);
+
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--color-bg);
+  box-shadow: inset 0 0 0 1px var(--color-line);
+
+  transition: background 0.25s var(--ease), box-shadow 0.25s var(--ease),
+              transform 0.25s var(--ease);
+}
+
+/* A passed node is filled but quiet; the selected one gets the halo. */
+.st-tab.is-past::after {
+  background: var(--about-accent);
+  box-shadow: inset 0 0 0 1px var(--about-accent);
+  opacity: 0.55;
+}
+
+.st-tab.is-selected::after {
+  background: var(--about-accent);
+  box-shadow: inset 0 0 0 1px var(--about-accent),
+              0 0 0 6px var(--about-accent-soft);
+  transform: scale(1.12);
+}
+
+/* A slow pulse on the selected node, purely decorative, and off for anyone
+   who has asked for less motion. */
+.st-tab.is-selected .st-tab-num::before {
+  content: "";
+  position: absolute;
+  top: 19px;
+  left: calc(50% - 6px);
+
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  border: 1px solid var(--about-accent);
+
+  animation: st-pulse 2.6s var(--ease) infinite;
+  pointer-events: none;
+}
+
+@keyframes st-pulse {
+  0%   { transform: scale(1);   opacity: 0.55; }
+  70%  { transform: scale(2.3); opacity: 0; }
+  100% { transform: scale(2.3); opacity: 0; }
+}
+
+.st-tab-num {
+  display: block;
+  position: static;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.06em;
+}
+
+.st-tab-title {
+  display: block;
+  margin-top: 2px;
+  font-size: 16px;
+  color: var(--color-text);
+}
+
+.st-tab-sub {
+  display: block;
+  margin-top: 2px;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.st-tab.is-selected .st-tab-num,
+.st-tab.is-selected .st-tab-title { color: var(--about-accent); }
+
+.st-tab:hover:not(.is-selected)::after { box-shadow: inset 0 0 0 1px var(--color-text); }
+
+/* --- the reading panel --- */
+
+.st-panels {
+  margin-top: var(--space-2xl);
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--color-line);
+}
+
+.st-panel h3 {
+  margin: 0 0 var(--space-lg);
+  font-size: clamp(24px, 2.6vw, 32px);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  font-weight: 400;
+}
+
+/* A wide measure on purpose: these chapters are long, and a narrow column
+   turned each one into a tall stack of short lines. Held at 54em rather than
+   the full column because past roughly 110 characters the eye starts losing
+   its place on the return sweep. */
+.st-panel p {
+  max-width: 54em;
+  margin: 0 0 var(--space-lg);
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--color-text);
+}
+
+.st-panel p:last-child { margin-bottom: 0; }
+
+.st-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+
+  margin-top: var(--space-xl);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-line);
+}
+
+.st-nav button {
+  padding: 10px 18px;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s var(--ease);
+}
+
+.st-nav button:hover:not(:disabled) { background: var(--color-surface); }
+.st-nav button:disabled { opacity: 0.35; cursor: default; }
+
+.st-position {
+  margin-left: auto;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-secondary);
+}
+
+
+/* ========================================
+   FOCUS
+   Visible on keyboard, quiet on mouse.
+======================================== */
+
+.lg-arrow:focus-visible,
+.lg-shot:focus-visible,
+.st-tab:focus-visible,
+.st-nav button:focus-visible,
+.lg-close:focus-visible {
+  outline: 2px solid var(--about-accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+
+/* ========================================
+   RESPONSIVE
+   The gallery and the rail stay horizontal at every width. That is the point
+   of both, so neither collapses into a stack.
+======================================== */
+
+@media (max-width: 900px) {
+  .ab-intro { padding-top: var(--space-xl); }
+  .lg-track { --row-h: 320px; }
+  .st-tab { flex: 0 0 168px; }
+  .st-panel p { font-size: 16px; }
+}
+
+@media (max-width: 560px) {
+  .lg-track { --row-h: 250px; }
+  .st-tab { flex: 0 0 150px; }
+  .st-nav { flex-wrap: wrap; }
+  .st-position { margin-left: 0; width: 100%; }
+}
+
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .lg-track { scroll-behavior: auto; }
+  .lg-shot img,
+  .st-tab::before,
+  .st-tab::after,
+  .lg-bar::after { transition: none; }
+  .lg-shot:hover img { transform: none; }
+  .st-tab.is-selected .st-tab-num::before { animation: none; display: none; }
+}
