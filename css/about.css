@@ -6,8 +6,11 @@
    ========================================================================== */
 
 :root {
-  --about-accent: #b4674a;              /* terracotta, selected node only */
-  --about-accent-soft: rgba(180, 103, 74, 0.12);
+  /* Borrowed from the Plus design system: periwinkle and orange as the brand
+     pair, and its five pastels below, one per chapter. */
+  --about-accent: #a3acf9;
+  --about-accent-soft: rgba(163, 172, 249, 0.16);
+  --about-orange: #f4975e;
 }
 
 
@@ -299,7 +302,8 @@
   margin-top: var(--space-2xl);
 
   display: flex;
-  gap: var(--space-md);
+  gap: 30px;
+  align-items: stretch;
 
   overflow-x: auto;
   scrollbar-width: none;
@@ -312,121 +316,135 @@
 
 .st-rail::-webkit-scrollbar { display: none; }
 
+/* Five cards, each in its own Plus pastel. No connector: the row of colours
+   is what holds them together, the way the Plus cards do it. */
 .st-tab {
   flex: 1 0 210px;
   position: relative;
 
   display: block;
-  padding: 62px var(--space-sm) 0;
+  padding: var(--space-md) var(--space-sm) var(--space-md) var(--space-md);
   border: 0;
-  background: none;
+  border-radius: 16px;
+  background: var(--c-pale);
   text-align: left;
   cursor: pointer;
   color: var(--color-secondary);
+
+  transition: background 0.3s var(--ease), transform 0.3s var(--ease),
+              box-shadow 0.3s var(--ease);
 }
 
-/* A hand-drawn wave rather than a ruled hairline. The SVG is one period of a
-   sine-ish curve, repeated across the tab, so the path reads as drawn instead
-   of plotted. Chapters already read carry it in colour. */
-.st-tab::before {
+/* Three dots in the gap: enough to read left-to-right as one sequence,
+   without the ruled line that made it look like a chart axis. Dots behind
+   the current chapter carry its colour, so the row shows progress. */
+.st-tab:not(:last-child)::after {
   content: "";
   position: absolute;
-  top: 27px;
-  left: 0;
-  right: 0;
-  height: 10px;
+  top: 38px;
+  right: -21px;
 
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='10' viewBox='0 0 44 10'%3E%3Cpath d='M0 5 Q11 0.6 22 5 T44 5' fill='none' stroke='%23c9c4bb' stroke-width='1.7' stroke-linecap='round'/%3E%3C/svg%3E");
+  width: 19px;
+  height: 5px;
+
+  background-image: radial-gradient(circle, #cfcabf 2px, transparent 2.2px);
+  background-size: 7px 5px;
   background-repeat: repeat-x;
-  background-position: left center;
+
+  transition: background-image 0.3s var(--ease);
 }
 
-.st-tab:first-child::before { left: 50%; }
-.st-tab:last-child::before { right: 50%; }
-
-.st-tab.is-past::before,
-.st-tab.is-selected::before {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='10' viewBox='0 0 44 10'%3E%3Cpath d='M0 5 Q11 0.6 22 5 T44 5' fill='none' stroke='%23b4674a' stroke-width='1.9' stroke-linecap='round' opacity='0.6'/%3E%3C/svg%3E");
+.st-tab.is-past::after,
+.st-tab.is-selected::after {
+  background-image: radial-gradient(circle, var(--c-ink) 1.8px, transparent 2px);
+  opacity: 0.55;
 }
 
-/* The number becomes the stop on the map: a round, slightly tilted badge you
-   could imagine stamping. */
+.st-tab:nth-child(1) { --c: #d3eaff; --c-pale: #f2f8ff; --c-ink: #2f5f8c; }
+.st-tab:nth-child(2) { --c: #ffe3a5; --c-pale: #fff9ec; --c-ink: #8a6413; }
+.st-tab:nth-child(3) { --c: #ffdccb; --c-pale: #fff6f1; --c-ink: #9a5230; }
+.st-tab:nth-child(4) { --c: #e1e9be; --c-pale: #f6f9ec; --c-ink: #5b6b2e; }
+.st-tab:nth-child(5) { --c: #eaf0ff; --c-pale: #f6f8ff; --c-ink: #4a55a8; }
+
+.st-tab:hover:not(.is-selected) {
+  background: var(--c);
+  transform: translateY(-2px);
+}
+
+.st-tab.is-past { background: var(--c-pale); }
+
+.st-tab.is-selected {
+  background: var(--c);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 26px rgba(28, 26, 23, 0.10);
+  z-index: 1;
+}
+
+/* Played once per pick: the card springs up, slightly past its resting size,
+   so choosing a chapter feels like picking something up. */
+.st-tab.is-picking {
+  animation: st-pop 0.46s var(--ease);
+}
+
+@keyframes st-pop {
+  0%   { transform: translateY(0) scale(0.97); }
+  50%  { transform: translateY(-7px) scale(1.045); }
+  100% { transform: translateY(-4px) scale(1); }
+}
+
+.st-panel.is-entering {
+  animation: st-panel-in 0.44s var(--ease);
+}
+
+@keyframes st-panel-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* The rounded-square badge Plus puts on every card. */
 .st-tab-num {
-  position: absolute;
-  top: 11px;
-  left: calc(50% - 21px);
-
-  width: 42px;
-  height: 42px;
   display: grid;
   place-items: center;
 
-  border-radius: 50%;
-  background: var(--color-bg);
-  box-shadow: inset 0 0 0 1.7px #c9c4bb;
+  width: 34px;
+  height: 34px;
+  margin-bottom: var(--space-sm);
 
-  font-size: 14px;
+  border-radius: 10px;
+  background: #fff;
+
+  font-size: 13px;
   font-variant-numeric: tabular-nums;
-  letter-spacing: 0.02em;
-  color: var(--color-secondary);
+  color: var(--c-ink);
 
-  transform: rotate(-4deg);
-  transition: background 0.3s var(--ease), box-shadow 0.3s var(--ease),
-              transform 0.3s var(--ease), color 0.3s var(--ease);
+  transition: background 0.3s var(--ease), color 0.3s var(--ease);
 }
 
 .st-tab.is-past .st-tab-num {
-  background: var(--about-accent-soft);
-  box-shadow: inset 0 0 0 1.7px var(--about-accent);
-  color: var(--about-accent);
-  transform: rotate(3deg);
+  background: var(--c);
+  color: var(--c-ink);
 }
 
 .st-tab.is-selected .st-tab-num {
-  background: var(--about-accent);
-  box-shadow: inset 0 0 0 1.7px var(--about-accent),
-              0 6px 16px rgba(180, 103, 74, 0.28);
+  background: var(--c-ink);
   color: #fff;
-  transform: rotate(-6deg) scale(1.14);
-}
-
-/* A ring that breathes out of the selected badge. Decorative only. */
-.st-tab.is-selected .st-tab-num::after {
-  content: "";
-  position: absolute;
-  inset: -2px;
-  border-radius: 50%;
-  border: 1.6px solid var(--about-accent);
-  animation: st-pulse 2.8s var(--ease) infinite;
-}
-
-@keyframes st-pulse {
-  0%   { transform: scale(1);   opacity: 0.5; }
-  70%  { transform: scale(1.7); opacity: 0; }
-  100% { transform: scale(1.7); opacity: 0; }
-}
-
-.st-tab:hover:not(.is-selected) .st-tab-num {
-  box-shadow: inset 0 0 0 1.7px var(--about-accent);
-  color: var(--about-accent);
-  transform: rotate(4deg) scale(1.06);
 }
 
 .st-tab-title {
   display: block;
-  margin-top: 2px;
   font-size: 16px;
+  line-height: 1.25;
   color: var(--color-text);
 }
 
 .st-tab-sub {
   display: block;
-  margin-top: 3px;
+  margin-top: 4px;
   font-size: 13px;
   line-height: 1.45;
 }
 
-.st-tab.is-selected .st-tab-title { color: var(--about-accent); }
+.st-tab.is-selected .st-tab-title { color: var(--c-ink); }
 
 /* --- the reading panel --- */
 
@@ -534,11 +552,11 @@
 @media (prefers-reduced-motion: reduce) {
   .lg-track { scroll-behavior: auto; }
   .lg-shot img,
-  .st-tab::before,
   .st-tab::after,
   .lg-bar::after { transition: none; }
   .lg-shot:hover img { transform: none; }
-  .st-tab.is-selected .st-tab-num::after { animation: none; display: none; }
+  .st-tab, .st-tab-num { transition: none; }
+  .st-tab.is-picking, .st-panel.is-entering { animation: none; }
 }
 
 

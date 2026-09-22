@@ -40,14 +40,14 @@
       alt: "Wearing a laurel wreath and holding a certificate in front of a Politecnico di Milano graduation backdrop",
       caption: "Graduation day", location: "Politecnico di Milano" },
     { src: "assets/about/gallery/duomo.jpg", width: 1080, height: 1440,
-      alt: "Two people in the piazza in front of the Duomo di Milano, one posing with outstretched hands while the other photographs them",
-      caption: "Taking each other's photo in the piazza", location: "Duomo di Milano" },
+      alt: "Graduation in duomo”",
+      caption: "Graduation day in the piazza", location: "Duomo di Milano" },
     { src: "assets/about/gallery/desk.jpg", width: 1320, height: 746,
       alt: "Mid-yawn at a desk while writing in a notebook, a laptop open alongside and a shelf of magazines behind",
       caption: "Not every hour of it was glamorous", location: "" },
     { src: "assets/about/gallery/cohort.jpg", width: 1200, height: 1600,
       alt: "Three class photographs stacked together, each a large group gathered outside a university building",
-      caption: "The people you end up in every photograph with", location: "" },
+      caption: "Erasmus Sustainable summer school", location: "" },
     { src: "assets/about/gallery/mountains-clouds.jpg", width: 1440, height: 1080,
       alt: "Standing on a grassy slope with one arm raised, jagged peaks and heavy cloud behind",
       caption: "Somewhere with better weather than forecast", location: "" },
@@ -56,7 +56,7 @@
       caption: "Still bad at the overhangs", location: "" },
     { src: "assets/about/gallery/hike-group.jpg", width: 1600, height: 1067,
       alt: "Nine people in hiking gear lined up on grass, arms raised, mountains behind them",
-      caption: "Everyone made it back down", location: "" },
+      caption: "Everyone made it back down", location: "Leeco with haier people" },
     { src: "assets/about/gallery/summit-four.jpg", width: 1200, height: 1600,
       alt: "Four people seen from behind with backpacks, arms raised towards a mountain ridge under cloud",
       caption: "The part of the walk nobody complains about", location: "" },
@@ -77,7 +77,7 @@
       caption: "Above the cloud line", location: "" },
     { src: "assets/about/gallery/winter-run.jpg", width: 1201, height: 1600,
       alt: "Three runners in matching pink race shirts with race numbers, tinsel and Santa hats",
-      caption: "A race that was mostly an excuse for the outfit", location: "" }
+      caption: "Marathon with cute christmas", location: "Lecco" }
   ];
 
   /* ====================================================================== */
@@ -396,7 +396,18 @@
     });
     if (current < 0) current = 1;   /* chapter 02 by default */
 
+    /* Restart a one-shot animation: removing the class is not enough on its
+       own, because the class goes back on in the same frame and the browser
+       never sees a change. Reading offsetWidth forces the reflow between. */
+    function replay(el, cls) {
+      if (reduced || !el) return;
+      el.classList.remove(cls);
+      void el.offsetWidth;
+      el.classList.add(cls);
+    }
+
     function select(i, focusTab) {
+      var moved = current !== i;
       current = Math.max(0, Math.min(tabs.length - 1, i));
 
       tabs.forEach(function (tab, n) {
@@ -405,11 +416,18 @@
         tab.setAttribute("tabindex", on ? "0" : "-1");
         tab.classList.toggle("is-selected", on);
         tab.classList.toggle("is-past", n < current);
+        if (!on) tab.classList.remove("is-picking");
       });
 
       panels.forEach(function (panel, n) {
         panel.hidden = n !== current;
       });
+
+      /* Only on a real change of chapter, so the first paint is still. */
+      if (moved) {
+        replay(tabs[current], "is-picking");
+        replay(panels[current], "is-entering");
+      }
 
       if (position) {
         position.textContent =
