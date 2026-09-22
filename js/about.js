@@ -4,30 +4,19 @@
    sideways, and a story timeline whose nodes act as tabs over one shared
    reading panel.
 
-   Everything you are likely to edit is in the three blocks below:
-     1. CV_URL        the Google Drive link for the CV
-     2. GALLERY       the photographs and their captions
-     3. (story copy)  lives in about.html, inside the .st-panel elements
+   Everything you are likely to edit is in the two places below:
+     1. GALLERY       the photographs and their captions
+     2. (story copy)  lives in about.html, inside the .st-panel elements
+
+   The CV link is not here: it lives in js/main.js, because every page's
+   navigation needs it.
    ========================================================================== */
 
 (function () {
   "use strict";
 
   /* ------------------------------------------------------------------------
-     1. CV LINK
-
-     Paste the Google Drive share link for your CV PDF between the quotes.
-     While this is empty the navigation shows "CV" as plain, non-interactive
-     text rather than a link that goes nowhere.
-
-     Use the direct-view form, for example:
-       https://drive.google.com/file/d/<FILE_ID>/view?usp=sharing
-     ---------------------------------------------------------------------- */
-
-  var CV_URL = "";
-
-  /* ------------------------------------------------------------------------
-     2. GALLERY
+     1. GALLERY
 
      Replace each entry with a real photograph. Keep width and height equal to
      the file's real pixel dimensions: the row sizes every image to one common
@@ -88,33 +77,6 @@
   function $$(sel, root) {
     return Array.prototype.slice.call((root || document).querySelectorAll(sel));
   }
-
-  /* ------------------------------------------------------------------------
-     CV link
-     ---------------------------------------------------------------------- */
-
-  (function cvLink() {
-    $$("[data-cv-link]").forEach(function (el) {
-      if (!CV_URL) {
-        /* No URL yet. Leave it as text so nothing links nowhere, and say why
-           to anyone reading the console. */
-        el.setAttribute("aria-disabled", "true");
-        el.removeAttribute("href");
-        return;
-      }
-      el.setAttribute("href", CV_URL);
-      el.setAttribute("target", "_blank");
-      el.setAttribute("rel", "noopener noreferrer");
-      el.removeAttribute("aria-disabled");
-    });
-
-    if (!CV_URL) {
-      console.info(
-        "[about] CV_URL is empty, so the CV item renders as plain text. " +
-        "Add your Google Drive link at the top of js/about.js."
-      );
-    }
-  })();
 
   /* ------------------------------------------------------------------------
      LIFE GALLERY

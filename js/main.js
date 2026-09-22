@@ -5,6 +5,44 @@
 (function () {
   "use strict";
 
+  /* ---------------------------------------------------------------
+     0. CV LINK
+
+     Paste the Google Drive share link for your CV between the quotes.
+     Every page loads this file, so this one line drives the CV item in
+     every navigation bar.
+
+     Use the direct-view form:
+       https://drive.google.com/file/d/<FILE_ID>/view?usp=sharing
+
+     While it is empty the item renders as plain text rather than a link
+     that goes nowhere.
+     --------------------------------------------------------------- */
+
+  var CV_URL = "";
+
+  Array.prototype.forEach.call(
+    document.querySelectorAll("[data-cv-link]"),
+    function (el) {
+      if (!CV_URL) {
+        el.setAttribute("aria-disabled", "true");
+        el.removeAttribute("href");
+        return;
+      }
+      el.setAttribute("href", CV_URL);
+      el.setAttribute("target", "_blank");
+      el.setAttribute("rel", "noopener noreferrer");
+      el.removeAttribute("aria-disabled");
+    }
+  );
+
+  if (!CV_URL && document.querySelector("[data-cv-link]")) {
+    console.info(
+      "[nav] CV_URL is empty, so the CV item is plain text. " +
+      "Add your Google Drive link at the top of js/main.js."
+    );
+  }
+
   var reduced = window.matchMedia &&
                 window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
