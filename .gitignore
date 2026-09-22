@@ -29,3 +29,6 @@ assets/ecco/A2_POSTER.jpg
 # You asked for the icon library to stay off the site; it is unreferenced,
 # but a staged file is still reachable by direct URL.
 assets/haier/icon-library.jpg
+
+# Internal build notes; not for the public repo homepage.
+README.md
