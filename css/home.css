@@ -19,11 +19,25 @@
    across two of them. Let it use the full column instead. */
 .home-intro {
   max-width: none;
+  width: 100%;          /* flex would otherwise shrink this to its content */
 }
 
-/* No text-wrap: balance here. Balancing evens the line lengths, which on a
-   four-line headline leaves the right-hand third empty; letting the lines
-   fill is what makes the headline read as wide. */
+/* Sized so the three hand-set lines fill the column rather than stopping
+   short of it: at 92px the sentence simply cannot reach the right edge in
+   three lines, so the type comes down instead of the lines going ragged. */
+.home-intro .display {
+  font-size: clamp(46px, 5.5vw, 82px);
+}
+
+/* The headline's four lines are set by hand, so the block tapers instead of
+   landing wherever the wrap happens to fall. Below the width where all four
+   fit, the breaks come out and the text wraps on its own. */
+/* Below this the third line no longer fits, and a forced break plus a wrap
+   is what made the block ragged in the first place. Let it wrap on its own
+   instead: natural wrapping fills each line and only shortens the last. */
+@media (max-width: 1250px) {
+  .hero-break { display: none; }
+}
 
 .home-intro .display {
   margin-bottom: 32px;
