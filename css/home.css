@@ -12,9 +12,16 @@
   align-items: flex-end;
 }
 
+/* The headline grew from "Interaction designer" to "Interaction design
+   researcher", which pushed it to five lines and split decision-making
+   across two of them. Let it use the full column instead. */
 .home-intro {
-  max-width: 1100px;
+  max-width: none;
 }
+
+/* No text-wrap: balance here. Balancing evens the line lengths, which on a
+   four-line headline leaves the right-hand third empty; letting the lines
+   fill is what makes the headline read as wide. */
 
 .home-intro .display {
   margin-bottom: 32px;
