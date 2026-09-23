@@ -19,7 +19,7 @@
      that goes nowhere.
      --------------------------------------------------------------- */
 
-  var CV_URL = "";
+  var CV_URL = "https://drive.google.com/file/d/1Zs1w4svsx1gEJMYR0vd61MP0YTYPyiCr/view?usp=sharing";
 
   Array.prototype.forEach.call(
     document.querySelectorAll("[data-cv-link]"),
