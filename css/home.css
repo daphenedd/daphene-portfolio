@@ -2,11 +2,13 @@
    HOME HERO
 ======================================== */
 
+/* The content sits at the bottom of this box, so min-height is the gap above
+   the headline, not just a floor. 68vh left too much of it empty. */
 .home-hero {
-  min-height: 68vh;
+  min-height: 46vh;
 
-  padding-top: 100px;
-  padding-bottom: 120px;
+  padding-top: 64px;
+  padding-bottom: 96px;
 
   display: flex;
   align-items: flex-end;
