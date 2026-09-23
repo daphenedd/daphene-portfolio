@@ -29,10 +29,10 @@
    line as its own block to even out and splits it again, which left a single
    word stranded on a line of its own. */
 .home-intro .display {
-  /* 68px is the largest size at which "exploring how AI can support human
-     thinking," still fits on one line. Above it that line wraps and leaves
-     "thinking," stranded on its own. */
-  font-size: clamp(40px, 4.7vw, 68px);
+  /* 80px is the largest size at which the first line, the longest of the
+     three, still fits. This break set tapers, so the type can run bigger
+     than the previous one allowed. */
+  font-size: clamp(40px, 5.5vw, 80px);
 }
 
 /* Below this the second line no longer fits and leaves "thinking," stranded
