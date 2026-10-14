@@ -101,7 +101,8 @@ video {
   max-width: 100%;
 }
 
-img {
+img,
+video {
   height: auto;
 }
 

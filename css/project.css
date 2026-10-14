@@ -233,6 +233,35 @@
   gap: 20px;
 }
 
+/* Portrait phone recordings. A column grid sizes by page width, which
+   makes a 9:19 screen taller than the viewport; these are sized by the
+   phone instead, so a whole screen fits on screen. The box takes its shape
+   from the video (aspect-ratio), never from a fixed height. */
+.media-phones {
+  margin-top: 56px;
+  margin-bottom: 56px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px 32px;
+}
+
+.media-phones > figure {
+  width: clamp(200px, 19vw, 280px);
+}
+
+.media-phones video {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 720 / 1558;
+  object-fit: cover;
+
+  border-radius: 28px;
+  box-shadow: var(--ring-figure), var(--shadow-figure);
+}
+
 .media-stack {
   display: flex;
   flex-direction: column;
@@ -774,6 +803,19 @@
   .media-pair,
   .media-triplet {
     grid-template-columns: 1fr;
+  }
+
+  /* Two phones abreast still fits a phone; one would be taller than it. */
+  .media-phones {
+    gap: 28px 16px;
+  }
+
+  .media-phones > figure {
+    width: calc(50% - 8px);
+  }
+
+  .media-phones video {
+    border-radius: 18px;
   }
 
   .stat-grid {
